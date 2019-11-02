@@ -1,0 +1,8 @@
+**/out
+**/node_modules
+**/build
+**/*lock*
+**/*.log
+**/.vscode
+**/.next
+**/.DS_Store

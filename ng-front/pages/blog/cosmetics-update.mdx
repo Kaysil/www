@@ -1,0 +1,76 @@
+import withPost from '../../components/blog/with-post'
+import Image from '../../components/image'
+
+export const meta = {
+  title: 'Cosmetics update',
+  description: 'A brand new update is live across the network!',
+  date: '2019-03-03T00:00:00.000Z',
+  url: 'https://nethergames.org.org/blog/cosmetics-update',
+  link: '/blog/cosmetics-update',
+  authors: [
+    {
+      name: 'NetherGames Team',
+      avatar: '/static/images/icon.png',
+      twitter: 'NetherGamesMC'
+    }
+  ]
+}
+
+export default withPost({ ...meta })
+
+Hello NetherGames players!
+
+We're pleased to announce that a new update has been released and is now live across the network!
+
+This update brings the long-awaited cosmetics, including trails, arrow trails, kill effects and win effects. Right now, there are only a limited number of cosmetics up for grabs, however this list should expand as time goes on.
+
+You can earn keys by playing a game - once you've won, you have a 1 in 5 chance of getting a key to unlock a crate in the lobby. Crate keys will also be available on our store very soon.
+
+On top of cosmetics, this update also brings a number of bug fixes and team chat for Bedwars and SkyWars.
+
+If you find any bugs with the new update, please report them to #bugs on our Discord server (ngmc.co/d) or send them to our support team - ngmc.co/lc or email support@nethergames.org.
+
+Enjoy!
+
+<style jsx>{`
+  table {
+    margin: 0 auto 30px;
+  }
+  table td,
+  table th {
+    padding: 10px 20px;
+  }
+  table th {
+    font-weight: normal;
+    font-size: 12px;
+    color: #9b9b9b;
+    padding-bottom: 0px;
+  }
+  table td:first-child {
+    width: 55%;
+  }
+  table td {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  table td:last-child {
+    color: #067df7;
+  }
+  table td:not(:first-child) {
+    text-align: center;
+  }
+  table td em {
+    font-weight: normal;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-style: normal;
+    display: block;
+  }
+  // CSS only media query for mobile
+  @media screen and (max-width: 640px) {
+    table td,
+    table th {
+      padding: 10px 10px;
+    }
+  }
+`}</style>

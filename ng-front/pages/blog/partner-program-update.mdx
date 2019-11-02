@@ -1,0 +1,77 @@
+import withPost from '../../components/blog/with-post'
+import Image from '../../components/image'
+
+export const meta = {
+  title: 'Partnership Program Update',
+  description: 'YouTubers may now apply to join the NetherGames Partnership Program!',
+  date: '2019-10-01T00:00:00.000Z',
+  url: 'https://nethergames.org.org/blog/partner-program-update',
+  link: '/blog/partner-program-update',
+  authors: [
+    {
+      name: 'NetherGames Team',
+      avatar: '/static/images/icon.png',
+      twitter: 'NetherGamesMC'
+    }
+  ]
+}
+
+export default withPost({ ...meta })
+
+<p>Greetings everyone!</p>
+
+<p>Today we will be unveiling a new application system for the Partner rank!<br />
+Yes, you read it you will be now able to apply for the Partner rank on the NetherGames Network. This system is like the current YouTube application system but will be reviewed by our Marketing Department to see if you are suitable for the rank.</p>
+
+<p>To apply you'll need to be able to login to our account portal (https://account.nethergames.org/).<br />
+Once you have successfully logged in, head to "Account Settings" and click the blue "Apply for partner program" button towards the bottom of the page. You'll be redirected to Google's servers where you will be prompted to login with your Google (YouTube account).</p>
+
+<p>After logging in to your Google/YT account, click "Allow" to grant our system access to read your YouTube channel's details. We use these details to check your channel eligibility. Please note that you must have at least 5000 subscribers (requirement for the YouTube rank) to be eligible.<br />
+If the system has validated your eligibility, you'll be prompted to confirm your application. Once completed, our Marketing Department will review the application (this may take over 48 hours).</p>
+
+<p>If your application is accepted you will be sent an email with information regarding the Partnership Program. If you do not receive an email within 48 hours of applying, your application may unfortunately have been denied.</p>
+
+<p>If you have any issues, please contact our support team (http://ngmc.co/lc).</p>
+
+<style jsx>{`
+  table {
+    margin: 0 auto 30px;
+  }
+  table td,
+  table th {
+    padding: 10px 20px;
+  }
+  table th {
+    font-weight: normal;
+    font-size: 12px;
+    color: #9b9b9b;
+    padding-bottom: 0px;
+  }
+  table td:first-child {
+    width: 55%;
+  }
+  table td {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  table td:last-child {
+    color: #067df7;
+  }
+  table td:not(:first-child) {
+    text-align: center;
+  }
+  table td em {
+    font-weight: normal;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-style: normal;
+    display: block;
+  }
+  // CSS only media query for mobile
+  @media screen and (max-width: 640px) {
+    table td,
+    table th {
+      padding: 10px 10px;
+    }
+  }
+`}</style>

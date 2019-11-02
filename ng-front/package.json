@@ -1,0 +1,56 @@
+{
+  "name": "ng-front",
+  "license": "MIT",
+  "scripts": {
+    "build": "next build",
+    "export": "next export",
+    "start": "next"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2
+  },
+  "dependencies": {
+    "@mapbox/rehype-prism": "^0.3.0",
+    "@mdx-js/loader": "^1.5.1",
+    "@mdx-js/mdx": "^1.5.1",
+    "@mdx-js/tag": "^0.20.3",
+    "@next/bundle-analyzer": "^9.1.1",
+    "@next/mdx": "^9.1.1",
+    "@reach/skip-nav": "0.4.0",
+    "@zeit/next-bundle-analyzer": "^0.1.1",
+    "@zeit/next-mdx": "^1.1.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "classnames": "^2.2.6",
+    "date-fns": "^1.29.0",
+    "github-slugger": "1.2.1",
+    "highlight.js": "9.15.10",
+    "intersection-observer": "^0.7.0",
+    "mitt": "^1.2.0",
+    "next": "9.1.1",
+    "nprogress": "0.2.0",
+    "polished": "^3.4.1",
+    "prop-types": "^15.6.2",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-keyframes": "0.2.3",
+    "react-pose": "4.0.9",
+    "react-spring": "^5.6.14",
+    "react-tweet-embed": "1.2.2",
+    "react-virtualized": "^9.20.1",
+    "scroll-into-view-if-needed": "^2.2.16",
+    "unist-util-visit": "2.0.0"
+  },
+  "devDependencies": {
+    "husky": "3.0.9",
+    "prettier": "^1.14.2",
+    "pretty-quick": "2.0.0"
+  }
+}

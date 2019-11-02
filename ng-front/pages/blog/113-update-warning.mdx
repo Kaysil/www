@@ -1,0 +1,80 @@
+import withPost from '../../components/blog/with-post'
+import Image from '../../components/image'
+
+export const meta = {
+  title: '1.13 Update Warning',
+  description:
+    'Another major update is coming to Minecraft Bedrock Edition, and there are serious consequences.',
+  date: '2019-09-06T00:00:00.000Z',
+  url: 'https://nethergames.org.org/blog/113-update-warning',
+  link: '/blog/113-update-warning',
+  authors: [
+    {
+      name: 'NetherGames Team',
+      avatar: '/static/images/icon.png',
+      twitter: 'NetherGamesMC'
+    }
+  ]
+}
+
+export default withPost({ ...meta })
+
+<p>We are posting this as a warning to everyone before the upcoming 1.13 update (currently in beta) is released to all Bedrock clients.</p>
+
+<p>In typical Mojang fashion, Minecraft Bedrock Edition developers have managed to remove something vital in the 1.13 beta releases for server software developers to do their work. They've removed "debugging symbols" which are critically useful for reverse-engineers to update their software to support the Minecraft updates.</p>
+
+<p>Because of this, it is expected that once the 1.13 update comes out, there will be large-scale disruption for players joining non-partnered servers (partnered servers should work fine but this is unconfirmed). Updates to bring the server software up-to-date with the latest protocol changes in Minecraft updates could take anywhere from a few days to a few months if Mojang does push through with the removal of debugging symbols.</p>
+
+<p>As this is the case, we'd strongly advise that you turn off Automatic Updates so that once the update is released you are still able to play on third-party servers. Here are tutorials to assist you with turning auto-updates off:<br></br>
+iOS users: https://support.apple.com/en-au/HT202180#iOS<br></br>
+Android users: https://www.androidpit.com/how-to-disable-auto-intall-of-google-play-apps<br></br>
+Windows 10 users: https://support.microsoft.com/en-au/help/15081/windows-turn-on-automatic-app-updates (set to off, not on)</p>
+
+<p>If you're using an emulator (e.g. Bedrock launcher for macOS or Linux), it will most likely not work after the update.</p>
+
+<p>For people who want more information on the effects of this update on third-party servers, please refer to this post by Dylan (lead dev @ PMMP) - https://forums.pmmp.io/threads/1-13-debug-symbols-and-the-titanic.8571/</p>
+
+<p>We'll try to keep you updated if anything does change. In the meantime, we encourage you to share this warning with your friends and other players so they will also be able to play on non-partnered servers after the update too!</p>
+
+<style jsx>{`
+  table {
+    margin: 0 auto 30px;
+  }
+  table td,
+  table th {
+    padding: 10px 20px;
+  }
+  table th {
+    font-weight: normal;
+    font-size: 12px;
+    color: #9b9b9b;
+    padding-bottom: 0px;
+  }
+  table td:first-child {
+    width: 55%;
+  }
+  table td {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  table td:last-child {
+    color: #067df7;
+  }
+  table td:not(:first-child) {
+    text-align: center;
+  }
+  table td em {
+    font-weight: normal;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-style: normal;
+    display: block;
+  }
+  // CSS only media query for mobile
+  @media screen and (max-width: 640px) {
+    table td,
+    table th {
+      padding: 10px 10px;
+    }
+  }
+`}</style>

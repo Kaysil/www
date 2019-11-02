@@ -1,0 +1,78 @@
+import withPost from '../../components/blog/with-post'
+import Image from '../../components/image'
+
+export const meta = {
+  title: 'Infection Mode Update - Changelog',
+  description: "Here's the changelog for our most recent update to Infection Mode.",
+  date: '2019-03-16T00:00:00.000Z',
+  url: 'https://nethergames.org.org/blog/infection-v2-update',
+  link: '/blog/infection-v2-update',
+  authors: [
+    {
+      name: 'NetherGames Team',
+      avatar: '/static/images/icon.png',
+      twitter: 'NetherGamesMC'
+    }
+  ]
+}
+
+export default withPost({ ...meta })
+
+Hello NetherGames players!
+
+We've pushed out a huge update to Infection Mode on our Murder Mystery servers!
+
+Here’s what's new:
+
+- The Alpha Infected (the first player to be infected) looks like any other survivor until they’re killed. They'll have a fake bow to trick other survivors, so beware! The Alpha Infected also has 2 lives (once they're dead infected players can no longer respawn) and they can throw their weapon every 15 seconds.
+
+- Normal infected players can throw their sword once they have collected 10 gold and no longer have jump boost
+
+- Survivors now spawn with 16 arrows instead of 64 and can collect 6 gold for an additional 24 arrows
+
+If you have any questions, feel free to contact our support team via the live chat button located at the bottom right corner of your screen, through email - support@nethergames.org, or through Twitter - @NetherGamesMC.
+
+Enjoy the new update!
+
+<style jsx>{`
+  table {
+    margin: 0 auto 30px;
+  }
+  table td,
+  table th {
+    padding: 10px 20px;
+  }
+  table th {
+    font-weight: normal;
+    font-size: 12px;
+    color: #9b9b9b;
+    padding-bottom: 0px;
+  }
+  table td:first-child {
+    width: 55%;
+  }
+  table td {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  table td:last-child {
+    color: #067df7;
+  }
+  table td:not(:first-child) {
+    text-align: center;
+  }
+  table td em {
+    font-weight: normal;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-style: normal;
+    display: block;
+  }
+  // CSS only media query for mobile
+  @media screen and (max-width: 640px) {
+    table td,
+    table th {
+      padding: 10px 10px;
+    }
+  }
+`}</style>

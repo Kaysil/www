@@ -1,0 +1,70 @@
+import withPost from '../../components/blog/with-post'
+import Image from '../../components/image'
+
+export const meta = {
+  title: 'New website design',
+  description: "We've launched a new look website!",
+  date: '2019-02-26T16:05:55.907Z',
+  url: 'https://nethergames.org.org/blog/new-website-design',
+  link: '/blog/new-website-design',
+  authors: [
+    {
+      name: 'NetherGames Team',
+      avatar: '/static/images/icon.png',
+      twitter: 'NetherGamesMC'
+    }
+  ]
+}
+
+export default withPost({ ...meta })
+
+Greetings! Welcome to our revamped website.
+
+This new site, designed by one of our web developers - Casper - runs on ReactJS and features a new design and better performance. It also includes a new blog.
+
+This refreshed look is part of an effort to revamp all our existing websites.
+
+We hope you like this new design!
+
+<style jsx>{`
+  table {
+    margin: 0 auto 30px;
+  }
+  table td,
+  table th {
+    padding: 10px 20px;
+  }
+  table th {
+    font-weight: normal;
+    font-size: 12px;
+    color: #9b9b9b;
+    padding-bottom: 0px;
+  }
+  table td:first-child {
+    width: 55%;
+  }
+  table td {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  table td:last-child {
+    color: #067df7;
+  }
+  table td:not(:first-child) {
+    text-align: center;
+  }
+  table td em {
+    font-weight: normal;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-style: normal;
+    display: block;
+  }
+  // CSS only media query for mobile
+  @media screen and (max-width: 640px) {
+    table td,
+    table th {
+      padding: 10px 10px;
+    }
+  }
+`}</style>
