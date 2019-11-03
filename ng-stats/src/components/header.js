@@ -71,6 +71,7 @@ const menuItems = [
   {
     key: 'group-1',
     caption: 'Top Wins',
+    onClick: () => {},
     subMenuItems: [
       {
         key: '3',
