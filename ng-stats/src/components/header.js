@@ -250,15 +250,6 @@ export default function Header() {
                   onClick={toggleDrawer(side, false)}
                   href="/leaderboard/wins"
                 >
-                  <ListItemText primary="Global" />
-                </ListItem>
-                <ListItem
-                  button
-                  className={classes.nested}
-                  component={Link}
-                  onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/wins"
-                >
                   <ListItemText primary="Global Wins" />
                 </ListItem>
                 <ListItem

@@ -25,6 +25,7 @@ if (process.env.NODE_ENV !== 'development') {
     s.async = 1
     d.getElementsByTagName('head')[0].appendChild(s)
   })()
+  $crisp.push(['safe', true])
 }
 
 const App = () => (
