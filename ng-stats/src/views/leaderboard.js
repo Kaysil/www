@@ -42,10 +42,12 @@ class Leaderboard extends Component {
   }
 
   componentDidMount() {
-    const path = window.location.pathname.split('/')[2]
-    const type = undefined !== path ? path : 'wins'
+    const typePath = window.location.pathname.split('/')[2]
+    const gamePath = window.location.pathname.split('/')[3]
+    const type = undefined !== typePath ? typePath : 'wins'
+    const game = undefined !== gamePath ? gamePath : null
 
-    fetch(`https://api.nethergames.org/?action=leaderboards&type=${type}&limit=100`)
+    fetch(`https://api.nethergames.org/?action=leaderboards&type=${type}&game=${game}&limit=100`)
       .then(res => res.json())
       .then(res => this.setState({ data: res }))
       .catch(() => this.setState({ failed: true }))

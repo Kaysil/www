@@ -58,7 +58,7 @@ export default class Player extends Component {
           <meta property="og:url" content={`https://portal.nethergames.org/player/${stats.name}`} />
           <meta
             property="og:image"
-            content={`https://player.nethergames.org/avatar/${stats.name}`}
+            content={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${stats.name}.png`}
           />
           <meta property="og:profile:username" content={stats.name} />
           <meta

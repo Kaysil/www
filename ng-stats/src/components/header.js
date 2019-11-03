@@ -6,6 +6,7 @@ import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/sty
 
 import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
+import CascadingMenu from './menu'
 import Collapse from '@material-ui/core/Collapse'
 import Drawer from '@material-ui/core/Drawer'
 import ExpandLess from '@material-ui/icons/ExpandLess'
@@ -52,13 +53,131 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+const menuItems = [
+  {
+    key: '1',
+    caption: 'Top Credits',
+    onClick: () => {
+      location.href = '/leaderboard/credits'
+    }
+  },
+  {
+    key: '2',
+    caption: 'Top Levels/XP',
+    onClick: () => {
+      location.href = '/leaderboard/xp'
+    }
+  },
+  {
+    key: 'group-1',
+    caption: 'Top Wins',
+    subMenuItems: [
+      {
+        key: '3',
+        caption: 'Global Wins',
+        onClick: () => {
+          location.href = '/leaderboard/wins'
+        }
+      },
+      {
+        key: '4',
+        caption: 'Build Battle',
+        onClick: () => {
+          location.href = '/leaderboard/wins/BB'
+        }
+      },
+      {
+        key: '5',
+        caption: 'BlockHunt',
+        onClick: () => {
+          location.href = '/leaderboard/wins/BH'
+        }
+      },
+      {
+        key: '6',
+        caption: 'Battle Royale',
+        onClick: () => {
+          location.href = '/leaderboard/wins/BR'
+        }
+      },
+      {
+        key: '7',
+        caption: 'Bedwars',
+        onClick: () => {
+          location.href = '/leaderboard/wins/BW'
+        }
+      },
+      {
+        key: '8',
+        caption: 'Duels',
+        onClick: () => {
+          location.href = '/leaderboard/wins/Duels'
+        }
+      },
+      {
+        key: '9',
+        caption: 'Murder Mystery',
+        onClick: () => {
+          location.href = '/leaderboard/wins/MM'
+        }
+      },
+      {
+        key: '10',
+        caption: 'Races',
+        onClick: () => {
+          location.href = '/leaderboard/wins/RC'
+        }
+      },
+      {
+        key: '11',
+        caption: 'Soccer',
+        onClick: () => {
+          location.href = '/leaderboard/wins/SC'
+        }
+      },
+      {
+        key: '12',
+        caption: 'SkyWars',
+        onClick: () => {
+          location.href = '/leaderboard/wins/SW'
+        }
+      }
+    ]
+  },
+  {
+    key: '13',
+    caption: 'Top Kills',
+    onClick: () => {
+      location.href = '/leaderboard/kills'
+    }
+  },
+  {
+    key: '14',
+    caption: 'Top K/DR',
+    onClick: () => {
+      location.href = '/leaderboard/kdr'
+    }
+  },
+  {
+    key: '15',
+    caption: 'Top Guilds',
+    onClick: () => {
+      location.href = '/guildboard'
+    }
+  }
+]
+
 export default function Header() {
   const classes = useStyles()
 
   const [openList, setOpenList] = useState(false)
+  const [openSecondList, setOpenSecondList] = useState(false)
 
   const handleClickList = () => {
     setOpenList(!openList)
+  }
+  const handleClickSecondList = () => {
+    setOpenSecondList(!openSecondList)
   }
 
   const [anchorEl, setAnchorEl] = useState(null)
@@ -117,15 +236,114 @@ export default function Header() {
             >
               <ListItemText primary="Top Levels/XP" />
             </ListItem>
-            <ListItem
-              button
-              className={classes.nested}
-              component={Link}
-              onClick={toggleDrawer(side, false)}
-              href="/leaderboard/wins"
-            >
+
+            <ListItem button onClick={handleClickSecondList}>
               <ListItemText primary="Top Wins" />
+              {openSecondList ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
+            <Collapse in={openSecondList} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/wins"
+                >
+                  <ListItemText primary="Global" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/wins"
+                >
+                  <ListItemText primary="Global Wins" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/BB"
+                >
+                  <ListItemText primary="Build Battle" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/wins/BH"
+                >
+                  <ListItemText primary="BlockHunt" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/wins/BR"
+                >
+                  <ListItemText primary="Battle Royale" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/wins/BW"
+                >
+                  <ListItemText primary="Bedwars" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/wins/Duels"
+                >
+                  <ListItemText primary="Duels" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/wins/MM"
+                >
+                  <ListItemText primary="Murder Mystery" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/wins/RC"
+                >
+                  <ListItemText primary="Races" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/wins/SC"
+                >
+                  <ListItemText primary="Soccer" />
+                </ListItem>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  component={Link}
+                  onClick={toggleDrawer(side, false)}
+                  href="/leaderboard/wins/SW"
+                >
+                  <ListItemText primary="SkyWars" />
+                </ListItem>
+              </List>
+            </Collapse>
             <ListItem
               button
               className={classes.nested}
@@ -195,35 +413,28 @@ export default function Header() {
                 <Button component={NavLink} strict exact to={'/'}>
                   Stats
                 </Button>
-                <Button aria-controls="lb-menu" aria-haspopup="true" onClick={handleClick}>
+                <Button
+                  aria-label="Toggle Menu"
+                  aria-controls="user-menu"
+                  aria-haspopup="true"
+                  onClick={handleClick}
+                >
                   Leaderboard
                 </Button>
-                <Menu
-                  id="lb-menu"
-                  anchorEl={anchorEl}
-                  keepMounted
-                  open={Boolean(anchorEl)}
+                <CascadingMenu
+                  anchorElement={anchorEl}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right'
+                  }}
+                  menuItems={menuItems}
                   onClose={handleClose}
-                >
-                  <MenuItem component={Link} href="/leaderboard/credits" onClick={handleClose}>
-                    Top Credits
-                  </MenuItem>
-                  <MenuItem component={Link} href="/leaderboard/xp" onClick={handleClose}>
-                    Top Levels/XP
-                  </MenuItem>
-                  <MenuItem component={Link} href="/leaderboard/wins" onClick={handleClose}>
-                    Top Wins
-                  </MenuItem>
-                  <MenuItem component={Link} href="/leaderboard/kills" onClick={handleClose}>
-                    Top Kills
-                  </MenuItem>
-                  <MenuItem component={Link} href="/leaderboard/kdr" onClick={handleClose}>
-                    Top K/DR
-                  </MenuItem>
-                  <MenuItem component={Link} href="/guildboard" onClick={handleClose}>
-                    Top Guilds
-                  </MenuItem>
-                </Menu>
+                  open={Boolean(anchorEl)}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right'
+                  }}
+                />
                 <Button href="https://sso.nethergames.org/?service=account">Settings</Button>
                 <Button href="https://minecraftpocket-servers.com/server/36864/vote">Vote</Button>
               </div>
