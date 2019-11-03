@@ -225,7 +225,7 @@ export default class Player extends Component {
                 {stats.winsData[0].MM > 0 && <Text>Murder Mystery: {stats.winsData[0].MM}</Text>}
                 {stats.winsData[0].RC > 0 && <Text>Races: {stats.winsData[0].RC}</Text>}
                 {stats.winsData[0].SC > 0 && <Text>Soccer: {stats.winsData[0].SC}</Text>}
-                {stats.winsData[0].SW > 0 && <Text>Sky Wars: {stats.winsData[0].SW}</Text>}
+                {stats.winsData[0].SW > 0 && <Text>SkyWars: {stats.winsData[0].SW}</Text>}
                 {stats.winsData[0].SG > 0 && <Text>Survival Games: {stats.winsData[0].SG}</Text>}
                 {stats.winsData[0].TR > 0 && <Text>TNT Run: {stats.winsData[0].TR}</Text>}
               </AccordionPanel>
