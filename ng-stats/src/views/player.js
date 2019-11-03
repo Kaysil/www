@@ -63,7 +63,7 @@ export default class Player extends Component {
           <meta property="og:profile:username" content={stats.name} />
           <meta
             property="og:description"
-            content={`Kills: ${stats.kills} | Deaths: ${stats.deaths} | Wins: ${stats.wins} | Level: ${stats.level} | Credits: ${stats.credits}`}
+            content={`Kills: ${stats.kills} | Deaths: ${stats.deaths} | Wins: ${stats.wins} | Level: ${stats.level} | Credits: ${stats.status_credits}`}
           />
         </Helmet>
         <Box bg="white" borderWidth="1px" overflow="auto" rounded="lg" minH="m" maxW="lg" p="4">
