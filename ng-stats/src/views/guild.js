@@ -71,7 +71,7 @@ export default class Guild extends Component {
               </TabPanel>
               <TabPanel>
                 <List spacing={2}>
-                  {stats.members.map(stat => (
+                  {stats.officers.map(stat => (
                     <ListItem>
                       <Flex align="center">
                         <Avatar
@@ -92,7 +92,7 @@ export default class Guild extends Component {
               </TabPanel>
               <TabPanel>
                 <List spacing={2}>
-                  {stats.officers.map(stat => (
+                  {stats.members.map(stat => (
                     <ListItem>
                       <Flex align="center">
                         <Avatar
