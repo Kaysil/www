@@ -2,7 +2,7 @@
   "name": "ng-stats",
   "license": "MIT",
   "scripts": {
-    "build": "preact build",
+    "build": "preact build && cp -r src/assets/_* build",
     "start": "preact watch"
   },
   "dependencies": {
