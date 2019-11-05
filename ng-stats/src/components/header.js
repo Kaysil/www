@@ -41,6 +41,9 @@ const useStyles = makeStyles(theme => ({
   nested: {
     paddingLeft: theme.spacing(4)
   },
+  nestedSecond: {
+    paddingLeft: theme.spacing(4)
+  },
   navBar: {
     display: 'flex',
     justifyContent: 'space-between'
@@ -238,7 +241,7 @@ export default function Header() {
               <ListItemText primary="Top Levels/XP" />
             </ListItem>
 
-            <ListItem button onClick={handleClickSecondList}>
+            <ListItem button onClick={handleClickSecondList} className={classes.nestedSecond}>
               <ListItemText primary="Top Wins" />
               {openSecondList ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
