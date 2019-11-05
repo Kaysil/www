@@ -44,6 +44,9 @@ const useStyles = makeStyles(theme => ({
   nestedSecond: {
     paddingLeft: theme.spacing(4)
   },
+  nestedThird: {
+    paddingLeft: theme.spacing(4)
+  },
   navBar: {
     display: 'flex',
     justifyContent: 'space-between'
@@ -246,7 +249,7 @@ export default function Header() {
               {openSecondList ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse in={openSecondList} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
+              <List component="div" disablePadding className={classes.nestedThird}>
                 <ListItem
                   button
                   className={classes.nested}
