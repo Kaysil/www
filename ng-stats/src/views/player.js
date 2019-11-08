@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionPanel,
   Avatar,
+  AvatarBadge,
   Badge,
   Box,
   Flex,
@@ -18,6 +19,7 @@ import {
 import { Component, h } from 'preact'
 
 import { Helmet } from 'react-helmet'
+import Tooltip from '@material-ui/core/Tooltip'
 
 export default class Player extends Component {
   state = {
@@ -70,7 +72,13 @@ export default class Player extends Component {
           <Flex>
             <Avatar
               src={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${stats.name}.png`}
-            />
+            >
+              {0 !== stats.voted && (
+                <Tooltip title="Voted">
+                  <AvatarBadge as={Icon} name="check-circle" size="1.25em" color="black" />
+                </Tooltip>
+              )}
+            </Avatar>
             <Box ml="3">
               <Box fontWeight="bold">
                 {stats.name}
