@@ -13,7 +13,7 @@
     "@material-ui/icons": "^4.5.1",
     "emotion-theming": "^10.0.19",
     "formik": "^2.0.1",
-    "preact": "^10.0.4",
+    "preact": "^10.0.5",
     "preact-render-to-string": "^5.1.0",
     "react-helmet": "^5.2.1",
     "react-router-dom": "^5.1.2"

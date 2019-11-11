@@ -35,6 +35,6 @@
     "react-tweet-embed": "1.2.2",
     "react-virtualized": "^9.20.1",
     "scroll-into-view-if-needed": "^2.2.16",
-    "unist-util-visit": "2.0.0"
+    "unist-util-visit": "2.0.1"
   }
 }
