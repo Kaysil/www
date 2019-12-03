@@ -5,6 +5,11 @@
     "build": "preact build && cp -r src/assets/_* build",
     "start": "preact watch"
   },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true
+  },
   "dependencies": {
     "@chakra-ui/core": "^0.4.1",
     "@emotion/core": "^10.0.22",

@@ -171,6 +171,13 @@ const menuItems = [
     onClick: () => {
       location.href = '/guildboard'
     }
+  },
+  {
+    key: '16',
+    caption: 'Top Presents',
+    onClick: () => {
+      location.href = '/presentboard'
+    }
   }
 ]
 
@@ -368,6 +375,15 @@ export default function Header() {
               href={'/guildboard'}
             >
               <ListItemText primary="Top Guilds" />
+            </ListItem>
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              onClick={toggleDrawer(side, false)}
+              href={'/presentboard'}
+            >
+              <ListItemText primary="Top Presents" />
             </ListItem>
           </List>
         </Collapse>

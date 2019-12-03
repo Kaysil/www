@@ -13,6 +13,7 @@ import Header from './header'
 import Leaderboard from '../views/leaderboard'
 import NotFound from '../views/notfound'
 import Player from '../views/player'
+import Presentboard from '../views/presentboard'
 import { h } from 'preact'
 
 if (process.env.NODE_ENV !== 'development') {
@@ -45,11 +46,12 @@ const App = () => (
           <CSSReset />
           <Switch>
             <Route exact path="/" component={Front} />
-            <Route path="/guildboard" component={Guildboard} />
-            <Route path="/leaderboard" component={Leaderboard} />
-            <Route path="/faction" component={Faction} />
-            <Route path="/guild" component={Guild} />
+            <Route path="/presentboard" component={Presentboard} />
             <Route path="/player" component={Player} />
+            <Route path="/leaderboard" component={Leaderboard} />
+            <Route path="/guildboard" component={Guildboard} />
+            <Route path="/guild" component={Guild} />
+            <Route path="/faction" component={Faction} />
             <Route component={NotFound} />
           </Switch>
         </Flex>
