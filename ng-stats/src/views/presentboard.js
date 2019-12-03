@@ -13,8 +13,8 @@ import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 import { withStyles } from '@material-ui/core/styles'
 
-function createData(name, wins) {
-  return { name, wins }
+function createData(name, presents) {
+  return { name, presents }
 }
 
 const styles = () => ({
@@ -57,7 +57,7 @@ class Presentboard extends Component {
 
     const columns = [
       { id: 'name', label: 'Name' },
-      { id: 'wins', label: 'Wins', align: 'right' }
+      { id: 'presents', label: 'Presents', align: 'right' }
     ]
 
     if (failed || null === stats) {
