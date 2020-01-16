@@ -5,13 +5,8 @@
     "build": "preact build && cp -r src/assets/_* build",
     "start": "preact watch"
   },
-  "prettier": {
-    "printWidth": 100,
-    "semi": false,
-    "singleQuote": true
-  },
   "dependencies": {
-    "@chakra-ui/core": "^0.4.1",
+    "@chakra-ui/core": "^0.5.2",
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.22",
     "@material-ui/core": "^4.6.0",
@@ -25,5 +20,10 @@
   },
   "devDependencies": {
     "preact-cli": "^3.0.0-rc.6"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "singleQuote": true
   }
 }
