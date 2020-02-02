@@ -12,8 +12,8 @@ import Guildboard from '../views/guildboard'
 import Header from './header'
 import Leaderboard from '../views/leaderboard'
 import NotFound from '../views/notfound'
+import Parkourboard from '../views/parkourboard'
 import Player from '../views/player'
-import Presentboard from '../views/presentboard'
 import { h } from 'preact'
 
 if (process.env.NODE_ENV !== 'development') {
@@ -46,7 +46,7 @@ const App = () => (
           <CSSReset />
           <Switch>
             <Route exact path='/' component={Front} />
-            <Route path='/presentboard' component={Presentboard} />
+            <Route path='/parkourboard' component={Parkourboard} />
             <Route path='/player' component={Player} />
             <Route path='/leaderboard' component={Leaderboard} />
             <Route path='/guildboard' component={Guildboard} />

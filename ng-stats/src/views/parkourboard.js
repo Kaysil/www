@@ -33,7 +33,7 @@ const styles = () => ({
   }
 })
 
-class Presentboard extends Component {
+class Parkourboard extends Component {
   state = {
     data: {},
     failed: false,
@@ -139,4 +139,4 @@ class Presentboard extends Component {
   }
 }
 
-export default withStyles(styles)(Presentboard)
+export default withStyles(styles)(Parkourboard)
