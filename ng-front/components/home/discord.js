@@ -3,14 +3,14 @@ import Button from '../button'
 import SectionHeader from '../section-header'
 
 export default () => (
-  <Container center padding wide blurple white role="region" aria-labelledby="discord">
-    <SectionHeader id="discord" title="Join our Discord server" />
-    <div className="discord-intro">
+  <Container center padding wide blurple white role='region' aria-labelledby='discord'>
+    <SectionHeader id='discord' title='Join our Discord server' />
+    <div className='discord-intro'>
       <p>
-        Chat with friends, get news, and updates. <br className="display-mobile" />
+        Chat with friends, get news, and updates. <br className='display-mobile' />
         Join the official Discord server today.
       </p>
-      <div className="overlay" />
+      <div className='overlay' />
       <style jsx>{`
         .discord-intro {
           position: relative;
@@ -45,7 +45,7 @@ export default () => (
       `}</style>
     </div>
     <div>
-      <Button href="https://discord.nethergames.org" invert>
+      <Button href='https://discord.nethergames.org' invert>
         Launch Discord
       </Button>
     </div>

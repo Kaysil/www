@@ -2,7 +2,7 @@ import Container from '../container'
 import WordSlider from '../word-slider'
 
 export default () => (
-  <div className="slider-container">
+  <div className='slider-container'>
     <WordSlider duration={1800}>
       <span>Bedwars</span>
       <span>Creative</span>

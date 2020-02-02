@@ -15,19 +15,19 @@ import SocialMeta from '../social-meta'
 import ArrowLeftLong from '../icons/arrow-left-long'
 
 const Author = meta => (
-  <div className="author">
+  <div className='author'>
     <img src={meta.avatar} alt={meta.name} />
-    <span className="name f5">
-      <span className="real-name">{meta.name}</span>
+    <span className='name f5'>
+      <span className='real-name'>{meta.name}</span>
       <Link href={`https://twitter.com/${meta.twitter}`}>
-        <a className="twitter" target="_blank">
+        <a className='twitter' target='_blank'>
           @{meta.twitter}
         </a>
       </Link>
-      <span className="twitter-mobile">
+      <span className='twitter-mobile'>
         (
         <Link href={`https://twitter.com/${meta.twitter}`}>
-          <a target="_blank">@{meta.twitter}</a>
+          <a target='_blank'>@{meta.twitter}</a>
         </Link>
         )
       </span>
@@ -117,9 +117,9 @@ export default meta => ({ children }) => {
         </MediaQueryConsumer>
         <HeaderImage {...meta} />
         <Container padding>
-          <h1 className="title fw6 f0">{meta.title}</h1>
-          {meta.type && <span className="post-type mute fw7">{meta.type}</span>}
-          <div className="date mute f6">
+          <h1 className='title fw6 f0'>{meta.title}</h1>
+          {meta.type && <span className='post-type mute fw7'>{meta.type}</span>}
+          <div className='date mute f6'>
             <time dateTime={meta.date}>
               {formatDate(date, 'dddd, MMMM Do YYYY')} (
               {distanceInWordsToNow(date, {
@@ -128,17 +128,17 @@ export default meta => ({ children }) => {
               )
             </time>
           </div>
-          <div className="authors">
+          <div className='authors'>
             {meta.authors.map(data => (
               <Author key={data.name} {...data} />
             ))}
           </div>
           <Container small wide overflow>
             <content>{children}</content>
-            <div className="back-button">
-              <Button href="/blog" invert prefetch>
-                <span className="icon">
-                  <ArrowLeftLong color="white" />
+            <div className='back-button'>
+              <Button href='/blog' invert prefetch>
+                <span className='icon'>
+                  <ArrowLeftLong color='white' />
                 </span>{' '}
                 Back to Blog
               </Button>

@@ -5,7 +5,7 @@ import withPure from './hoc/pure'
 
 export default withPure(({ children, invert, href, as, className, prefetch, ...props }) => {
   const a = (
-    <a className={classNames(className, 'fw4 no-drag', { invert })} role="button" {...props}>
+    <a className={classNames(className, 'fw4 no-drag', { invert })} role='button' {...props}>
       {children}
       <style jsx>
         {`

@@ -35,7 +35,7 @@ const items = previewItems.sort(dateSortDesc).map(({ default: Component, meta },
 })
 
 export default () => (
-  <Page title="NetherGames - Blog">
+  <Page title='NetherGames - Blog'>
     <MediaQueryConsumer>
       {({ isMobile }) => (
         <Header height={64 + (isMobile ? 32 : 0)} shadow defaultActive>
@@ -45,7 +45,7 @@ export default () => (
     </MediaQueryConsumer>
     <Screen offset={64 + 400}>
       <Container padding wide>
-        <SectionHeader title="Blog" />
+        <SectionHeader title='Blog' />
         {items}
       </Container>
     </Screen>

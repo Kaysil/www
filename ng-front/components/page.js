@@ -8,7 +8,7 @@ export default withMediaQuery(({ title, description, children }) => (
     <Head>
       <title>{title || 'NetherGames'}</title>
       <meta
-        name="description"
+        name='description'
         content={
           description ||
           'All for one. All for fun. Play Bedwars, Creative, Murder Mystery and SkyWars among other games with your friends now.'

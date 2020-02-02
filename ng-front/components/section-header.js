@@ -18,10 +18,10 @@ export default withPure(({ anchor, id, title, description }) => (
         }
       `}
     </style>
-    {anchor && <span id={anchor} className="anchor" />}
-    <h2 id={id} className="f0 fw6">
+    {anchor && <span id={anchor} className='anchor' />}
+    <h2 id={id} className='f0 fw6'>
       {title}
     </h2>
-    {description && <h3 className="f-reset subtitle fw4">{description}</h3>}
+    {description && <h3 className='f-reset subtitle fw4'>{description}</h3>}
   </div>
 ))

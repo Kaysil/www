@@ -58,7 +58,7 @@ export default class Popover extends PureComponent {
 
     return (
       <div
-        className="container"
+        className='container'
         ref={el => (this.containerEl = el)}
         onTouchStart={this.onMouseEnter}
         onMouseEnter={this.onMouseEnter}

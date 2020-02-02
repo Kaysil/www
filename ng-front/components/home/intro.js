@@ -38,7 +38,7 @@ export default class extends React.PureComponent {
 
     return (
       <Container
-        role="main"
+        role='main'
         wide
         center
         overflow
@@ -52,7 +52,7 @@ export default class extends React.PureComponent {
         }}
       >
         <Container>
-          <div className="intro-container">
+          <div className='intro-container'>
             <style jsx>{`
               .intro-container {
                 margin: 0 0 2rem 0;
@@ -147,7 +147,7 @@ export default class extends React.PureComponent {
               }
             `}</style>
             <div
-              className="logo-main f4 fw6"
+              className='logo-main f4 fw6'
               style={{
                 top: Math.max(LOGO_TOP - scroll, 7),
                 willChange: `transform`,
@@ -157,34 +157,34 @@ export default class extends React.PureComponent {
               }}
             >
               <Link href={scroll >= LOGO_TOP ? '/' : undefined}>
-                <a aria-label="NetherGames">
-                  <img height={80} src="/static/images/logo.png" />
+                <a aria-label='NetherGames'>
+                  <img height={80} src='/static/images/logo.png' />
                 </a>
               </Link>
             </div>
-            <div className="campaign no-drag no-tap-highlight">
+            <div className='campaign no-drag no-tap-highlight'>
               <h1 className={classNames('title-1', 'fw6')}>All for one. All for fun. Play</h1>
               <h2 className={classNames('title-2', 'fw7')}>
                 <Campaign />
               </h2>
             </div>
             <div>
-              <div className="main-button">
+              <div className='main-button'>
                 <Button
-                  target="_blank"
-                  href="minecraft://?addExternalServer=NetherGames|play.nethergames.org:19132"
+                  target='_blank'
+                  href='minecraft://?addExternalServer=NetherGames|play.nethergames.org:19132'
                   invert
                   prefetch
                 >
                   Launch Minecraft now{' '}
-                  <span className="icon">
-                    <ArrowRightLong color="white" />
+                  <span className='icon'>
+                    <ArrowRightLong color='white' />
                   </span>
                 </Button>
               </div>
-              <div className="links">
-                <a rel="noreferrer" target="_blank">
-                  <span className="mute">Or connect to play.nethergames.org (19132)</span>
+              <div className='links'>
+                <a rel='noreferrer' target='_blank'>
+                  <span className='mute'>Or connect to play.nethergames.org (19132)</span>
                 </a>
               </div>
             </div>

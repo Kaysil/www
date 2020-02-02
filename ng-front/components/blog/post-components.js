@@ -3,7 +3,7 @@ import Highlight from '../highlight'
 import { GenericLink } from '../text/link'
 
 const H1 = ({ children }) => (
-  <h1 className="fw6">
+  <h1 className='fw6'>
     {children}
 
     <style jsx>{`

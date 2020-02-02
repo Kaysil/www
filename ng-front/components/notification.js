@@ -8,7 +8,7 @@ import withPure from './hoc/pure'
 export default withPure(({ href, title, titleMobile, children }) => (
   <MediaQueryConsumer>
     {({ isMobile }) => (
-      <div className="notification f6" title={title}>
+      <div className='notification f6' title={title}>
         <style jsx>
           {`
             .notification {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const Table = ({ children }) => (
-  <table cellSpacing="0" cellPadding="5">
+  <table cellSpacing='0' cellPadding='5'>
     <tbody>
       {children}
 

@@ -53,7 +53,7 @@ class Image extends Component {
     const aspectRatio = `${String((height / width) * 100)}%`
 
     return (
-      <IObserver once onIntersect={this.handleIntersect} rootMargin="20%" disabled={!lazy}>
+      <IObserver once onIntersect={this.handleIntersect} rootMargin='20%' disabled={!lazy}>
         <figure
           className={classNames({
             oversize: width > 650,

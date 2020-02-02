@@ -9,7 +9,7 @@ import ArrowRightLong from '../icons/arrow-right-long'
 
 export default ({ type, thumbnail, detail, link, title, date, prefetch, children }) => {
   return (
-    <div className="post-preview">
+    <div className='post-preview'>
       <style jsx>{`
         .post-preview {
           padding: 2.5rem 0;
@@ -76,31 +76,31 @@ export default ({ type, thumbnail, detail, link, title, date, prefetch, children
         }
       `}</style>
       <Container small>
-        <div className="preview-layout">
-          <div className="preview-content">
-            {type && <span className="post-type mute fw6">{type}</span>}
+        <div className='preview-layout'>
+          <div className='preview-content'>
+            {type && <span className='post-type mute fw6'>{type}</span>}
             <Link href={link} prefetch={prefetch}>
-              <h3 className="f2 fw6 post-title">{title}</h3>
+              <h3 className='f2 fw6 post-title'>{title}</h3>
             </Link>
-            <p className="f6 date mute">
+            <p className='f6 date mute'>
               {formatDate(date, 'dddd, MMMM Do YYYY')} (
               {distanceInWordsToNow(date, {
                 addSuffix: true
               })}
               )
             </p>
-            {detail && <section className="description f5">{children}</section>}
-            <div className="read-more">
+            {detail && <section className='description f5'>{children}</section>}
+            <div className='read-more'>
               <Button href={link}>
                 Read More{' '}
-                <span className="icon">
-                  <ArrowRightLong color="currentColor" />
+                <span className='icon'>
+                  <ArrowRightLong color='currentColor' />
                 </span>
               </Button>
             </div>
           </div>
           {thumbnail && (
-            <div className="thumbnail">
+            <div className='thumbnail'>
               <img src={thumbnail} />
             </div>
           )}

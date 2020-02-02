@@ -1,5 +1,5 @@
 export default ({ duration, children }) => (
-  <div className="slider-container">
+  <div className='slider-container'>
     <style jsx>{`
       .slider-container {
         overflow: hidden;
@@ -23,7 +23,7 @@ export default ({ duration, children }) => (
         }
       }
     `}</style>
-    <div className="slider-content-wrapper">
+    <div className='slider-content-wrapper'>
       <div>{children}</div>
       <div>{children}</div>
     </div>

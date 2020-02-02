@@ -55,87 +55,87 @@ export default withPure(() => (
             }
           `}
         </style>
-        <div className="row f5">
-          <div className="column">
-            <h4 className="fw5">Social</h4>
+        <div className='row f5'>
+          <div className='column'>
+            <h4 className='fw5'>Social</h4>
             <p>
-              <Link href="https://instagram.com/NetherGamesMC">
-                <a rel="noreferrer" target="_blank">
+              <Link href='https://instagram.com/NetherGamesMC'>
+                <a rel='noreferrer' target='_blank'>
                   Instagram
                 </a>
               </Link>
             </p>
             <p>
-              <Link href="https://facebook.com/NetherGamesMC">
-                <a rel="noreferrer" target="_blank">
+              <Link href='https://facebook.com/NetherGamesMC'>
+                <a rel='noreferrer' target='_blank'>
                   Facebook
                 </a>
               </Link>
             </p>
             <p>
-              <Link href="https://twitter.com/NetherGamesMC">
-                <a rel="noreferrer" target="_blank">
+              <Link href='https://twitter.com/NetherGamesMC'>
+                <a rel='noreferrer' target='_blank'>
                   Twitter
                 </a>
               </Link>
             </p>
           </div>
-          <div className="column">
-            <h4 className="fw5">Support</h4>
+          <div className='column'>
+            <h4 className='fw5'>Support</h4>
             <p>
-              <Link href="https://ngmc.co/s">
-                <a rel="noreferrer" target="_blank">
+              <Link href='https://ngmc.co/s'>
+                <a rel='noreferrer' target='_blank'>
                   Knowledge Base
                 </a>
               </Link>
             </p>
             <p>
-              <Link href="https://ngmc.co/lc">
-                <a rel="noreferrer" target="_blank">
+              <Link href='https://ngmc.co/lc'>
+                <a rel='noreferrer' target='_blank'>
                   Live Support
                 </a>
               </Link>
             </p>
             <p>
-              <Link href="https://ngmc.co/d">
-                <a rel="noreferrer" target="_blank">
+              <Link href='https://ngmc.co/d'>
+                <a rel='noreferrer' target='_blank'>
                   Discord Server
                 </a>
               </Link>
             </p>
           </div>
-          <div className="column">
-            <h4 className="fw5">Legal</h4>
+          <div className='column'>
+            <h4 className='fw5'>Legal</h4>
             <p>
-              <Link href="https://ngmc.co/tac">
-                <a rel="noreferrer" target="_blank">
+              <Link href='https://ngmc.co/tac'>
+                <a rel='noreferrer' target='_blank'>
                   Terms and Conditions
                 </a>
               </Link>
             </p>
             <p>
-              <Link href="https://ngmc.co/pp">
-                <a rel="noreferrer" target="_blank">
+              <Link href='https://ngmc.co/pp'>
+                <a rel='noreferrer' target='_blank'>
                   Data & Privacy Policy
                 </a>
               </Link>
             </p>
             <p>
-              <Link href="https://ngmc.co/rrp">
-                <a rel="noreferrer" target="_blank">
+              <Link href='https://ngmc.co/rrp'>
+                <a rel='noreferrer' target='_blank'>
                   Ranks & Refunds Policy
                 </a>
               </Link>
             </p>
           </div>
         </div>
-        <div className="copyright f6">
-          <Link href="#">
-            <a rel="noreferrer" target="_blank" aria-label="NetherGames">
+        <div className='copyright f6'>
+          <Link href='#'>
+            <a rel='noreferrer' target='_blank' aria-label='NetherGames'>
               <img
                 height={30}
                 style={{ transform: 'translateX(4%)' }}
-                src="/static/images/logo.png"
+                src='/static/images/logo.png'
               />
             </a>
           </Link>
@@ -145,16 +145,16 @@ export default withPure(() => (
             <br />
             All trademarks are property of their respective owners.
             <br />
-            <a href="https://ngmc.co/a">Account Dashboard/Player Statistics</a> |{' '}
+            <a href='https://ngmc.co/a'>Account Dashboard/Player Statistics</a> |{' '}
             <img
-              src="https://status.nethergames.org/includes/badge"
+              src='https://status.nethergames.org/includes/badge'
               style={{
                 height: '8px',
                 marginBottom: '1px',
                 borderRadius: '100%'
               }}
             />{' '}
-            <a href="https://status.nethergames.org">Network Status</a>
+            <a href='https://status.nethergames.org'>Network Status</a>
           </div>
         </div>
       </footer>

@@ -108,8 +108,8 @@ export const ExternalLink = ({ href, children }, { disabled, darkBg } = {}) => (
       ${disabled ? 'disabled' : ''}
     `}
     href={href}
-    target="_blank"
-    rel="noopener noreferrer"
+    target='_blank'
+    rel='noopener noreferrer'
   >
     {children}
 

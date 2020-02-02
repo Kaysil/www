@@ -4,7 +4,7 @@ import Container from '../container'
 import Button from '../button'
 
 export default ({ type, link, title, prefetch, featuredImage, subtitle }) => (
-  <div className="case-study">
+  <div className='case-study'>
     <style jsx>{`
       .case-study {
         display: flex;
@@ -51,13 +51,13 @@ export default ({ type, link, title, prefetch, featuredImage, subtitle }) => (
       }
     `}</style>
     <Container small>
-      <div className="wrapper">
-        {type && <span className="post-type fw6">{type}</span>}
+      <div className='wrapper'>
+        {type && <span className='post-type fw6'>{type}</span>}
         <Link href={link} prefetch={prefetch}>
-          <h2 className="f1 fw7">{title}</h2>
+          <h2 className='f1 fw7'>{title}</h2>
         </Link>
-        <div className="content">{subtitle}</div>
-        <div className="remove-shadow">
+        <div className='content'>{subtitle}</div>
+        <div className='remove-shadow'>
           <Button href={link} invert>
             Read More
           </Button>
