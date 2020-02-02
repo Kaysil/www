@@ -41,12 +41,12 @@ export default class Guild extends Component {
     const failed = this.state.failed
 
     if (failed || null === stats) {
-      return <Heading color="white">We couldn't find that guild!</Heading>
+      return <Heading color='white'>We couldn't find that guild!</Heading>
     }
 
     if (!stats[0] && !stats.officers) {
       return (
-        <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
+        <Spinner thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
       )
     }
 
@@ -55,9 +55,9 @@ export default class Guild extends Component {
         <Helmet>
           <title>{stats.name}</title>
         </Helmet>
-        <Box bg="white" borderWidth="1px" overflow="auto" rounded="lg" maxH="75vh" maxW="lg" p="4">
+        <Box bg='white' borderWidth='1px' overflow='auto' rounded='lg' maxH='75vh' maxW='lg' p='4'>
           <Heading>{stats.name}</Heading>
-          <Tabs variant="enclosed" pt="4">
+          <Tabs variant='enclosed' pt='4'>
             <TabList>
               <Tab>General</Tab>
               <Tab>Officers</Tab>
@@ -73,13 +73,13 @@ export default class Guild extends Component {
                 <List spacing={2}>
                   {stats.officers.map(stat => (
                     <ListItem>
-                      <Flex align="center">
+                      <Flex align='center'>
                         <Avatar
-                          size="sm"
+                          size='sm'
                           src={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${stat}.png`}
                         />
-                        <Box ml="3">
-                          <Text fontWeight="bold">
+                        <Box ml='3'>
+                          <Text fontWeight='bold'>
                             <Link as={NavLink} strict exact to={`/player/${stat}`}>
                               {stat}
                             </Link>
@@ -94,13 +94,13 @@ export default class Guild extends Component {
                 <List spacing={2}>
                   {stats.members.map(stat => (
                     <ListItem>
-                      <Flex align="center">
+                      <Flex align='center'>
                         <Avatar
-                          size="sm"
+                          size='sm'
                           src={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${stat}.png`}
                         />
-                        <Box ml="3">
-                          <Text fontWeight="bold">
+                        <Box ml='3'>
+                          <Text fontWeight='bold'>
                             <Link as={NavLink} strict exact to={`/player/${stat}`}>
                               {stat}
                             </Link>

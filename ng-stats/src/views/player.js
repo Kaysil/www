@@ -41,12 +41,12 @@ export default class Player extends Component {
     const failed = this.state.failed
 
     if (failed || null === stats) {
-      return <Heading color="white">We couldn't find that player!</Heading>
+      return <Heading color='white'>We couldn't find that player!</Heading>
     }
 
     if (!stats.winsData && !stats.factionsData && !stats.rankHexes) {
       return (
-        <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
+        <Spinner thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
       )
     }
 
@@ -54,169 +54,169 @@ export default class Player extends Component {
       <div>
         <Helmet>
           <title>{stats.name}</title>
-          <meta property="og:site_name" content="NetherGames Network" />
-          <meta property="og:title" content={`Player statistics for ${stats.name}`} />
-          <meta property="og:type" content="profile" />
-          <meta property="og:url" content={`https://portal.nethergames.org/player/${stats.name}`} />
+          <meta property='og:site_name' content='NetherGames Network' />
+          <meta property='og:title' content={`Player statistics for ${stats.name}`} />
+          <meta property='og:type' content='profile' />
+          <meta property='og:url' content={`https://portal.nethergames.org/player/${stats.name}`} />
           <meta
-            property="og:image"
+            property='og:image'
             content={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${stats.name}.png`}
           />
-          <meta property="og:profile:username" content={stats.name} />
+          <meta property='og:profile:username' content={stats.name} />
           <meta
-            property="og:description"
+            property='og:description'
             content={`Kills: ${stats.kills} | Deaths: ${stats.deaths} | Wins: ${stats.wins} | Level: ${stats.level} | Credits: ${stats.status_credits}`}
           />
         </Helmet>
-        <Box bg="white" borderWidth="1px" overflow="auto" rounded="lg" minH="m" maxW="lg" p="4">
+        <Box bg='white' borderWidth='1px' overflow='auto' rounded='lg' minH='m' maxW='lg' p='4'>
           <Flex>
             <Avatar
               src={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${stats.name}.png`}
             >
               {0 !== stats.voted && (
-                <Tooltip title="Voted">
-                  <AvatarBadge as={Icon} name="check-circle" size="1.25em" color="black" />
+                <Tooltip title='Voted'>
+                  <AvatarBadge as={Icon} name='check-circle' size='1.25em' color='black' />
                 </Tooltip>
               )}
             </Avatar>
-            <Box ml="3">
-              <Box fontWeight="bold">
+            <Box ml='3'>
+              <Box fontWeight='bold'>
                 {stats.name}
                 {stats.tierHexes.hasOwnProperty('Bronze') && (
-                  <Badge backgroundColor="#b84e00" color="#fff" ml="1">
+                  <Badge backgroundColor='#b84e00' color='#fff' ml='1'>
                     Bronze
                   </Badge>
                 )}
                 {stats.tierHexes.hasOwnProperty('Silver') && (
-                  <Badge backgroundColor="#777" color="#fff" ml="1">
+                  <Badge backgroundColor='#777' color='#fff' ml='1'>
                     Silver
                   </Badge>
                 )}
                 {stats.tierHexes.hasOwnProperty('Gold') && (
-                  <Badge backgroundColor="#f79500" color="#fff" ml="1">
+                  <Badge backgroundColor='#f79500' color='#fff' ml='1'>
                     Gold
                   </Badge>
                 )}
                 {stats.tierHexes.hasOwnProperty('Ruby') && (
-                  <Badge backgroundColor="#ff0024" color="#fff" ml="1">
+                  <Badge backgroundColor='#ff0024' color='#fff' ml='1'>
                     Ruby
                   </Badge>
                 )}
                 {stats.tierHexes.hasOwnProperty('Diamond') && (
-                  <Badge backgroundColor="#00c5e5" color="#fff" ml="1">
+                  <Badge backgroundColor='#00c5e5' color='#fff' ml='1'>
                     Diamond
                   </Badge>
                 )}
                 {stats.tierHexes.hasOwnProperty('Sapphire') && (
-                  <Badge backgroundColor="#3b37e8" color="#fff" ml="1">
+                  <Badge backgroundColor='#3b37e8' color='#fff' ml='1'>
                     Sapphire
                   </Badge>
                 )}
                 {stats.tierHexes.hasOwnProperty('Platinum') && (
-                  <Badge backgroundColor="#777" color="#fff" ml="1">
+                  <Badge backgroundColor='#777' color='#fff' ml='1'>
                     Platinum
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Owner') && (
-                  <Badge backgroundColor="#ff0024" color="#fff" ml="1">
+                  <Badge backgroundColor='#ff0024' color='#fff' ml='1'>
                     Owner
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Dev') && (
-                  <Badge backgroundColor="#ff0041" color="#fff" ml="1">
+                  <Badge backgroundColor='#ff0041' color='#fff' ml='1'>
                     Dev
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Director') && (
-                  <Badge backgroundColor="#00cc62" color="#fff" ml="1">
+                  <Badge backgroundColor='#00cc62' color='#fff' ml='1'>
                     Director
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Advisor') && (
-                  <Badge backgroundColor="#ff0024" color="#fff" ml="1">
+                  <Badge backgroundColor='#ff0024' color='#fff' ml='1'>
                     Advisor
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Commmunity') && (
-                  <Badge backgroundColor="#ff009b" color="#fff" ml="1">
+                  <Badge backgroundColor='#ff009b' color='#fff' ml='1'>
                     Community
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Admin') && (
-                  <Badge backgroundColor="#ffac1a" color="#fff" ml="1">
+                  <Badge backgroundColor='#ffac1a' color='#fff' ml='1'>
                     Admin
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Supervisor') && (
-                  <Badge backgroundColor="#ff00ba" color="#fff" ml="1">
+                  <Badge backgroundColor='#ff00ba' color='#fff' ml='1'>
                     Supervisor
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Mod') && (
-                  <Badge backgroundColor="#00c5e5" color="#fff" ml="1">
+                  <Badge backgroundColor='#00c5e5' color='#fff' ml='1'>
                     Mod
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Crew') && (
-                  <Badge backgroundColor="#00cc62" color="#fff" ml="1">
+                  <Badge backgroundColor='#00cc62' color='#fff' ml='1'>
                     Crew
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Trainee') && (
-                  <Badge backgroundColor="#ffab1c" color="#fff" ml="1">
+                  <Badge backgroundColor='#ffab1c' color='#fff' ml='1'>
                     Trainee
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Builder') && (
-                  <Badge backgroundColor="#0092e2" color="#fff" ml="1">
+                  <Badge backgroundColor='#0092e2' color='#fff' ml='1'>
                     Builder
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Legend') && (
-                  <Badge backgroundColor="#00c5e5" color="#fff" ml="1">
+                  <Badge backgroundColor='#00c5e5' color='#fff' ml='1'>
                     Legend
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Emerald') && (
-                  <Badge backgroundColor="#00cc62" color="#fff" ml="1">
+                  <Badge backgroundColor='#00cc62' color='#fff' ml='1'>
                     Emerald
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Ultra') && (
-                  <Badge backgroundColor="#f79500" color="#fff" ml="1">
+                  <Badge backgroundColor='#f79500' color='#fff' ml='1'>
                     Ultra
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Partner') && (
-                  <Badge backgroundColor="#ff4f00" color="#fff" ml="1">
+                  <Badge backgroundColor='#ff4f00' color='#fff' ml='1'>
                     Partner
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('YouTube') && (
-                  <Badge backgroundColor="#ff0024" color="#fff" ml="1">
+                  <Badge backgroundColor='#ff0024' color='#fff' ml='1'>
                     YouTube
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('YT') && (
-                  <Badge backgroundColor="#006e96" color="#fff" ml="1">
+                  <Badge backgroundColor='#006e96' color='#fff' ml='1'>
                     YT
                   </Badge>
                 )}
               </Box>
-              <Text fontSize="m">
+              <Text fontSize='m'>
                 {Math.round((stats.kills / stats.deaths) * 100) / 100} k/d ratio
               </Text>
             </Box>
           </Flex>
-          <Flex pt="4" pb="2">
-            <Text fontSize="m">
+          <Flex pt='4' pb='2'>
+            <Text fontSize='m'>
               {stats.kills} kills · {stats.deaths} deaths · {stats.wins} wins · {stats.level} levels
               · {stats.status_credits} credits
             </Text>
           </Flex>
-          <Flex pb="4">
-            <Text fontSize="lg">
-              <Icon name="view" /> Last seen {stats.online ? 'right now' : `${stats.lastSeen} ago`}{' '}
+          <Flex pb='4'>
+            <Text fontSize='lg'>
+              <Icon name='view' /> Last seen {stats.online ? 'right now' : `${stats.lastSeen} ago`}{' '}
               in {stats.lastServer}
             </Text>
           </Flex>
@@ -224,7 +224,7 @@ export default class Player extends Component {
             {stats.bio !== undefined && (
               <AccordionItem>
                 <AccordionHeader>
-                  <Box flex="1" textAlign="left" fontWeight="bold">
+                  <Box flex='1' textAlign='left' fontWeight='bold'>
                     Biography
                   </Box>
                   <AccordionIcon />
@@ -235,7 +235,7 @@ export default class Player extends Component {
             {stats.winsData[0] !== undefined && (
               <AccordionItem>
                 <AccordionHeader>
-                  <Box flex="1" textAlign="left" fontWeight="bold">
+                  <Box flex='1' textAlign='left' fontWeight='bold'>
                     Wins Summary
                   </Box>
                   <AccordionIcon />
@@ -261,7 +261,7 @@ export default class Player extends Component {
             {stats.factionsData[0] !== undefined && (
               <AccordionItem>
                 <AccordionHeader>
-                  <Box flex="1" textAlign="left" fontWeight="bold">
+                  <Box flex='1' textAlign='left' fontWeight='bold'>
                     Factions Statistics
                   </Box>
                   <AccordionIcon />

@@ -33,7 +33,7 @@ const App = () => (
   <BrowserRouter>
     <ThemeProvider>
       <div
-        id="app"
+        id='app'
         style={{
           background: 'url(https://cdn.nethergames.org/img/bg.jpg) no-repeat center center fixed',
           backgroundSize: 'cover',
@@ -41,17 +41,17 @@ const App = () => (
           overflow: 'hidden'
         }}
       >
-        <Flex align="center" justify="center" h="100vh">
+        <Flex align='center' justify='center' h='100vh'>
           <Header />
           <CSSReset />
           <Switch>
-            <Route exact path="/" component={Front} />
-            <Route path="/presentboard" component={Presentboard} />
-            <Route path="/player" component={Player} />
-            <Route path="/leaderboard" component={Leaderboard} />
-            <Route path="/guildboard" component={Guildboard} />
-            <Route path="/guild" component={Guild} />
-            <Route path="/faction" component={Faction} />
+            <Route exact path='/' component={Front} />
+            <Route path='/presentboard' component={Presentboard} />
+            <Route path='/player' component={Player} />
+            <Route path='/leaderboard' component={Leaderboard} />
+            <Route path='/guildboard' component={Guildboard} />
+            <Route path='/guild' component={Guild} />
+            <Route path='/faction' component={Faction} />
             <Route component={NotFound} />
           </Switch>
         </Flex>

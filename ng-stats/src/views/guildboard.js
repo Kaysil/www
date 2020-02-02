@@ -63,12 +63,12 @@ class Guildboard extends Component {
     ]
 
     if (failed || null === stats) {
-      return <Heading color="white">Something went wrong!</Heading>
+      return <Heading color='white'>Something went wrong!</Heading>
     }
 
     if (!stats[0]) {
       return (
-        <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
+        <Spinner thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
       )
     }
 
@@ -81,7 +81,7 @@ class Guildboard extends Component {
     return (
       <Paper className={classes.root}>
         <div className={classes.tableWrapper}>
-          <Table stickyHeader aria-label="sticky table">
+          <Table stickyHeader aria-label='sticky table'>
             <TableHead>
               <TableRow>
                 {columns.map(({ id, align, minWidth, label }) => (
@@ -93,13 +93,13 @@ class Guildboard extends Component {
             </TableHead>
             <TableBody>
               {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                <TableRow hover role='checkbox' tabIndex={-1} key={row.id}>
                   {columns.map(column => {
                     const value = row[column.id]
                     if (column.id === 'name') {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          <Text fontWeight="bold">
+                          <Text fontWeight='bold'>
                             <Link as={NavLink} strict exact to={`/guild/${value}`}>
                               {value}
                             </Link>
@@ -110,13 +110,13 @@ class Guildboard extends Component {
                     if (column.id === 'leader') {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          <Flex align="center">
+                          <Flex align='center'>
                             <Avatar
-                              size="sm"
+                              size='sm'
                               src={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${value}.png`}
                             />
-                            <Box ml="3">
-                              <Text fontWeight="bold">
+                            <Box ml='3'>
+                              <Text fontWeight='bold'>
                                 <Link as={NavLink} strict exact to={`/player/${value}`}>
                                   {value}
                                 </Link>
@@ -139,7 +139,7 @@ class Guildboard extends Component {
         </div>
         <TablePagination
           backIconButtonProps={{ 'aria-label': 'previous page' }}
-          component="div"
+          component='div'
           count={rows.length}
           nextIconButtonProps={{ 'aria-label': 'next page' }}
           onChangePage={handleChangePage}

@@ -36,7 +36,7 @@ class Front extends Component {
     let history = useHistory()
 
     return (
-      <Box bg="white" borderWidth="1px" overflow="hidden" rounded="lg" minW={['sm', 'lg']} p="4">
+      <Box bg='white' borderWidth='1px' overflow='hidden' rounded='lg' minW={['sm', 'lg']} p='4'>
         <Formik
           initialValues={{ search: 'player', query: '' }}
           onSubmit={({ search, query }) => {
@@ -49,26 +49,26 @@ class Front extends Component {
                 <Input
                   isFullWidth
                   isRequired
-                  name="query"
+                  name='query'
                   onChange={handleChange}
-                  placeholder="Find a player, faction, or guild ..."
-                  size="lg"
-                  type="text"
+                  placeholder='Find a player, faction, or guild ...'
+                  size='lg'
+                  type='text'
                   value={values.query}
                 />
-                <InputRightElement children={<Icon name="search" color="gray.300" />} />
+                <InputRightElement children={<Icon name='search' color='gray.300' />} />
               </InputGroup>
-              <Button type="submit" variantColor="teal" size="sm" float="right" mt={2}>
+              <Button type='submit' variantColor='teal' size='sm' float='right' mt={2}>
                 Search
               </Button>
               <FormControl mt={3}>
                 {constants.map(({ value, label }, index) => (
                   <label key={index} style={{ marginRight: '1rem' }}>
-                    <Field name="search">
+                    <Field name='search'>
                       {({ field }) => (
                         <input
                           {...field}
-                          type="radio"
+                          type='radio'
                           name={field.name}
                           checked={isChecked(value, field.value)}
                           onChange={() => field.onChange(field.name)(value)}

@@ -174,9 +174,9 @@ const menuItems = [
   },
   {
     key: '16',
-    caption: 'Top Presents',
+    caption: 'Best Parkour',
     onClick: () => {
-      location.href = '/presentboard'
+      location.href = '/parkourboard'
     }
   }
 ]
@@ -214,8 +214,8 @@ export default function Header() {
   }
 
   const sideList = side => (
-    <div className={classes.list} role="presentation" onKeyDown={toggleDrawer(side, false)}>
-      <List component="nav" className={classes.navList}>
+    <div className={classes.list} role='presentation' onKeyDown={toggleDrawer(side, false)}>
+      <List component='nav' className={classes.navList}>
         <ListItem
           button
           component={NavLink}
@@ -224,128 +224,128 @@ export default function Header() {
           strict
           to={'/'}
         >
-          <ListItemText primary="Stats" />
+          <ListItemText primary='Stats' />
         </ListItem>
         <ListItem button onClick={handleClickList}>
-          <ListItemText primary="Leaderboard" />
+          <ListItemText primary='Leaderboard' />
           {openList ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
-        <Collapse in={openList} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
+        <Collapse in={openList} timeout='auto' unmountOnExit>
+          <List component='div' disablePadding>
             <ListItem
               button
               className={classes.nested}
               component={Link}
               onClick={toggleDrawer(side, false)}
-              href="/leaderboard/credits"
+              href='/leaderboard/credits'
             >
-              <ListItemText primary="Top Credits" />
+              <ListItemText primary='Top Credits' />
             </ListItem>
             <ListItem
               button
               className={classes.nested}
               component={Link}
               onClick={toggleDrawer(side, false)}
-              href="/leaderboard/xp"
+              href='/leaderboard/xp'
             >
-              <ListItemText primary="Top Levels/XP" />
+              <ListItemText primary='Top Levels/XP' />
             </ListItem>
 
             <ListItem button onClick={handleClickSecondList} className={classes.nestedSecond}>
-              <ListItemText primary="Top Wins" />
+              <ListItemText primary='Top Wins' />
               {openSecondList ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
-            <Collapse in={openSecondList} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding className={classes.nestedThird}>
+            <Collapse in={openSecondList} timeout='auto' unmountOnExit>
+              <List component='div' disablePadding className={classes.nestedThird}>
                 <ListItem
                   button
                   className={classes.nested}
                   component={Link}
                   onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/wins"
+                  href='/leaderboard/wins'
                 >
-                  <ListItemText primary="Global Wins" />
+                  <ListItemText primary='Global Wins' />
                 </ListItem>
                 <ListItem
                   button
                   className={classes.nested}
                   component={Link}
                   onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/BB"
+                  href='/leaderboard/BB'
                 >
-                  <ListItemText primary="Build Battle" />
+                  <ListItemText primary='Build Battle' />
                 </ListItem>
                 <ListItem
                   button
                   className={classes.nested}
                   component={Link}
                   onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/wins/BH"
+                  href='/leaderboard/wins/BH'
                 >
-                  <ListItemText primary="BlockHunt" />
+                  <ListItemText primary='BlockHunt' />
                 </ListItem>
                 <ListItem
                   button
                   className={classes.nested}
                   component={Link}
                   onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/wins/BR"
+                  href='/leaderboard/wins/BR'
                 >
-                  <ListItemText primary="Battle Royale" />
+                  <ListItemText primary='Battle Royale' />
                 </ListItem>
                 <ListItem
                   button
                   className={classes.nested}
                   component={Link}
                   onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/wins/BW"
+                  href='/leaderboard/wins/BW'
                 >
-                  <ListItemText primary="Bedwars" />
+                  <ListItemText primary='Bedwars' />
                 </ListItem>
                 <ListItem
                   button
                   className={classes.nested}
                   component={Link}
                   onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/wins/Duels"
+                  href='/leaderboard/wins/Duels'
                 >
-                  <ListItemText primary="Duels" />
+                  <ListItemText primary='Duels' />
                 </ListItem>
                 <ListItem
                   button
                   className={classes.nested}
                   component={Link}
                   onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/wins/MM"
+                  href='/leaderboard/wins/MM'
                 >
-                  <ListItemText primary="Murder Mystery" />
+                  <ListItemText primary='Murder Mystery' />
                 </ListItem>
                 <ListItem
                   button
                   className={classes.nested}
                   component={Link}
                   onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/wins/RC"
+                  href='/leaderboard/wins/RC'
                 >
-                  <ListItemText primary="Races" />
+                  <ListItemText primary='Races' />
                 </ListItem>
                 <ListItem
                   button
                   className={classes.nested}
                   component={Link}
                   onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/wins/SC"
+                  href='/leaderboard/wins/SC'
                 >
-                  <ListItemText primary="Soccer" />
+                  <ListItemText primary='Soccer' />
                 </ListItem>
                 <ListItem
                   button
                   className={classes.nested}
                   component={Link}
                   onClick={toggleDrawer(side, false)}
-                  href="/leaderboard/wins/SW"
+                  href='/leaderboard/wins/SW'
                 >
-                  <ListItemText primary="SkyWars" />
+                  <ListItemText primary='SkyWars' />
                 </ListItem>
               </List>
             </Collapse>
@@ -354,18 +354,18 @@ export default function Header() {
               className={classes.nested}
               component={Link}
               onClick={toggleDrawer(side, false)}
-              href="/leaderboard/kills"
+              href='/leaderboard/kills'
             >
-              <ListItemText primary="Top Kills" />
+              <ListItemText primary='Top Kills' />
             </ListItem>
             <ListItem
               button
               className={classes.nested}
               component={Link}
               onClick={toggleDrawer(side, false)}
-              href="/leaderboard/kdr"
+              href='/leaderboard/kdr'
             >
-              <ListItemText primary="Top K/DR" />
+              <ListItemText primary='Top K/DR' />
             </ListItem>
             <ListItem
               button
@@ -374,34 +374,34 @@ export default function Header() {
               onClick={toggleDrawer(side, false)}
               href={'/guildboard'}
             >
-              <ListItemText primary="Top Guilds" />
+              <ListItemText primary='Top Guilds' />
             </ListItem>
             <ListItem
               button
               className={classes.nested}
               component={Link}
               onClick={toggleDrawer(side, false)}
-              href={'/presentboard'}
+              href={'/parkourboard'}
             >
-              <ListItemText primary="Top Presents" />
+              <ListItemText primary='Best Parkour' />
             </ListItem>
           </List>
         </Collapse>
         <ListItem
           button
           component={Link}
-          href="https://sso.nethergames.org/?service=account"
+          href='https://sso.nethergames.org/?service=account'
           onClick={toggleDrawer(side, false)}
         >
-          <ListItemText primary="Settings" />
+          <ListItemText primary='Settings' />
         </ListItem>
         <ListItem
           button
           component={Link}
-          href="https://minecraftpocket-servers.com/server/36864/vote"
+          href='https://minecraftpocket-servers.com/server/36864/vote'
           onClick={toggleDrawer(side, false)}
         >
-          <ListItemText primary="Vote" />
+          <ListItemText primary='Vote' />
         </ListItem>
       </List>
     </div>
@@ -410,16 +410,16 @@ export default function Header() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
-        <AppBar position="fixed">
+        <AppBar position='fixed'>
           <Toolbar className={classes.navBar}>
-            <RouterLink to="/">
+            <RouterLink to='/'>
               <Image
-                alt="NetherGames Logo"
+                alt='NetherGames Logo'
                 className={classes.logo}
-                cursor="pointer"
-                edge="start"
-                height="2rem"
-                src="https://cdn.nethergames.org/img/logo_cropped.png"
+                cursor='pointer'
+                edge='start'
+                height='2rem'
+                src='https://cdn.nethergames.org/img/logo_cropped.png'
               />
             </RouterLink>
             {matches && (
@@ -428,9 +428,9 @@ export default function Header() {
                   Stats
                 </Button>
                 <Button
-                  aria-label="Toggle Menu"
-                  aria-controls="user-menu"
-                  aria-haspopup="true"
+                  aria-label='Toggle Menu'
+                  aria-controls='user-menu'
+                  aria-haspopup='true'
                   onClick={handleClick}
                 >
                   Leaderboard
@@ -449,14 +449,14 @@ export default function Header() {
                     horizontal: 'right'
                   }}
                 />
-                <Button href="https://sso.nethergames.org/?service=account">Settings</Button>
-                <Button href="https://minecraftpocket-servers.com/server/36864/vote">Vote</Button>
+                <Button href='https://sso.nethergames.org/?service=account'>Settings</Button>
+                <Button href='https://minecraftpocket-servers.com/server/36864/vote'>Vote</Button>
               </div>
             )}
             {!matches && (
               <div>
                 <Button onClick={toggleDrawer('right', true)}>Menu</Button>
-                <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
+                <Drawer anchor='right' open={state.right} onClose={toggleDrawer('right', false)}>
                   {sideList('right')}
                 </Drawer>
               </div>
