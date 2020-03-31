@@ -1,5 +1,5 @@
 if (!Object.entries) {
-  Object.entries = function(obj) {
+  Object.entries = function (obj) {
     var ownProps = Object.keys(obj),
       i = ownProps.length,
       resArray = new Array(i)
@@ -11,7 +11,7 @@ if (!Object.entries) {
 }
 
 if (!String.prototype.startsWith) {
-  String.prototype.startsWith = function(searchString, position) {
+  String.prototype.startsWith = function (searchString, position) {
     position = position || 0
     return this.indexOf(searchString, position) === position
   }

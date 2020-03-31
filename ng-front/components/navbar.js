@@ -1,18 +1,16 @@
-import Link from 'next/link'
-import { withRouter } from 'next/router'
-import classNames from 'classnames'
-
-import { MediaQueryConsumer } from './media-query'
 import Container from './container'
-import Popover from './popover'
+import Link from 'next/link'
+import { MediaQueryConsumer } from './media-query'
+import classNames from 'classnames'
+import { withRouter } from 'next/router'
 
-export default withRouter(({ isMobile, router, hideLogo = false }) => {
+export default withRouter(({ router, hideLogo = false }) => {
   const { route } = router
 
   return (
     <MediaQueryConsumer>
-      {media => {
-        if (media.isMobile) {
+      {({ isMobile }) => {
+        if (isMobile) {
           return (
             <Container center>
               <h1 className='visually-hidden' aria-hidden='true'>
@@ -90,15 +88,8 @@ export default withRouter(({ isMobile, router, hideLogo = false }) => {
                   <Link href='https://store.nethergames.org'>
                     <a target='_blank'>Store</a>
                   </Link>
-                  <Link href='/blog' prefetch>
-                    <a
-                      className={classNames({
-                        selected: route.startsWith('/blog')
-                      })}
-                      title='Blog'
-                    >
-                      Blog
-                    </a>
+                  <Link href='https://medium.com/nethergamesmc'>
+                    <a target='_blank'>Blog</a>
                   </Link>
                   <Link href='https://discord.nethergames.org'>
                     <a target='_blank'>Discord</a>

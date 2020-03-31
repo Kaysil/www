@@ -48,8 +48,8 @@ class Leaderboard extends Component {
     const game = undefined !== gamePath ? gamePath : null
 
     fetch(`https://api.nethergames.org/?action=leaderboards&type=${type}&game=${game}&limit=100`)
-      .then(res => res.json())
-      .then(res => this.setState({ data: res }))
+      .then((res) => res.json())
+      .then((res) => this.setState({ data: res }))
       .catch(() => this.setState({ failed: true }))
   }
 
@@ -80,7 +80,7 @@ class Leaderboard extends Component {
       )
     }
 
-    const rows = stats.map(stat =>
+    const rows = stats.map((stat) =>
       createData(
         stat.player,
         stat.kdr,
@@ -110,9 +110,9 @@ class Leaderboard extends Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => (
+              {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
                 <TableRow hover role='checkbox' tabIndex={-1} key={row.id}>
-                  {columns.map(column => {
+                  {columns.map((column) => {
                     const value = row[column.id]
                     if (column.id === 'name') {
                       return (

@@ -87,7 +87,7 @@ export class TerminalOutput extends React.Component {
   }
 }
 
-export const TerminalLink = props => (
+export const TerminalLink = (props) => (
   <span>
     <GenericLink {...props} />
     <style jsx>{`

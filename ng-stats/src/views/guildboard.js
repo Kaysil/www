@@ -43,8 +43,8 @@ class Guildboard extends Component {
 
   componentDidMount() {
     fetch(`https://api.nethergames.org/?action=leaderboards&type=guilds&limit=100`)
-      .then(res => res.json())
-      .then(res => this.setState({ data: res }))
+      .then((res) => res.json())
+      .then((res) => this.setState({ data: res }))
       .catch(() => this.setState({ failed: true }))
   }
 
@@ -72,7 +72,7 @@ class Guildboard extends Component {
       )
     }
 
-    const rows = stats.map(stat => createData(stat.player, stat.rank, stat.level, stat.xp))
+    const rows = stats.map((stat) => createData(stat.player, stat.rank, stat.level, stat.xp))
 
     const handleChangePage = (event, newPage) => {
       this.setState({ page: newPage })
@@ -92,9 +92,9 @@ class Guildboard extends Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => (
+              {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
                 <TableRow hover role='checkbox' tabIndex={-1} key={row.id}>
-                  {columns.map(column => {
+                  {columns.map((column) => {
                     const value = row[column.id]
                     if (column.id === 'name') {
                       return (

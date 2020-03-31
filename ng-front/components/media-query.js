@@ -5,7 +5,7 @@ const { Provider: MediaQueryProvider, Consumer: MediaQueryConsumer } = React.cre
   isTablet: false
 })
 
-const withMediaQuery = Comp =>
+const withMediaQuery = (Comp) =>
   class extends PureComponent {
     state = {
       isMobile: false,

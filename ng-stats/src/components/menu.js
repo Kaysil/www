@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 
-const styles = theme => ({
+const styles = (theme) => ({
   rootMenu: {
     overflow: 'visible'
   },
@@ -85,11 +85,11 @@ class CascadingMenu extends Component {
     this.props.onClose()
   }
 
-  renderMenuItem = menuItem => {
+  renderMenuItem = (menuItem) => {
     const { classes } = this.props
     const { subMenuStates } = this.state
     const hasSubMenu = !!(menuItem.subMenuItems && menuItem.subMenuItems.length)
-    let subMenuState = subMenuStates.find(menuState => menuState.key === menuItem.key)
+    let subMenuState = subMenuStates.find((menuState) => menuState.key === menuItem.key)
 
     if (hasSubMenu && !subMenuState) {
       subMenuState = {
@@ -103,7 +103,7 @@ class CascadingMenu extends Component {
 
     return (
       <MenuItem
-        onClick={e => this.handleItemClick(e, menuItem)}
+        onClick={(e) => this.handleItemClick(e, menuItem)}
         className={classes.menuItem}
         key={menuItem.key}
       >
@@ -113,7 +113,7 @@ class CascadingMenu extends Component {
             <ArrowRightIcon className={classes.arrowIcon} />
             <Paper className={`${classes.subMenu} ${subMenuState.open ? classes.subMenuOpen : ''}`}>
               <MenuList>
-                {menuItem.subMenuItems.map(subMenuItem => this.renderMenuItem(subMenuItem))}
+                {menuItem.subMenuItems.map((subMenuItem) => this.renderMenuItem(subMenuItem))}
               </MenuList>
             </Paper>
           </>
@@ -136,7 +136,7 @@ class CascadingMenu extends Component {
         open={open}
         onClose={() => this.closeAllMenus()}
       >
-        {menuItems.map(menuItem => this.renderMenuItem(menuItem))}
+        {menuItems.map((menuItem) => this.renderMenuItem(menuItem))}
       </Menu>
     )
   }

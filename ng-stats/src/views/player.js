@@ -31,8 +31,8 @@ export default class Player extends Component {
     const input = window.location.pathname.split('/')[2]
 
     fetch(`https://api.nethergames.org/?action=stats&player=${input}`)
-      .then(res => res.json())
-      .then(res => this.setState({ data: res }))
+      .then((res) => res.json())
+      .then((res) => this.setState({ data: res }))
       .catch(() => this.setState({ failed: true }))
   }
 

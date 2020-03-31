@@ -31,8 +31,8 @@ export default class Guild extends Component {
     const input = window.location.pathname.split('/')[2]
 
     fetch(`https://api.nethergames.org/?action=guilds&guild=${input}`)
-      .then(res => res.json())
-      .then(res => this.setState({ data: res }))
+      .then((res) => res.json())
+      .then((res) => this.setState({ data: res }))
       .catch(() => this.setState({ failed: true }))
   }
 
@@ -71,7 +71,7 @@ export default class Guild extends Component {
               </TabPanel>
               <TabPanel>
                 <List spacing={2}>
-                  {stats.officers.map(stat => (
+                  {stats.officers.map((stat) => (
                     <ListItem>
                       <Flex align='center'>
                         <Avatar
@@ -92,7 +92,7 @@ export default class Guild extends Component {
               </TabPanel>
               <TabPanel>
                 <List spacing={2}>
-                  {stats.members.map(stat => (
+                  {stats.members.map((stat) => (
                     <ListItem>
                       <Flex align='center'>
                         <Avatar

@@ -21,7 +21,7 @@ const nextConfig = {
     publicDirectory: true,
     granularChunks: true
   },
-  webpack: config => {
+  webpack: (config) => {
     config.plugins = config.plugins || []
     config.plugins.push(
       new webpack.ContextReplacementPlugin(

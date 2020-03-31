@@ -30,7 +30,7 @@ export default class extends PureComponent {
       leave = { opacity: 0 },
       ...rest
     } = this.props
-    const result = styles => wrap(children, styles)
+    const result = (styles) => wrap(children, styles)
     return (
       <Transition
         config={config}

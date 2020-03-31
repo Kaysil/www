@@ -32,7 +32,7 @@ const theme = createMuiTheme({
   }
 })
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   list: {
     width: '100%',
     maxWidth: 360,
@@ -213,7 +213,7 @@ export default function Header() {
     setState({ ...state, [side]: open })
   }
 
-  const sideList = side => (
+  const sideList = (side) => (
     <div className={classes.list} role='presentation' onKeyDown={toggleDrawer(side, false)}>
       <List component='nav' className={classes.navList}>
         <ListItem

@@ -2,7 +2,7 @@
 import NativeLink from 'next/link'
 import PropTypes from 'prop-types'
 
-export const GenericLink = props => {
+export const GenericLink = (props) => {
   if (
     props.href.startsWith('/') &&
     !props.href.startsWith('/docs') &&

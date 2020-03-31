@@ -59,7 +59,7 @@ export default class Observer extends Component {
     this.unobserve()
   }
 
-  handleTarget = node => {
+  handleTarget = (node) => {
     // eslint-disable-next-line
     const element = isDOMNode(node) ? node : findDOMNode(node)
     if (this.target && this.target !== element) {
@@ -79,7 +79,7 @@ export default class Observer extends Component {
     unobserveTarget(this.observer, this.target)
   }
 
-  handleIntersect = entry => {
+  handleIntersect = (entry) => {
     this.props.onIntersect(entry, this.props.value)
     if (this.props.once && entry.isIntersecting) {
       this.unobserve()
@@ -95,7 +95,7 @@ export default class Observer extends Component {
   }
 }
 
-const getOptions = props => ({
+const getOptions = (props) => ({
   root: props.root,
   rootMargin: props.rootMargin,
   threshold: props.threshold

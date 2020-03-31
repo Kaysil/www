@@ -15,7 +15,7 @@ export default class Tabs extends PureComponent {
 
     if (this.props.anchor) {
       let index = this.props.data
-        .map(tab => slugger.slug(tab))
+        .map((tab) => slugger.slug(tab))
         .indexOf(window.location.hash.slice(1))
       if (index !== -1) {
         this.setState({
@@ -25,7 +25,7 @@ export default class Tabs extends PureComponent {
     }
   }
 
-  onSelect = id => {
+  onSelect = (id) => {
     if (this.props.data.indexOf(id) === -1) {
       return
     }

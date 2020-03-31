@@ -14,7 +14,7 @@ import { components } from './post-components'
 import SocialMeta from '../social-meta'
 import ArrowLeftLong from '../icons/arrow-left-long'
 
-const Author = meta => (
+const Author = (meta) => (
   <div className='author'>
     <img src={meta.avatar} alt={meta.name} />
     <span className='name f5'>
@@ -81,7 +81,7 @@ const Author = meta => (
   </div>
 )
 
-const HeaderImage = meta => {
+const HeaderImage = (meta) => {
   if (meta.headerImage) {
     return (
       <div>
@@ -101,7 +101,7 @@ const HeaderImage = meta => {
   return null
 }
 
-export default meta => ({ children }) => {
+export default (meta) => ({ children }) => {
   const date = meta.date ? new Date(meta.date) : new Date()
 
   return (
@@ -129,7 +129,7 @@ export default meta => ({ children }) => {
             </time>
           </div>
           <div className='authors'>
-            {meta.authors.map(data => (
+            {meta.authors.map((data) => (
               <Author key={data.name} {...data} />
             ))}
           </div>

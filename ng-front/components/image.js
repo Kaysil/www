@@ -28,7 +28,7 @@ class Image extends Component {
     src: !this.props.lazy ? this.props.videoSrc || this.props.src : undefined
   }
 
-  handleIntersect = entry => {
+  handleIntersect = (entry) => {
     if (entry.isIntersecting) {
       this.setState({ src: this.props.videoSrc || this.props.src })
     }
@@ -127,6 +127,6 @@ class Image extends Component {
   }
 }
 
-export const Video = props => <Image {...props} video />
+export const Video = (props) => <Image {...props} video />
 
 export default Image

@@ -53,7 +53,7 @@ export default class extends PureComponent {
             <animated.div
               style={{
                 position: 'absolute',
-                transform: y.interpolate(y => `translate3d(0, ${y}%, 0)`),
+                transform: y.interpolate((y) => `translate3d(0, ${y}%, 0)`),
                 opacity
               }}
             >

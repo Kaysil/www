@@ -32,7 +32,7 @@ export default class Popover extends PureComponent {
     this.setState({ show: false })
   }
 
-  handleClickOutside = ev => {
+  handleClickOutside = (ev) => {
     if (
       this.state.show &&
       this.containerEl &&
@@ -59,7 +59,7 @@ export default class Popover extends PureComponent {
     return (
       <div
         className='container'
-        ref={el => (this.containerEl = el)}
+        ref={(el) => (this.containerEl = el)}
         onTouchStart={this.onMouseEnter}
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
