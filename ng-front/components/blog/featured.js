@@ -1,9 +1,8 @@
+import Button from '../button'
+import Container from '../container'
 import Link from 'next/link'
 
-import Container from '../container'
-import Button from '../button'
-
-export default ({ type, link, title, prefetch, featuredImage, subtitle }) => (
+export default ({ type, link, title, featuredImage, subtitle }) => (
   <div className='case-study'>
     <style jsx>{`
       .case-study {
@@ -53,7 +52,7 @@ export default ({ type, link, title, prefetch, featuredImage, subtitle }) => (
     <Container small>
       <div className='wrapper'>
         {type && <span className='post-type fw6'>{type}</span>}
-        <Link href={link} prefetch={prefetch}>
+        <Link href={link}>
           <h2 className='f1 fw7'>{title}</h2>
         </Link>
         <div className='content'>{subtitle}</div>

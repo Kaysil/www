@@ -79,21 +79,21 @@ export default withRouter(({ router, hideLogo = false }) => {
                   </Link>
                 </div>
                 <div className='links mute dropdown'>
-                  <Link href='https://forums.nethergames.org'>
-                    <a target='_blank'>Forums</a>
-                  </Link>
-                  <Link href='https://minecraftpocket-servers.com/server/36864/vote/'>
-                    <a target='_blank'>Vote</a>
-                  </Link>
-                  <Link href='https://store.nethergames.org'>
-                    <a target='_blank'>Store</a>
-                  </Link>
-                  <Link href='https://medium.com/nethergamesmc'>
-                    <a target='_blank'>Blog</a>
-                  </Link>
-                  <Link href='https://discord.nethergames.org'>
-                    <a target='_blank'>Discord</a>
-                  </Link>
+                  <a href='https://forums.nethergames.org' target='_blank'>
+                    Forums
+                  </a>
+                  <a href='https://minecraftpocket-servers.com/server/36864/vote' target='_blank'>
+                    Vote
+                  </a>
+                  <a href='https://store.nethergames.org' target='_blank'>
+                    Store
+                  </a>
+                  <a href='https://medium.com/nethergamesmc' target='_blank'>
+                    Blog
+                  </a>
+                  <a href='https://discord.nethergames.org' target='_blank'>
+                    Discord
+                  </a>
                 </div>
               </nav>
             </Container>
@@ -167,19 +167,19 @@ export default withRouter(({ router, hideLogo = false }) => {
                 `}
               </style>
               <div className='links'>
-                <Link href='https://forums.nethergames.org'>
-                  <a target='_blank'>Forums</a>
-                </Link>
-                <Link href='https://minecraftpocket-servers.com/server/36864/vote/'>
-                  <a target='_blank'>Vote</a>
-                </Link>
-                <Link href='https://store.nethergames.org'>
-                  <a target='_blank'>Store</a>
-                </Link>
+                <a href='https://forums.nethergames.org' target='_blank'>
+                  Forums
+                </a>
+                <a href='https://minecraftpocket-servers.com/server/36864/vote' target='_blank'>
+                  Vote
+                </a>
+                <a href='https://store.nethergames.org' target='_blank'>
+                  Store
+                </a>
               </div>
               {!hideLogo && (
                 <div className='logo'>
-                  <Link href='/' prefetch>
+                  <Link href='/'>
                     <a aria-label='NetherGames'>
                       <img
                         height={25}
@@ -191,18 +191,12 @@ export default withRouter(({ router, hideLogo = false }) => {
                 </div>
               )}
               <div className='links'>
-                <Link href='/blog' prefetch>
-                  <a
-                    className={classNames('mute', {
-                      selected: route.startsWith('/blog')
-                    })}
-                  >
-                    Blog
-                  </a>
-                </Link>
-                <Link href='https://discord.nethergames.org'>
-                  <a target='_blank'>Discord</a>
-                </Link>
+                <a href='https://medium.com/nethergamesmc' target='_blank'>
+                  Blog
+                </a>
+                <a href='https://discord.nethergames.org' target='_blank'>
+                  Discord
+                </a>
               </div>
             </nav>
           </Container>

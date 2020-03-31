@@ -1,12 +1,10 @@
-import React from 'react'
-import classNames from 'classnames'
-import Link from 'next/link'
-
-import Container from '../container'
 import ArrowRightLong from '../icons/arrow-right-long'
 import Button from '../button'
-import Popover from '../popover'
 import Campaign from './campaign'
+import Container from '../container'
+import Link from 'next/link'
+import React from 'react'
+import classNames from 'classnames'
 
 const LOGO_TOP = 170
 
@@ -157,7 +155,7 @@ export default class extends React.PureComponent {
                 transformOrigin: 'top'
               }}
             >
-              <Link href={scroll >= LOGO_TOP ? '/' : undefined}>
+              <Link href={scroll >= LOGO_TOP ? '/' : '#'}>
                 <a aria-label='NetherGames'>
                   <img height={80} src='/static/images/logo.png' />
                 </a>
@@ -171,17 +169,17 @@ export default class extends React.PureComponent {
             </div>
             <div>
               <div className='main-button'>
-                <Button
+                <a
                   target='_blank'
                   href='minecraft://?addExternalServer=NetherGames|play.nethergames.org:19132'
-                  invert
-                  prefetch
                 >
-                  Launch Minecraft now{' '}
-                  <span className='icon'>
-                    <ArrowRightLong color='white' />
-                  </span>
-                </Button>
+                  <Button invert>
+                    Launch Minecraft now{' '}
+                    <span className='icon'>
+                      <ArrowRightLong color='white' />
+                    </span>
+                  </Button>
+                </a>
               </div>
               <div className='links'>
                 <a rel='noreferrer' target='_blank'>

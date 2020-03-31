@@ -22,7 +22,7 @@ export const InternalLink = (
   { href, as, children, error = false, underlineOnHover = true },
   { disabled, darkBg = false, inError = false } = {}
 ) => (
-  <NativeLink prefetch href={href} as={as}>
+  <NativeLink href={href} as={as}>
     <a
       className={`
       ${darkBg ? 'dark' : ''}

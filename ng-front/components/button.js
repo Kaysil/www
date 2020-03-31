@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import classNames from 'classnames'
-
 import withPure from './hoc/pure'
 
-export default withPure(({ children, invert, href, as, className, prefetch, ...props }) => {
+export default withPure(({ children, invert, href, as, className, ...props }) => {
   const a = (
     <a className={classNames(className, 'fw4 no-drag', { invert })} role='button' {...props}>
       {children}
@@ -47,7 +46,7 @@ export default withPure(({ children, invert, href, as, className, prefetch, ...p
 
   if (href) {
     return (
-      <Link href={href} as={as} prefetch={prefetch}>
+      <Link href={href} as={as}>
         {a}
       </Link>
     )

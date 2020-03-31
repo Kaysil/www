@@ -1,35 +1,30 @@
+import ArrowLeftLong from '../icons/arrow-left-long'
+import Button from '../button'
+import Container from '../container'
+import Footer from '../footer'
+import Header from '../header'
 import Link from 'next/link'
 import { MDXProvider } from '@mdx-js/tag'
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
-import formatDate from 'date-fns/format'
-
-import Header from '../header'
-import Footer from '../footer'
+import { MediaQueryConsumer } from '../media-query'
 import Navbar from '../navbar'
 import Page from '../page'
-import Container from '../container'
-import Button from '../button'
-import { MediaQueryConsumer } from '../media-query'
-import { components } from './post-components'
 import SocialMeta from '../social-meta'
-import ArrowLeftLong from '../icons/arrow-left-long'
+import { components } from './post-components'
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
+import formatDate from 'date-fns/format'
 
 const Author = (meta) => (
   <div className='author'>
     <img src={meta.avatar} alt={meta.name} />
     <span className='name f5'>
       <span className='real-name'>{meta.name}</span>
-      <Link href={`https://twitter.com/${meta.twitter}`}>
-        <a className='twitter' target='_blank'>
+      <a href={`https://twitter.com/${meta.twitter}`} className='twitter' target='_blank'>
+        @{meta.twitter}
+      </a>
+      <span className='twitter-mobile'>
+        <a href={`https://twitter.com/${meta.twitter}`} target='_blank'>
           @{meta.twitter}
         </a>
-      </Link>
-      <span className='twitter-mobile'>
-        (
-        <Link href={`https://twitter.com/${meta.twitter}`}>
-          <a target='_blank'>@{meta.twitter}</a>
-        </Link>
-        )
       </span>
     </span>
     <style jsx>{`
@@ -136,7 +131,7 @@ export default (meta) => ({ children }) => {
           <Container small wide overflow>
             <content>{children}</content>
             <div className='back-button'>
-              <Button href='/blog' invert prefetch>
+              <Button href='/blog' invert>
                 <span className='icon'>
                   <ArrowLeftLong color='white' />
                 </span>{' '}

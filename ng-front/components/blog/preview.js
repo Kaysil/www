@@ -1,13 +1,11 @@
-import Link from 'next/link'
-import classNames from 'classnames'
-import formatDate from 'date-fns/format'
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
-
-import Container from '../container'
-import Button from '../button'
 import ArrowRightLong from '../icons/arrow-right-long'
+import Button from '../button'
+import Container from '../container'
+import Link from 'next/link'
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
+import formatDate from 'date-fns/format'
 
-export default ({ type, thumbnail, detail, link, title, date, prefetch, children }) => {
+export default ({ type, thumbnail, detail, link, title, date, children }) => {
   return (
     <div className='post-preview'>
       <style jsx>{`
@@ -79,7 +77,7 @@ export default ({ type, thumbnail, detail, link, title, date, prefetch, children
         <div className='preview-layout'>
           <div className='preview-content'>
             {type && <span className='post-type mute fw6'>{type}</span>}
-            <Link href={link} prefetch={prefetch}>
+            <Link href={link}>
               <h3 className='f2 fw6 post-title'>{title}</h3>
             </Link>
             <p className='f6 date mute'>

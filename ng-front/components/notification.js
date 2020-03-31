@@ -1,8 +1,7 @@
-import Link from 'next/link'
-import { ellipsis } from 'polished'
-
-import { MediaQueryConsumer } from './media-query'
 import Container from './container'
+import Link from 'next/link'
+import { MediaQueryConsumer } from './media-query'
+import { ellipsis } from 'polished'
 import withPure from './hoc/pure'
 
 export default withPure(({ href, title, titleMobile, children }) => (

@@ -1,6 +1,5 @@
-import Link from 'next/link'
-
 import Container from './container'
+import Link from 'next/link'
 import withPure from './hoc/pure'
 
 export default withPure(() => (
@@ -59,86 +58,66 @@ export default withPure(() => (
           <div className='column'>
             <h4 className='fw5'>Social</h4>
             <p>
-              <Link href='https://instagram.com/NetherGamesMC'>
-                <a rel='noreferrer' target='_blank'>
-                  Instagram
-                </a>
-              </Link>
+              <a href='https://instagram.com/NetherGamesMC' rel='noreferrer' target='_blank'>
+                Instagram
+              </a>
             </p>
             <p>
-              <Link href='https://facebook.com/NetherGamesMC'>
-                <a rel='noreferrer' target='_blank'>
-                  Facebook
-                </a>
-              </Link>
+              <a href='https://facebook.com/NetherGamesMC' rel='noreferrer' target='_blank'>
+                Facebook
+              </a>
             </p>
             <p>
-              <Link href='https://twitter.com/NetherGamesMC'>
-                <a rel='noreferrer' target='_blank'>
-                  Twitter
-                </a>
-              </Link>
+              <a href='https://twitter.com/NetherGamesMC' rel='noreferrer' target='_blank'>
+                Twitter
+              </a>
             </p>
           </div>
           <div className='column'>
             <h4 className='fw5'>Support</h4>
             <p>
-              <Link href='https://ngmc.co/s'>
-                <a rel='noreferrer' target='_blank'>
-                  Knowledge Base
-                </a>
-              </Link>
+              <a href='https://ngmc.co/s' rel='noreferrer' target='_blank'>
+                Knowledge Base
+              </a>
             </p>
             <p>
-              <Link href='https://ngmc.co/lc'>
-                <a rel='noreferrer' target='_blank'>
-                  Live Support
-                </a>
-              </Link>
+              <a href='https://ngmc.co/lc' rel='noreferrer' target='_blank'>
+                Live Support
+              </a>
             </p>
             <p>
-              <Link href='https://ngmc.co/d'>
-                <a rel='noreferrer' target='_blank'>
-                  Discord Server
-                </a>
-              </Link>
+              <a href='https://ngmc.co/d' rel='noreferrer' target='_blank'>
+                Discord Server
+              </a>
             </p>
           </div>
           <div className='column'>
             <h4 className='fw5'>Legal</h4>
             <p>
-              <Link href='https://ngmc.co/tac'>
-                <a rel='noreferrer' target='_blank'>
-                  Terms and Conditions
-                </a>
-              </Link>
+              <a href='https://ngmc.co/tac' rel='noreferrer' target='_blank'>
+                Terms and Conditions
+              </a>
             </p>
             <p>
-              <Link href='https://ngmc.co/pp'>
-                <a rel='noreferrer' target='_blank'>
-                  Data & Privacy Policy
-                </a>
-              </Link>
+              <a href='https://ngmc.co/pp' rel='noreferrer' target='_blank'>
+                Data & Privacy Policy
+              </a>
             </p>
             <p>
-              <Link href='https://ngmc.co/rrp'>
-                <a rel='noreferrer' target='_blank'>
-                  Ranks & Refunds Policy
-                </a>
-              </Link>
+              <a href='https://ngmc.co/rrp' rel='noreferrer' target='_blank'>
+                Ranks & Refunds Policy
+              </a>
             </p>
           </div>
         </div>
         <div className='copyright f6'>
-          <Link href='#'>
-            <a rel='noreferrer' target='_blank' aria-label='NetherGames'>
-              <img
-                height={30}
-                style={{ transform: 'translateX(4%)' }}
-                src='/static/images/logo.png'
-              />
-            </a>
-          </Link>
+          <a href='#' rel='noreferrer' target='_blank' aria-label='NetherGames'>
+            <img
+              height={30}
+              style={{ transform: 'translateX(4%)' }}
+              src='/static/images/logo.png'
+            />
+          </a>
           <div>
             {' '}
             Copyright © 2019 NetherGames Network. All rights reserved.

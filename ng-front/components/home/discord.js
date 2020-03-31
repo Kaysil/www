@@ -1,5 +1,5 @@
-import Container from '../container'
 import Button from '../button'
+import Container from '../container'
 import SectionHeader from '../section-header'
 
 export default () => (
@@ -45,9 +45,9 @@ export default () => (
       `}</style>
     </div>
     <div>
-      <Button href='https://discord.nethergames.org' invert>
-        Launch Discord
-      </Button>
+      <a href='https://discord.nethergames.org'>
+        <Button invert>Launch Discord</Button>
+      </a>
     </div>
   </Container>
 )

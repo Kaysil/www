@@ -1,15 +1,13 @@
-import Header from '../../components/header'
-import Footer from '../../components/footer'
-import Navbar from '../../components/navbar'
-import Screen from '../../components/screen'
-import Page from '../../components/page'
-import { MediaQueryConsumer } from '../../components/media-query'
-
 import Container from '../../components/container'
-import SectionHeader from '../../components/section-header'
-
 import Featured from '../../components/blog/featured'
+import Footer from '../../components/footer'
+import Header from '../../components/header'
+import { MediaQueryConsumer } from '../../components/media-query'
+import Navbar from '../../components/navbar'
+import Page from '../../components/page'
 import Preview from '../../components/blog/preview'
+import Screen from '../../components/screen'
+import SectionHeader from '../../components/section-header'
 import { components } from '../../components/blog/post-components'
 
 function importAll(r) {
@@ -28,7 +26,7 @@ function dateSortDesc(a, b) {
 
 const items = previewItems.sort(dateSortDesc).map(({ default: Component, meta }, index) => {
   return (
-    <Preview key={meta.title} detail={index < 5} prefetch={index < 3} {...meta}>
+    <Preview key={meta.title} detail={index < 5} {...meta}>
       <Component components={components} />
     </Preview>
   )
