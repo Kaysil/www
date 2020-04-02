@@ -1,9 +1,9 @@
-Redirect 301 /artist https://forums.nethergames.org/artist/
-Redirect 301 /bandispute https://forums.nethergames.org/unban/
-Redirect 301 /builder https://forums.nethergames.org/builder/
-Redirect 301 /developer https://forums.nethergames.org/developer/
-Redirect 301 /discordmod https://forums.nethergames.org/discordmod/
-Redirect 301 /forumsmod https://forums.nethergames.org/forumsmod/
+/artist https://forums.nethergames.org/artist/
+/bandispute https://forums.nethergames.org/unban/
+/builder https://forums.nethergames.org/builder/
+/developer https://forums.nethergames.org/developer/
+/discordmod https://forums.nethergames.org/discordmod/
+/forumsmod https://forums.nethergames.org/forumsmod/
 /live https://www.youtube.com/embed/live_stream?channel=UCxkCEGV9MD_KrMcp2WwXE7Q
 /livechat https://go.crisp.chat/chat/embed/?website_id=ac15f3f7-12a4-4eac-a670-b20fa788c429
 /mutedispute https://forums.nethergames.org/unmute/
