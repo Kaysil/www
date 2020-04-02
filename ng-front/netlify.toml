@@ -1,0 +1,161 @@
+[[redirects]]
+  from = "/artist"
+  to = "https://forums.nethergames.org/artist/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/bandispute"
+  to = "https://forums.nethergames.org/unban/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/builder"
+  to = "https://forums.nethergames.org/builder/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/developer"
+  to = "https://forums.nethergames.org/developer/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/discordmod"
+  to = "https://forums.nethergames.org/discordmod/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/forumsmod"
+  to = "https://forums.nethergames.org/forumsmod"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/live"
+  to = "https://www.youtube.com/embed/live_stream?channel=UCxkCEGV9MD_KrMcp2WwXE7Q"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/livechat"
+  to = "https://go.crisp.chat/chat/embed/?website_id=ac15f3f7-12a4-4eac-a670-b20fa788c429"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/mutedispute"
+  to = "https://forums.nethergames.org/unmute/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy"
+  to = "https://support.nethergames.org/en-au/article/ovsyh2/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacypolicy"
+  to = "https://support.nethergames.org/en-au/article/ovsyh2/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "https://support.nethergames.org/en-au/article/ovsyh2/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/rrp"
+  to = "https://support.nethergames.org/en-au/article/1rvsbe9/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/refunds"
+  to = "https://support.nethergames.org/en-au/article/1rvsbe9/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/redeem"
+  to = "https://data.nethergames.org/redeem.php"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/report"
+  to = "https://forums.nethergames.org/report/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/support"
+  to = "https://support.nethergames.org"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/supportstaff"
+  to = "https://forums.nethergames.org/supportstaff/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/staff"
+  to = "https://forums.nethergames.org/trainee/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/survey"
+  to = "https://forms.office.com/Pages/ResponsePage.aspx?id=_3qZ76kIiE2d8Gfrine5gKMFwBX2GoFAiY0S_0-_W8pUQkYxSUg4UkFXVUxYOEZVVzFHUDNFMUtGQSQlQCN0PWcu"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tac"
+  to = "https://support.nethergames.org/en-au/article/1ecu64q/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms-and-conditions"
+  to = "https://support.nethergames.org/en-au/article/1ecu64q/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/trainee"
+  to = "https://forums.nethergames.org/trainee/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/unban"
+  to = "https://forums.nethergames.org/unban/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/unmute"
+  to = "https://forums.nethergames.org/unmute/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/warningdispute"
+  to = "https://forums.nethergames.org/warningdispute/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/youtube"
+  to = "https://login.nethergames.org/?service=account"
+  status = 301
+  force = true
