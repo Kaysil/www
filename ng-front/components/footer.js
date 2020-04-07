@@ -120,7 +120,7 @@ export default withPure(() => (
           </a>
           <div>
             {' '}
-            Copyright © 2019 NetherGames Network. All rights reserved.
+            Copyright © 2020 NetherGames Network. All rights reserved.
             <br />
             All trademarks are property of their respective owners.
             <br />

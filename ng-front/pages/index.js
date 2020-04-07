@@ -22,12 +22,11 @@ export default () => (
       {({ isMobile }) => (
         <Header height={32} offset={-32} distance={32} shadow active={isMobile ? 32 : 160}>
           <Notification
-            href='/blog/113-update-warning/'
-            title='1.13 UPDATE WARNING'
-            titleMobile='1.13 UPDATE WARNING'
+            href='https://medium.com/nethergamesmc/trainee-applications-6570bd7271ee'
+            title='TRAINEE APPLICATIONS'
+            titleMobile='TRAINEE APPLICATIONS'
           >
-            1.13 UPDATE WARNING - Another major update is coming to Minecraft Bedrock Edition, and
-            there are serious consequences — Friday, September 6th
+            TRAINEE APPLICATIONS - In light of the coronavirus pandemic, we are looking for more staff to help us moderate the network — Saturday, April 4th
           </Notification>
           <Navbar hideLogo={!isMobile} />
         </Header>
