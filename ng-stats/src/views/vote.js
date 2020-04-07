@@ -33,7 +33,7 @@ export const Vote = () => {
   }
 
   return (
-    <>
+    <Box color="white">
       {!data ? (
         <Stack align='center' justify='center' spacing={4}>
           <Heading>Check your vote status</Heading>
@@ -95,6 +95,6 @@ export const Vote = () => {
           )}
         </Stack>
       )}
-    </>
+    </Box>
   )
 }
