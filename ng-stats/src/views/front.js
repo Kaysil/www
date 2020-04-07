@@ -47,6 +47,7 @@ class Front extends Component {
             <form onSubmit={handleSubmit}>
               <InputGroup>
                 <Input
+                  autoComplete='off'
                   isFullWidth
                   isRequired
                   name='query'

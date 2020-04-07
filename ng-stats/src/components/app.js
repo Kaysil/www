@@ -14,6 +14,8 @@ import Leaderboard from '../views/leaderboard'
 import NotFound from '../views/notfound'
 import Parkourboard from '../views/parkourboard'
 import Player from '../views/player'
+import { Vote } from '../views/vote'
+import Voteboard from '../views/voteboard'
 import { h } from 'preact'
 
 if (process.env.NODE_ENV !== 'development') {
@@ -52,6 +54,8 @@ const App = () => (
             <Route path='/guildboard' component={Guildboard} />
             <Route path='/guild' component={Guild} />
             <Route path='/faction' component={Faction} />
+            <Route path='/vote' component={Vote} />
+            <Route path='/voteboard' component={Voteboard} />
             <Route component={NotFound} />
           </Switch>
         </Flex>

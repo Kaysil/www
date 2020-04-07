@@ -61,6 +61,13 @@ const useStyles = makeStyles((theme) => ({
 
 const menuItems = [
   {
+    key: '0',
+    caption: 'Top Voters',
+    onClick: () => {
+      location.href = '/voteboard'
+    }
+  },
+  {
     key: '1',
     caption: 'Top Credits',
     onClick: () => {
@@ -237,6 +244,15 @@ export default function Header() {
               className={classes.nested}
               component={Link}
               onClick={toggleDrawer(side, false)}
+              href='/voteboard'
+            >
+              <ListItemText primary='Top Voters' />
+            </ListItem>
+            <ListItem
+              button
+              className={classes.nested}
+              component={Link}
+              onClick={toggleDrawer(side, false)}
               href='/leaderboard/credits'
             >
               <ListItemText primary='Top Credits' />
@@ -395,12 +411,7 @@ export default function Header() {
         >
           <ListItemText primary='Settings' />
         </ListItem>
-        <ListItem
-          button
-          component={Link}
-          href='https://minecraftpocket-servers.com/server/36864/vote'
-          onClick={toggleDrawer(side, false)}
-        >
+        <ListItem button component={Link} href='/vote' onClick={toggleDrawer(side, false)}>
           <ListItemText primary='Vote' />
         </ListItem>
       </List>
@@ -450,7 +461,9 @@ export default function Header() {
                   }}
                 />
                 <Button href='https://sso.nethergames.org/?service=account'>Settings</Button>
-                <Button href='https://minecraftpocket-servers.com/server/36864/vote'>Vote</Button>
+                <Button component={NavLink} strict exact to={'/vote'}>
+                  Vote
+                </Button>
               </div>
             )}
             {!matches && (
