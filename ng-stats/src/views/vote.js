@@ -33,10 +33,22 @@ export const Vote = () => {
   }
 
   return (
-    <Box color="white">
+    <Box color='white'>
       {!data ? (
         <Stack align='center' justify='center' spacing={4}>
           <Heading>Check your vote status</Heading>
+
+          <Stack isInline spacing={2} align='center' justify='center'>
+            <Text>or</Text>
+            <Button
+              as='a'
+              size='sm'
+              href='https://minecraftpocket-servers.com/server/36864/vote'
+              variantColor='teal'
+            >
+              Vote now
+            </Button>
+          </Stack>
 
           <Box
             bg='white'
@@ -51,6 +63,7 @@ export const Vote = () => {
                 <Input
                   autoComplete='off'
                   isFullWidth
+                  color='black'
                   isRequired
                   name='query'
                   onChange={handleChange}
