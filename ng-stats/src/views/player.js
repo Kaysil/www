@@ -172,6 +172,11 @@ export default class Player extends Component {
                     Builder
                   </Badge>
                 )}
+                {stats.rankHexes.hasOwnProperty('Artist') && (
+                  <Badge backgroundColor='#ff00ba' color='#fff' ml='1'>
+                    Artist
+                  </Badge>
+                )}
                 {stats.rankHexes.hasOwnProperty('Legend') && (
                   <Badge backgroundColor='#00c5e5' color='#fff' ml='1'>
                     Legend
