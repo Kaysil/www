@@ -22,11 +22,11 @@ export default () => (
       {({ isMobile }) => (
         <Header height={32} offset={-32} distance={32} shadow active={isMobile ? 32 : 160}>
           <Notification
-            href='https://medium.com/nethergamesmc/trainee-applications-6570bd7271ee'
-            title='TRAINEE APPLICATIONS'
-            titleMobile='TRAINEE APPLICATIONS'
+            href='https://forums.nethergames.org/threads/20th-april-2020.7667/'
+            title='NEW LOBBY'
+            titleMobile='NEW LOBBY'
           >
-            TRAINEE APPLICATIONS - In light of the coronavirus pandemic, we are looking for more staff to help us moderate the network — Saturday, April 4th
+            NEW LOBBY - A new mega-sized lobby has dropped and is waiting to be explored! — Monday, April 20th
           </Notification>
           <Navbar hideLogo={!isMobile} />
         </Header>
