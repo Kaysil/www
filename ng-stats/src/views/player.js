@@ -152,6 +152,11 @@ export default class Player extends Component {
                     Supervisor
                   </Badge>
                 )}
+                {stats.rankHexes.hasOwnProperty('Support') && (
+                  <Badge backgroundColor='#b66adf' color='#fff' ml='1'>
+                    Support
+                  </Badge>
+                )}
                 {stats.rankHexes.hasOwnProperty('Mod') && (
                   <Badge backgroundColor='#00c5e5' color='#fff' ml='1'>
                     Mod
