@@ -76,7 +76,7 @@ export default class Guild extends Component {
                       <Flex align='center'>
                         <Avatar
                           size='sm'
-                          src={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${stat}.png`}
+                          src={`https://avatars.nethergames.org/${stat}`}
                         />
                         <Box ml='3'>
                           <Text fontWeight='bold'>
@@ -97,7 +97,7 @@ export default class Guild extends Component {
                       <Flex align='center'>
                         <Avatar
                           size='sm'
-                          src={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${stat}.png`}
+                          src={`https://avatars.nethergames.org/${stat}`}
                         />
                         <Box ml='3'>
                           <Text fontWeight='bold'>

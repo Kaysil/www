@@ -60,7 +60,7 @@ export default class Player extends Component {
           <meta property='og:url' content={`https://portal.nethergames.org/player/${stats.name}`} />
           <meta
             property='og:image'
-            content={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${stats.name}.png`}
+            content={`https://avatars.nethergames.org/${stats.name}`}
           />
           <meta property='og:profile:username' content={stats.name} />
           <meta
@@ -71,7 +71,7 @@ export default class Player extends Component {
         <Box bg='white' borderWidth='1px' overflow='auto' rounded='lg' minH='m' maxW='lg' p='4'>
           <Flex>
             <Avatar
-              src={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${stats.name}.png`}
+              src={`https://avatars.nethergames.org/${stats.name}`}
             >
               {0 !== stats.voted && (
                 <Tooltip title='Voted'>

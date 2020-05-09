@@ -120,7 +120,7 @@ class Leaderboard extends Component {
                           <Flex align='center'>
                             <Avatar
                               size='sm'
-                              src={`https://nethergames.nyc3.digitaloceanspaces.com/avatars/${value}.png`}
+                              src={`https://avatars.nethergames.org/${value}`}
                             />
                             <Box ml='3'>
                               <Text fontWeight='bold'>
