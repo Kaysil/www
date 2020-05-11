@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/artist"
-  to = "https://forums.nethergames.org/artist/"
+  to = "https://support.nethergames.org/en-au/article/3non78/"
   status = 301
   force = true
 
@@ -12,25 +12,25 @@
 
 [[redirects]]
   from = "/builder"
-  to = "https://forums.nethergames.org/builder/"
+  to = "https://support.nethergames.org/en-au/article/3non78/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/developer"
-  to = "https://forums.nethergames.org/developer/"
+  to = "https://support.nethergames.org/en-au/article/3non78/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/discordmod"
-  to = "https://forums.nethergames.org/discordmod/"
+  to = "https://support.nethergames.org/en-au/article/3non78/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/forumsmod"
-  to = "https://forums.nethergames.org/forumsmod"
+  to = "https://support.nethergames.org/en-au/article/3non78/"
   status = 301
   force = true
 
@@ -102,13 +102,13 @@
 
 [[redirects]]
   from = "/supportstaff"
-  to = "https://forums.nethergames.org/supportstaff/"
+  to = "https://support.nethergames.org/en-au/article/3non78/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/staff"
-  to = "https://forums.nethergames.org/trainee/"
+  to = "https://support.nethergames.org/en-au/article/3non78/"
   status = 301
   force = true
 
@@ -132,7 +132,7 @@
 
 [[redirects]]
   from = "/trainee"
-  to = "https://forums.nethergames.org/trainee/"
+  to = "https://support.nethergames.org/en-au/article/3non78/"
   status = 301
   force = true
 
