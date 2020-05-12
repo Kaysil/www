@@ -100,7 +100,7 @@ class Voteboard extends Component {
                           <Flex align='center'>
                             <Avatar
                               size='sm'
-                              src={`https://avatars.nethergames.org/${value}`}
+                              src={`https://player.nethergames.org/avatar/${value}`}
                             />
                             <Box ml='3'>
                               <Text fontWeight='bold'>

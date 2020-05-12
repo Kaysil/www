@@ -77,7 +77,7 @@ export default class Faction extends Component {
                       <Flex align='center'>
                         <Avatar
                           size='sm'
-                          src={`https://avatars.nethergames.org/${stat}`}
+                          src={`https://player.nethergames.org/avatar/${stat}`}
                         />
                         <Box ml='3'>
                           <Text fontWeight='bold'>
@@ -98,7 +98,7 @@ export default class Faction extends Component {
                       <Flex align='center'>
                         <Avatar
                           size='sm'
-                          src={`https://avatars.nethergames.org/${stat}`}
+                          src={`https://player.nethergames.org/avatar/${stat}`}
                         />
                         <Box ml='3'>
                           <Text fontWeight='bold'>
