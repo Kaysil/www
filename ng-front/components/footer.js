@@ -77,12 +77,12 @@ export default withPure(() => (
             <h4 className='fw5'>Support</h4>
             <p>
               <a href='https://ngmc.co/s' rel='noreferrer' target='_blank'>
-                Knowledge Base
+                Helpdesk
               </a>
             </p>
             <p>
               <a href='https://ngmc.co/lc' rel='noreferrer' target='_blank'>
-                Live Support
+                Live Chat Support
               </a>
             </p>
             <p>
@@ -120,11 +120,10 @@ export default withPure(() => (
           </a>
           <div>
             {' '}
-            Copyright © 2020 NetherGames Network. All rights reserved.
+            Copyright © 2020 NetherGames Network (ABN 72 871 552 173). All rights reserved.
             <br />
             All trademarks are property of their respective owners.
             <br />
-            <a href='https://ngmc.co/a'>Account Dashboard/Player Statistics</a> |{' '}
             <img
               src='https://status.nethergames.org/includes/badge'
               style={{
@@ -133,7 +132,10 @@ export default withPure(() => (
                 borderRadius: '100%'
               }}
             />{' '}
-            <a href='https://status.nethergames.org'>Network Status</a>
+            <a href='https://status.nethergames.org'>Network Status</a> |{' '}
+            <a href='https://live.nethergames.org'>Minecraft Server Status</a> |{' '}
+            <a href='https://account.nethergames.org/account.php'>Account Dashboard</a> |{' '}
+            <a href='http://cdn.nethergames.org/assets/mediakit.zip'>Media Kit</a>
           </div>
         </div>
       </footer>

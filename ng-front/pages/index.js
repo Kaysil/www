@@ -22,11 +22,11 @@ export default () => (
       {({ isMobile }) => (
         <Header height={32} offset={-32} distance={32} shadow active={isMobile ? 32 : 160}>
           <Notification
-            href='https://forums.nethergames.org/threads/20th-april-2020.7667/'
-            title='NEW LOBBY'
-            titleMobile='NEW LOBBY'
+            href='https://forums.nethergames.org/threads/discord-ban-appeals.8418/'
+            title='DISCORD BAN APPEALS'
+            titleMobile='DISCORD BAN APPEALS'
           >
-            NEW LOBBY - A new mega-sized lobby has dropped and is waiting to be explored! — Monday, April 20th
+            DISCORD BAN APPEALS - Banned from our Discord server? You can now appeal it! Conditions apply — Tuesday, May 12th
           </Notification>
           <Navbar hideLogo={!isMobile} />
         </Header>
