@@ -54,6 +54,19 @@ export default class Faction extends Component {
       <div>
         <Helmet>
           <title>{stats.name}</title>
+          <meta property='og:site_name' content='NetherGames Network' />
+          <meta property='og:title' content={`${stats.name} - Faction Statistics`} />
+          <meta property='og:type' content='profile' />
+          <meta property='og:url' content={`https://portal.nethergames.org/faction/${stats.name}`} />
+          <meta
+            property='og:image'
+            content={`https://player.nethergames.org/avatar/${stats.leader}`}
+          />
+          <meta property='og:profile:username' content={stats.name} />
+          <meta
+            property='og:description'
+            content={`Leader: ${stats.leader} | Strength: ${stats.strength} | Balance: ${stats.balance}`}
+          />
         </Helmet>
         <Box bg='white' borderWidth='1px' overflow='auto' rounded='lg' maxH='75vh' maxW='lg' p='4'>
           <Heading>{stats.name}</Heading>

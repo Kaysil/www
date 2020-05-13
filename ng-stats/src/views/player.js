@@ -55,7 +55,7 @@ export default class Player extends Component {
         <Helmet>
           <title>{stats.name}</title>
           <meta property='og:site_name' content='NetherGames Network' />
-          <meta property='og:title' content={`Player statistics for ${stats.name}`} />
+          <meta property='og:title' content={`${stats.name} - Player Statistics`} />
           <meta property='og:type' content='profile' />
           <meta property='og:url' content={`https://portal.nethergames.org/player/${stats.name}`} />
           <meta
