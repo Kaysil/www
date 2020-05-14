@@ -152,8 +152,13 @@ export default class Player extends Component {
                     Supervisor
                   </Badge>
                 )}
+                {stats.rankHexes.hasOwnProperty('Discord') && (
+                  <Badge backgroundColor='#1abc9c' color='#fff' ml='1'>
+                    Discord
+                  </Badge>
+                )}
                 {stats.rankHexes.hasOwnProperty('Support') && (
-                  <Badge backgroundColor='#b66adf' color='#fff' ml='1'>
+                  <Badge backgroundColor='#b66ae0' color='#fff' ml='1'>
                     Support
                   </Badge>
                 )}
@@ -178,7 +183,7 @@ export default class Player extends Component {
                   </Badge>
                 )}
                 {stats.rankHexes.hasOwnProperty('Artist') && (
-                  <Badge backgroundColor='#ff00ba' color='#fff' ml='1'>
+                  <Badge backgroundColor='#9b59b6' color='#fff' ml='1'>
                     Artist
                   </Badge>
                 )}
