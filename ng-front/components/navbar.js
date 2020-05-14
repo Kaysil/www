@@ -79,8 +79,8 @@ export default withRouter(({ router, hideLogo = false }) => {
                   </Link>
                 </div>
                 <div className='links mute dropdown'>
-                  <a href='https://forums.nethergames.org' target='_blank'>
-                    Forums
+                  <a href='https://portal.nethergames.org' target='_blank'>
+                    Statistics
                   </a>
                   <a href='https://portal.nethergames.org/vote' target='_blank'>
                     Vote
@@ -88,8 +88,8 @@ export default withRouter(({ router, hideLogo = false }) => {
                   <a href='https://store.nethergames.org' target='_blank'>
                     Store
                   </a>
-                  <a href='https://medium.com/nethergamesmc' target='_blank'>
-                    Blog
+                  <a href='https://forums.nethergames.org' target='_blank'>
+                    Forums
                   </a>
                   <a href='https://discord.nethergames.org' target='_blank'>
                     Discord
