@@ -17,10 +17,6 @@ const withBundleAnalyzer = bundleAnalyzer({
 const nextConfig = {
   target: 'server',
   pageExtensions: ['jsx', 'js', 'ts', 'tsx', 'mdx'],
-  experimental: {
-    publicDirectory: true,
-    granularChunks: true
-  },
   webpack: (config) => {
     config.plugins = config.plugins || []
     config.plugins.push(
