@@ -28,9 +28,7 @@ export default withPure(({ href, title, titleMobile, children }) => (
           `}
         </style>
         <Container style={ellipsis()}>
-          <Link href={href}>
-            <a>{isMobile && titleMobile ? titleMobile : children}</a>
-          </Link>
+          <a href={href}>{isMobile && titleMobile ? titleMobile : children}</a>
         </Container>
       </div>
     )}
