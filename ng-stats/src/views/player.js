@@ -232,7 +232,7 @@ export default class Player extends Component {
           <Flex pb='4'>
             <Text fontSize='lg'>
               <Icon name='view' /> Last seen {stats.online ? 'right now' : `${stats.lastSeen} ago`}{' '}
-              in {stats.lastServer}
+              on {stats.lastServer}
             </Text>
           </Flex>
           <Accordion allowToggle>

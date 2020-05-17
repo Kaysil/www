@@ -156,6 +156,6 @@
 
 [[redirects]]
   from = "/youtube"
-  to = "https://login.nethergames.org/?service=account"
+  to = "https://support.nethergames.org/en-au/article/13tuasi/"
   status = 301
   force = true
