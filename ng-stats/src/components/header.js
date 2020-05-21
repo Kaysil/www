@@ -430,7 +430,7 @@ export default function Header() {
                 cursor='pointer'
                 edge='start'
                 height='2rem'
-                src='https://cdn.nethergames.org/img/logo_cropped.png'
+                src='https://cdn.nethergames.org/img/logo/double-line-light.png'
               />
             </RouterLink>
             {matches && (
