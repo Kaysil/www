@@ -13,7 +13,7 @@ import SocialMeta from '../components/social-meta'
 export default () => (
   <Page title='NetherGames'>
     <SocialMeta
-      image={'/static/images/card.png'}
+      image={'https://cdn.nethergames.org/img/logo/double-line-light.png'}
       title='NetherGames'
       url='https://nethergames.org'
       description='All for one. All for fun. Play Bedwars, Creative, Duels, Factions, Murder Mystery and SkyWars among other games with your friends now.'

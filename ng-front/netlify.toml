@@ -149,6 +149,12 @@
   force = true
 
 [[redirects]]
+  from = "/vacancies"
+  to = "https://support.nethergames.org/en-au/article/3non78/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/warningdispute"
   to = "https://forums.nethergames.org/warningdispute/"
   status = 301

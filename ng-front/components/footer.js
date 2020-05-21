@@ -115,7 +115,7 @@ export default withPure(() => (
             <img
               height={30}
               style={{ transform: 'translateX(4%)' }}
-              src='/static/images/logo.png'
+              src='https://cdn.nethergames.org/img/logo/double-line-light.png'
             />
           </a>
           <div>

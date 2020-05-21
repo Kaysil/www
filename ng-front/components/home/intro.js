@@ -157,7 +157,7 @@ export default class extends React.PureComponent {
             >
               <Link href={scroll >= LOGO_TOP ? '/' : '#'}>
                 <a aria-label='NetherGames'>
-                  <img height={80} src='/static/images/logo.png' />
+                  <img height={120} src='https://cdn.nethergames.org/img/logo/stacked-icon-text-light.png' />
                 </a>
               </Link>
             </div>

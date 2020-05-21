@@ -73,7 +73,7 @@ export default withRouter(({ router, hideLogo = false }) => {
                       <img
                         height={25}
                         style={{ transform: 'translateX(4%)' }}
-                        src='/static/images/logo.png'
+                        src='https://cdn.nethergames.org/img/logo/double-line-light.png'
                       />
                     </a>
                   </Link>
@@ -184,7 +184,7 @@ export default withRouter(({ router, hideLogo = false }) => {
                       <img
                         height={25}
                         style={{ transform: 'translateX(4%)' }}
-                        src='/static/images/logo.png'
+                        src='https://cdn.nethergames.org/img/logo/double-line-light.png'
                       />
                     </a>
                   </Link>
