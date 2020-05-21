@@ -1,49 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>NetherGames</title>
-    <meta
-      name="viewport"
-      content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-    />
-    <meta content="yes" name="mobile-web-app-capable" />
-    <meta content="yes" name="apple-mobile-web-app-capable" />
-    <meta
-      content="All for one. All for fun. Play Bedwars, Creative, Duels, Factions, Murder Mystery and SkyWars among other games with your friends now."
-      name="description"
-    />
-    <meta content="#000000" name="theme-color" />
-    <link href="https://nethergames.org/static/favicon/safari-pinned-tab.svg" rel="mask-icon" />
-    <link href="https://nethergames.org/static/favicon/favicon.ico" rel="shortcut icon" />
-    <link
-      href="https://nethergames.org/static/favicon/favicon-32x32.png"
-      rel="icon"
-      sizes="32x32"
-      type="image/png"
-    />
-    <link
-      href="https://nethergames.org/static/favicon/favicon-16x16.png"
-      rel="icon"
-      sizes="16x16"
-      type="image/png"
-    />
-    <link
-      href="https://nethergames.org/static/favicon/apple-touch-icon.png"
-      rel="apple-touch-icon"
-      sizes="180x180"
-    />
-    <% for (var chunk of webpack.chunks) { %> <% if (chunk.names.length === 1 && chunk.names[0] ===
-    'polyfills') continue; %> <% for (var file of chunk.files) { %> <% if
-    (htmlWebpackPlugin.options.preload && file.match(/\.(js|css)$/)) { %>
-    <link
-      rel="preload"
-      href="<%= htmlWebpackPlugin.files.publicPath + file %>"
-      as="<%= file.match(/\.css$/)?'style':'script' %>"
-    />
-    <% } %> <% } %> <% } %>
-  </head>
-  <body translate="no">
-    <script defer src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"></script>
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<title>NetherGames</title>
+		<meta
+			name="viewport"
+			content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+		/>
+		<meta content="yes" name="mobile-web-app-capable" />
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta
+			content="All for one. All for fun. Play Bedwars, Creative, Duels, Factions, Murder Mystery and SkyWars among other games with your friends now."
+			name="description"
+		/>
+		<meta content="#000000" name="theme-color" />
+		<link
+			href="https://nethergames.org/static/favicon/safari-pinned-tab.svg"
+			rel="mask-icon"
+		/>
+		<link
+			href="https://nethergames.org/static/favicon/favicon.ico"
+			rel="shortcut icon"
+		/>
+		<link
+			href="https://nethergames.org/static/favicon/favicon-32x32.png"
+			rel="icon"
+			sizes="32x32"
+			type="image/png"
+		/>
+		<link
+			href="https://nethergames.org/static/favicon/favicon-16x16.png"
+			rel="icon"
+			sizes="16x16"
+			type="image/png"
+		/>
+		<link
+			href="https://nethergames.org/static/favicon/apple-touch-icon.png"
+			rel="apple-touch-icon"
+			sizes="180x180"
+		/>
+		<% for (var chunk of webpack.chunks) { %> <% if (chunk.names.length === 1 &&
+		chunk.names[0] === 'polyfills') continue; %> <% for (var file of
+		chunk.files) { %> <% if (htmlWebpackPlugin.options.preload &&
+		file.match(/\.(js|css)$/)) { %>
+		<link
+			rel="preload"
+			href="<%= htmlWebpackPlugin.files.publicPath + file %>"
+			as="<%= file.match(/\.css$/)?'style':'script' %>"
+		/>
+		<% } %> <% } %> <% } %>
+	</head>
+	<body translate="no">
+		<script
+			defer
+			src="<%= htmlWebpackPlugin.files.chunks['bundle'].entry %>"
+		></script>
+	</body>
 </html>

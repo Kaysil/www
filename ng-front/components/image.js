@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import classNames from "classnames"
 
-import IObserver from './intersection-observer'
+import IObserver from "./intersection-observer"
 
 // This component might look a little complex
 // because one could argue that keeping the aspect ratio
@@ -14,72 +14,79 @@ import IObserver from './intersection-observer'
 // ratio of the image's container BEFORE the image loads
 
 class Image extends Component {
-  static defaultProps = {
-    lazy: true
-  }
+	static defaultProps = {
+		lazy: true,
+	}
 
-  static propTypes = {
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
-    lazy: PropTypes.bool
-  }
+	static propTypes = {
+		width: PropTypes.number.isRequired,
+		height: PropTypes.number.isRequired,
+		lazy: PropTypes.bool,
+	}
 
-  state = {
-    src: !this.props.lazy ? this.props.videoSrc || this.props.src : undefined
-  }
+	state = {
+		src: !this.props.lazy ? this.props.videoSrc || this.props.src : undefined,
+	}
 
-  handleIntersect = (entry) => {
-    if (entry.isIntersecting) {
-      this.setState({ src: this.props.videoSrc || this.props.src })
-    }
-  }
+	handleIntersect = (entry) => {
+		if (entry.isIntersecting) {
+			this.setState({ src: this.props.videoSrc || this.props.src })
+		}
+	}
 
-  render() {
-    const {
-      caption,
-      width,
-      height,
-      margin = 40,
-      video = false,
-      videoSrc,
-      captionSpacing = null,
-      renderImage,
-      oversize = true,
-      float,
-      lazy,
-      ...rest
-    } = this.props
+	render() {
+		const {
+			caption,
+			width,
+			height,
+			margin = 40,
+			video = false,
+			videoSrc,
+			captionSpacing = null,
+			renderImage,
+			oversize = true,
+			float,
+			lazy,
+			...rest
+		} = this.props
 
-    const aspectRatio = `${String((height / width) * 100)}%`
+		const aspectRatio = `${String((height / width) * 100)}%`
 
-    return (
-      <IObserver once onIntersect={this.handleIntersect} rootMargin='20%' disabled={!lazy}>
-        <figure
-          className={classNames({
-            oversize: width > 650,
-            float: float && width < 520
-          })}
-        >
-          <main style={{ width }}>
-            <div style={{ paddingBottom: aspectRatio }}>
-              {this.state.src ? (
-                videoSrc || video ? (
-                  <video src={this.state.src} muted autoPlay loop playsInline />
-                ) : renderImage ? (
-                  renderImage(rest)
-                ) : (
-                  <img src={this.state.src || null} />
-                )
-              ) : null}
-            </div>
+		return (
+			<IObserver
+				once
+				onIntersect={this.handleIntersect}
+				rootMargin="20%"
+				disabled={!lazy}
+			>
+				<figure
+					className={classNames({
+						oversize: width > 650,
+						float: float && width < 520,
+					})}
+				>
+					<main style={{ width }}>
+						<div style={{ paddingBottom: aspectRatio }}>
+							{this.state.src ? (
+								videoSrc || video ? (
+									<video src={this.state.src} muted autoPlay loop playsInline />
+								) : renderImage ? (
+									renderImage(rest)
+								) : (
+									<img src={this.state.src || null} />
+								)
+							) : null}
+						</div>
 
-            {caption && (
-              <p style={captionSpacing ? { marginTop: captionSpacing } : {}}>{caption}</p>
-            )}
-          </main>
+						{caption && (
+							<p style={captionSpacing ? { marginTop: captionSpacing } : {}}>
+								{caption}
+							</p>
+						)}
+					</main>
 
-          <style jsx>
-            {`
+					<style jsx>
+						{`
               figure {
                 display: block;
                 text-align: center;
@@ -120,11 +127,11 @@ class Image extends Component {
                 }
               }
             `}
-          </style>
-        </figure>
-      </IObserver>
-    )
-  }
+					</style>
+				</figure>
+			</IObserver>
+		)
+	}
 }
 
 export const Video = (props) => <Image {...props} video />

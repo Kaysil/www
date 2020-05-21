@@ -1,52 +1,56 @@
-import Container from '../../components/container'
-import Featured from '../../components/blog/featured'
-import Footer from '../../components/footer'
-import Header from '../../components/header'
-import { MediaQueryConsumer } from '../../components/media-query'
-import Navbar from '../../components/navbar'
-import Page from '../../components/page'
-import Preview from '../../components/blog/preview'
-import Screen from '../../components/screen'
-import SectionHeader from '../../components/section-header'
-import { components } from '../../components/blog/post-components'
+import Container from "../../components/container"
+import Featured from "../../components/blog/featured"
+import Footer from "../../components/footer"
+import Header from "../../components/header"
+import { MediaQueryConsumer } from "../../components/media-query"
+import Navbar from "../../components/navbar"
+import Page from "../../components/page"
+import Preview from "../../components/blog/preview"
+import Screen from "../../components/screen"
+import SectionHeader from "../../components/section-header"
+import { components } from "../../components/blog/post-components"
 
 function importAll(r) {
-  return r.keys().map(r)
+	return r.keys().map(r)
 }
 
-const previewItems = importAll(require.context('../../blog', false, /\-preview\.mdx$/))
+const previewItems = importAll(
+	require.context("../../blog", false, /\-preview\.mdx$/),
+)
 
 function dateSortDesc(a, b) {
-  const date1 = new Date(a.meta.date)
-  const date2 = new Date(b.meta.date)
-  if (date1 > date2) return -1
-  if (date1 < date2) return 1
-  return 0
+	const date1 = new Date(a.meta.date)
+	const date2 = new Date(b.meta.date)
+	if (date1 > date2) return -1
+	if (date1 < date2) return 1
+	return 0
 }
 
-const items = previewItems.sort(dateSortDesc).map(({ default: Component, meta }, index) => {
-  return (
-    <Preview key={meta.title} detail={index < 5} {...meta}>
-      <Component components={components} />
-    </Preview>
-  )
-})
+const items = previewItems
+	.sort(dateSortDesc)
+	.map(({ default: Component, meta }, index) => {
+		return (
+			<Preview key={meta.title} detail={index < 5} {...meta}>
+				<Component components={components} />
+			</Preview>
+		)
+	})
 
 export default () => (
-  <Page title='NetherGames - Blog'>
-    <MediaQueryConsumer>
-      {({ isMobile }) => (
-        <Header height={64 + (isMobile ? 32 : 0)} shadow defaultActive>
-          <Navbar />
-        </Header>
-      )}
-    </MediaQueryConsumer>
-    <Screen offset={64 + 400}>
-      <Container padding wide>
-        <SectionHeader title='Blog' />
-        {items}
-      </Container>
-    </Screen>
-    <Footer />
-  </Page>
+	<Page title="NetherGames - Blog">
+		<MediaQueryConsumer>
+			{({ isMobile }) => (
+				<Header height={64 + (isMobile ? 32 : 0)} shadow defaultActive>
+					<Navbar />
+				</Header>
+			)}
+		</MediaQueryConsumer>
+		<Screen offset={64 + 400}>
+			<Container padding wide>
+				<SectionHeader title="Blog" />
+				{items}
+			</Container>
+		</Screen>
+		<Footer />
+	</Page>
 )

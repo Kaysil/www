@@ -1,32 +1,30 @@
 {
-  "name": "ng-stats",
-  "license": "MIT",
-  "scripts": {
-    "build": "preact build && cp -r src/assets/_* build",
-    "start": "preact watch"
-  },
-  "dependencies": {
-    "@chakra-ui/core": "0.7.0",
-    "@emotion/core": "10.0.28",
-    "@emotion/styled": "10.0.27",
-    "@material-ui/core": "4.9.9",
-    "@material-ui/icons": "4.9.1",
-    "emotion-theming": "10.0.27",
-    "formik": "2.1.4",
-    "preact": "10.3.4",
-    "preact-render-to-string": "5.1.4",
-    "react-helmet": "5.2.1",
-    "react-router-dom": "5.1.2"
-  },
-  "devDependencies": {
-    "preact-cli": "3.0.0-rc.6",
-    "prettier": "2.0.4"
-  },
-  "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "singleQuote": true,
-    "trailingComma": "none",
-    "jsxSingleQuote": true
-  }
+	"name": "ng-stats",
+	"license": "MIT",
+	"scripts": {
+		"build": "preact build && cp -r src/assets/_* build",
+		"start": "preact watch"
+	},
+	"dependencies": {
+		"@chakra-ui/core": "0.8.0",
+		"@emotion/core": "10.0.28",
+		"@emotion/styled": "10.0.27",
+		"@material-ui/core": "4.9.14",
+		"@material-ui/icons": "4.9.1",
+		"emotion-theming": "10.0.27",
+		"formik": "2.1.4",
+		"preact": "10.4.4",
+		"preact-render-to-string": "5.1.8",
+		"react-helmet": "6.0.0",
+		"react-router-dom": "5.2.0"
+	},
+	"devDependencies": {
+		"preact-cli": "3.0.0-rc.6",
+		"prettier": "2.0.5"
+	},
+	"prettier": {
+		"semi": false,
+		"useTabs": true,
+		"trailingComma": "all"
+	}
 }

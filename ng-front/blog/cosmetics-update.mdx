@@ -1,19 +1,19 @@
-import withPost from '../../components/blog/with-post'
-import Image from '../../components/image'
+import withPost from "../../components/blog/with-post"
+import Image from "../../components/image"
 
 export const meta = {
-  title: 'Cosmetics update',
-  description: 'A brand new update is live across the network!',
-  date: '2019-03-03T00:00:00.000Z',
-  url: 'https://nethergames.org.org/blog/cosmetics-update',
-  link: '/blog/cosmetics-update',
-  authors: [
-    {
-      name: 'NetherGames Team',
-      avatar: 'https://cdn.nethergames.org/img/logo/discord-icon-nobg.png',
-      twitter: 'NetherGamesMC'
-    }
-  ]
+	title: "Cosmetics update",
+	description: "A brand new update is live across the network!",
+	date: "2019-03-03T00:00:00.000Z",
+	url: "https://nethergames.org.org/blog/cosmetics-update",
+	link: "/blog/cosmetics-update",
+	authors: [
+		{
+			name: "NetherGames Team",
+			avatar: "https://cdn.nethergames.org/img/logo/discord-icon-nobg.png",
+			twitter: "NetherGamesMC",
+		},
+	],
 }
 
 export default withPost({ ...meta })
@@ -33,44 +33,44 @@ If you find any bugs with the new update, please report them to #bugs on our Dis
 Enjoy!
 
 <style jsx>{`
-  table {
-    margin: 0 auto 30px;
-  }
-  table td,
-  table th {
-    padding: 10px 20px;
-  }
-  table th {
-    font-weight: normal;
-    font-size: 12px;
-    color: #9b9b9b;
-    padding-bottom: 0px;
-  }
-  table td:first-child {
-    width: 55%;
-  }
-  table td {
-    font-size: 14px;
-    vertical-align: middle;
-  }
-  table td:last-child {
-    color: #067df7;
-  }
-  table td:not(:first-child) {
-    text-align: center;
-  }
-  table td em {
-    font-weight: normal;
-    font-size: 10px;
-    text-transform: uppercase;
-    font-style: normal;
-    display: block;
-  }
-  // CSS only media query for mobile
-  @media screen and (max-width: 640px) {
-    table td,
-    table th {
-      padding: 10px 10px;
-    }
-  }
+	table {
+		margin: 0 auto 30px;
+	}
+	table td,
+	table th {
+		padding: 10px 20px;
+	}
+	table th {
+		font-weight: normal;
+		font-size: 12px;
+		color: #9b9b9b;
+		padding-bottom: 0px;
+	}
+	table td:first-child {
+		width: 55%;
+	}
+	table td {
+		font-size: 14px;
+		vertical-align: middle;
+	}
+	table td:last-child {
+		color: #067df7;
+	}
+	table td:not(:first-child) {
+		text-align: center;
+	}
+	table td em {
+		font-weight: normal;
+		font-size: 10px;
+		text-transform: uppercase;
+		font-style: normal;
+		display: block;
+	}
+	// CSS only media query for mobile
+	@media screen and (max-width: 640px) {
+		table td,
+		table th {
+			padding: 10px 10px;
+		}
+	}
 `}</style>
