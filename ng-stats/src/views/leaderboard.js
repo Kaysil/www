@@ -20,13 +20,14 @@ import TableCell from "@material-ui/core/TableCell"
 import TableHead from "@material-ui/core/TableHead"
 import TablePagination from "@material-ui/core/TablePagination"
 import TableRow from "@material-ui/core/TableRow"
-import { withStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
+import { theme } from "../components/header"
 
 function createData(name, kdr, kills, deaths, wins, level, credits) {
 	return { name, kdr, kills, deaths, wins, level, credits }
 }
 
-const styles = () => ({
+const useStyles = makeStyles((theme) => ({
 	root: {
 		marginTop: "3rem",
 		width: "100%",
@@ -40,7 +41,7 @@ const styles = () => ({
 		maxHeight: 440,
 		overflow: "auto",
 	},
-})
+}))
 
 class Leaderboard extends Component {
 	state = {
@@ -67,7 +68,8 @@ class Leaderboard extends Component {
 	}
 
 	render() {
-		const { classes } = this.props
+		const classes = useStyles()
+
 		const failed = this.state.failed
 		const page = this.state.page
 		const rowsPerPage = this.state.rowsPerPage
@@ -89,13 +91,7 @@ class Leaderboard extends Component {
 
 		if (!stats[0]) {
 			return (
-				<Spinner
-					thickness="4px"
-					speed="0.65s"
-					emptyColor="gray.200"
-					color="blue.500"
-					size="xl"
-				/>
+				<Spinner thickness="4px" speed="0.65s" color="blue.500" size="xl" />
 			)
 		}
 
@@ -185,4 +181,4 @@ class Leaderboard extends Component {
 	}
 }
 
-export default withStyles(styles)(Leaderboard)
+export default Leaderboard

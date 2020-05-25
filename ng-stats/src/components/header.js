@@ -25,17 +25,16 @@ import { h } from "preact"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { useState } from "preact/hooks"
 
-const theme = createMuiTheme({
+export const theme = createMuiTheme({
 	palette: {
 		type: "dark",
 		primary: {
-			main: "#1A202C",
+			main: "#101A27",
 		},
 	},
 })
 
 const useStyles = makeStyles((theme) => ({
-	palette: { type: "dark" },
 	list: {
 		width: "100%",
 		maxWidth: 360,
@@ -449,7 +448,7 @@ export default function Header() {
 								edge="start"
 								height="2rem"
 								style={{ textIndent: "-9999px" }}
-								src="https://cdn.nethergames.org/img/logo/double-line-dark.png"
+								src="https://cdn.nethergames.org/img/logo/double-line-light.png"
 							/>
 						</RouterLink>
 						{matches && (

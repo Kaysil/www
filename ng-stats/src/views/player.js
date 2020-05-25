@@ -48,13 +48,7 @@ export default class Player extends Component {
 
 		if (!stats.winsData && !stats.factionsData && !stats.rankColors) {
 			return (
-				<Spinner
-					thickness="4px"
-					speed="0.65s"
-					emptyColor="gray.200"
-					color="blue.500"
-					size="xl"
-				/>
+				<Spinner thickness="4px" speed="0.65s" color="blue.500" size="xl" />
 			)
 		}
 
