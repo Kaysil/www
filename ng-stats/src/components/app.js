@@ -45,6 +45,18 @@ const GlobalCss = withStyles({
 		".MuiButton-root": {
 			color: "white",
 		},
+		".MuiPaper-root": {
+			color: "white",
+			backgroundColor: "#2D3748",
+		},
+		".MuiTableCell-root": {
+			border: 0,
+			color: "white",
+			backgroundColor: "#101A27",
+		},
+		".MuiToolbar-root": {
+			color: "white",
+		},
 	},
 })(() => null)
 
