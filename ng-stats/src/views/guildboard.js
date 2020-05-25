@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/core"
 import { Component, h } from "preact"
 
+import { API_HOST } from "../config"
 import { NavLink } from "react-router-dom"
 import Paper from "@material-ui/core/Paper"
 import Table from "@material-ui/core/Table"
@@ -50,9 +51,7 @@ class Guildboard extends Component {
 	}
 
 	componentDidMount() {
-		fetch(
-			`https://api.nethergames.org/?action=leaderboards&type=guilds&limit=100`,
-		)
+		fetch(`${API_HOST}/leaderboard?type=guilds&limit=100`)
 			.then((res) => res.json())
 			.then((res) => this.setState({ data: res }))
 			.catch(() => this.setState({ failed: true }))
@@ -72,7 +71,7 @@ class Guildboard extends Component {
 			{ id: "xp", label: "XP", align: "right" },
 		]
 
-		if (failed || null === stats) {
+		if (failed || null === stats || {} === stats || stats.error) {
 			return <Heading color="white">Something went wrong!</Heading>
 		}
 

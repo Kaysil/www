@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/core"
 import { Component, h } from "preact"
 
+import { API_HOST } from "../config"
 import { NavLink } from "react-router-dom"
 import Paper from "@material-ui/core/Paper"
 import Table from "@material-ui/core/Table"
@@ -50,9 +51,7 @@ class Parkourboard extends Component {
 	}
 
 	componentDidMount() {
-		fetch(
-			`https://api.nethergames.org/?action=leaderboards&type=parkour&limit=100`,
-		)
+		fetch(`${API_HOST}/leaderboard?type=parkour&limit=100`)
 			.then((res) => res.json())
 			.then((res) => this.setState({ data: res }))
 			.catch(() => this.setState({ failed: true }))
@@ -70,7 +69,7 @@ class Parkourboard extends Component {
 			{ id: "time", label: "Time (seconds)", align: "right" },
 		]
 
-		if (failed || null === stats) {
+		if (failed || null === stats || {} === stats || stats.error) {
 			return <Heading color="white">Something went wrong!</Heading>
 		}
 

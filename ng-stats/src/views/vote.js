@@ -11,6 +11,7 @@ import {
 	Text,
 } from "@chakra-ui/core"
 
+import { API_HOST } from "../config"
 import { h } from "preact"
 import { useState } from "preact/hooks"
 
@@ -23,9 +24,7 @@ export const Vote = () => {
 		setIsLoading(true)
 
 		const response = await fetch(
-			`https://api.nethergames.org/?action=voteCheck&player=${encodeURIComponent(
-				gamertag,
-			)}`,
+			`${API_HOST}/players/${encodeURIComponent(gamertag)}/votes`,
 		)
 		const data = await response.json()
 		setData(data)
@@ -62,7 +61,7 @@ export const Vote = () => {
 					</Stack>
 
 					<Box
-						bg="white"
+						bg="gray.900"
 						borderWidth="1px"
 						overflow="hidden"
 						rounded="lg"
@@ -74,7 +73,7 @@ export const Vote = () => {
 								<Input
 									autoComplete="off"
 									isFullWidth
-									color="black"
+									color="white"
 									isRequired
 									name="query"
 									onChange={handleChange}

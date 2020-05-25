@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/core"
 import { Component, h } from "preact"
 
+import { API_HOST } from "../config"
 import { NavLink } from "react-router-dom"
 import Paper from "@material-ui/core/Paper"
 import Table from "@material-ui/core/Table"
@@ -50,7 +51,7 @@ class Voteboard extends Component {
 	}
 
 	componentDidMount() {
-		fetch("https://api.nethergames.org/?action=leaderboards&type=voters")
+		fetch(`${API_HOST}/leaderboard?type=voters&limit=1000`)
 			.then((res) => res.json())
 			.then((res) => this.setState({ data: res }))
 			.catch(() => this.setState({ failed: true }))

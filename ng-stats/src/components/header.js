@@ -27,20 +27,18 @@ import { useState } from "preact/hooks"
 
 const theme = createMuiTheme({
 	palette: {
+		type: "dark",
 		primary: {
-			main: "#FFFFFF",
-		},
-		secondary: {
-			main: "#000000",
+			main: "#1A202C",
 		},
 	},
 })
 
 const useStyles = makeStyles((theme) => ({
+	palette: { type: "dark" },
 	list: {
 		width: "100%",
 		maxWidth: 360,
-		backgroundColor: theme.palette.background.paper,
 	},
 	nested: {
 		paddingLeft: theme.spacing(4),
@@ -446,11 +444,11 @@ export default function Header() {
 					<Toolbar className={classes.navBar}>
 						<RouterLink to="/">
 							<Image
-								alt="NetherGames Logo"
 								className={classes.logo}
 								cursor="pointer"
 								edge="start"
 								height="2rem"
+								style={{ textIndent: "-9999px" }}
 								src="https://cdn.nethergames.org/img/logo/double-line-dark.png"
 							/>
 						</RouterLink>

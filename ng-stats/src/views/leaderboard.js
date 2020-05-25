@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/core"
 import { Component, h } from "preact"
 
+import { API_HOST } from "../config"
 import { NavLink } from "react-router-dom"
 import Paper from "@material-ui/core/Paper"
 import Table from "@material-ui/core/Table"
@@ -56,7 +57,9 @@ class Leaderboard extends Component {
 		const game = undefined !== gamePath ? gamePath : null
 
 		fetch(
-			`https://api.nethergames.org/?action=leaderboards&type=${type}&game=${game}&limit=100`,
+			`${API_HOST}/leaderboard?type=${type}${
+				game ? `&game=${game}` : ""
+			}&limit=100`,
 		)
 			.then((res) => res.json())
 			.then((res) => this.setState({ data: res }))
@@ -80,7 +83,7 @@ class Leaderboard extends Component {
 			{ id: "credits", label: "Credits", align: "right" },
 		]
 
-		if (failed || null === stats) {
+		if (failed || null === stats || {} === stats || stats.error) {
 			return <Heading color="white">Something went wrong!</Heading>
 		}
 

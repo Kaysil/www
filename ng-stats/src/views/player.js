@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/core"
 import { Component, h } from "preact"
 
+import { API_HOST } from "../config"
 import { Helmet } from "react-helmet"
 import Tooltip from "@material-ui/core/Tooltip"
 
@@ -30,7 +31,7 @@ export default class Player extends Component {
 	componentDidMount() {
 		const input = window.location.pathname.split("/")[2]
 
-		fetch(`https://api.nethergames.org/?action=stats&player=${input}`)
+		fetch(`${API_HOST}/players/${encodeURIComponent(input)}/stats`)
 			.then((res) => res.json())
 			.then((res) => this.setState({ data: res }))
 			.catch(() => this.setState({ failed: true }))
@@ -40,11 +41,11 @@ export default class Player extends Component {
 		const stats = this.state.data
 		const failed = this.state.failed
 
-		if (failed || null === stats) {
+		if (failed || null === stats || {} === stats || stats.error) {
 			return <Heading color="white">We couldn't find that player!</Heading>
 		}
 
-		if (!stats.winsData && !stats.factionsData && !stats.rankHexes) {
+		if (!stats.winsData && !stats.factionsData && !stats.rankColors) {
 			return (
 				<Spinner
 					thickness="4px"
@@ -77,11 +78,11 @@ export default class Player extends Component {
 					<meta property="og:profile:username" content={stats.name} />
 					<meta
 						property="og:description"
-						content={`Kills: ${stats.kills} | Deaths: ${stats.deaths} | Wins: ${stats.wins} | Level: ${stats.level} | Credits: ${stats.status_credits}`}
+						content={`Kills: ${stats.kills} | Deaths: ${stats.deaths} | Wins: ${stats.wins} | Level: ${stats.level} | Credits: ${stats.statusCredits}`}
 					/>
 				</Helmet>
 				<Box
-					bg="white"
+					bg="gray.900"
 					borderWidth="1px"
 					overflow="auto"
 					rounded="lg"
@@ -97,7 +98,8 @@ export default class Player extends Component {
 										as={Icon}
 										name="check-circle"
 										size="1.25em"
-										color="black"
+										color="white"
+										borderColor="transparent"
 									/>
 								</Tooltip>
 							)}
@@ -105,137 +107,137 @@ export default class Player extends Component {
 						<Box ml="3">
 							<Box fontWeight="bold">
 								{stats.name}
-								{stats.tierHexes.hasOwnProperty("Bronze") && (
+								{stats.tierColors.hasOwnProperty("Bronze") && (
 									<Badge backgroundColor="#b84e00" color="#fff" ml="1">
 										Bronze
 									</Badge>
 								)}
-								{stats.tierHexes.hasOwnProperty("Silver") && (
+								{stats.tierColors.hasOwnProperty("Silver") && (
 									<Badge backgroundColor="#777" color="#fff" ml="1">
 										Silver
 									</Badge>
 								)}
-								{stats.tierHexes.hasOwnProperty("Gold") && (
+								{stats.tierColors.hasOwnProperty("Gold") && (
 									<Badge backgroundColor="#f79500" color="#fff" ml="1">
 										Gold
 									</Badge>
 								)}
-								{stats.tierHexes.hasOwnProperty("Ruby") && (
+								{stats.tierColors.hasOwnProperty("Ruby") && (
 									<Badge backgroundColor="#ff0024" color="#fff" ml="1">
 										Ruby
 									</Badge>
 								)}
-								{stats.tierHexes.hasOwnProperty("Diamond") && (
+								{stats.tierColors.hasOwnProperty("Diamond") && (
 									<Badge backgroundColor="#00c5e5" color="#fff" ml="1">
 										Diamond
 									</Badge>
 								)}
-								{stats.tierHexes.hasOwnProperty("Sapphire") && (
+								{stats.tierColors.hasOwnProperty("Sapphire") && (
 									<Badge backgroundColor="#3b37e8" color="#fff" ml="1">
 										Sapphire
 									</Badge>
 								)}
-								{stats.tierHexes.hasOwnProperty("Platinum") && (
+								{stats.tierColors.hasOwnProperty("Platinum") && (
 									<Badge backgroundColor="#777" color="#fff" ml="1">
 										Platinum
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Owner") && (
+								{stats.rankColors.hasOwnProperty("Owner") && (
 									<Badge backgroundColor="#ff0024" color="#fff" ml="1">
 										Owner
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Dev") && (
+								{stats.rankColors.hasOwnProperty("Dev") && (
 									<Badge backgroundColor="#ff0041" color="#fff" ml="1">
 										Dev
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Director") && (
+								{stats.rankColors.hasOwnProperty("Director") && (
 									<Badge backgroundColor="#00cc62" color="#fff" ml="1">
 										Director
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Advisor") && (
+								{stats.rankColors.hasOwnProperty("Advisor") && (
 									<Badge backgroundColor="#ff0024" color="#fff" ml="1">
 										Advisor
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Commmunity") && (
+								{stats.rankColors.hasOwnProperty("Commmunity") && (
 									<Badge backgroundColor="#ff009b" color="#fff" ml="1">
 										Community
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Admin") && (
+								{stats.rankColors.hasOwnProperty("Admin") && (
 									<Badge backgroundColor="#ffac1a" color="#fff" ml="1">
 										Admin
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Supervisor") && (
+								{stats.rankColors.hasOwnProperty("Supervisor") && (
 									<Badge backgroundColor="#ff00ba" color="#fff" ml="1">
 										Supervisor
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Discord") && (
+								{stats.rankColors.hasOwnProperty("Discord") && (
 									<Badge backgroundColor="#1abc9c" color="#fff" ml="1">
 										Discord
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Support") && (
+								{stats.rankColors.hasOwnProperty("Support") && (
 									<Badge backgroundColor="#b66ae0" color="#fff" ml="1">
 										Support
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Mod") && (
+								{stats.rankColors.hasOwnProperty("Mod") && (
 									<Badge backgroundColor="#00c5e5" color="#fff" ml="1">
 										Mod
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Crew") && (
+								{stats.rankColors.hasOwnProperty("Crew") && (
 									<Badge backgroundColor="#00cc62" color="#fff" ml="1">
 										Crew
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Trainee") && (
+								{stats.rankColors.hasOwnProperty("Trainee") && (
 									<Badge backgroundColor="#ffab1c" color="#fff" ml="1">
 										Trainee
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Builder") && (
+								{stats.rankColors.hasOwnProperty("Builder") && (
 									<Badge backgroundColor="#0092e2" color="#fff" ml="1">
 										Builder
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Artist") && (
+								{stats.rankColors.hasOwnProperty("Artist") && (
 									<Badge backgroundColor="#9b59b6" color="#fff" ml="1">
 										Artist
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Legend") && (
+								{stats.rankColors.hasOwnProperty("Legend") && (
 									<Badge backgroundColor="#00c5e5" color="#fff" ml="1">
 										Legend
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Emerald") && (
+								{stats.rankColors.hasOwnProperty("Emerald") && (
 									<Badge backgroundColor="#00cc62" color="#fff" ml="1">
 										Emerald
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Ultra") && (
+								{stats.rankColors.hasOwnProperty("Ultra") && (
 									<Badge backgroundColor="#f79500" color="#fff" ml="1">
 										Ultra
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("Partner") && (
+								{stats.rankColors.hasOwnProperty("Partner") && (
 									<Badge backgroundColor="#ff4f00" color="#fff" ml="1">
 										Partner
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("YouTube") && (
+								{stats.rankColors.hasOwnProperty("YouTube") && (
 									<Badge backgroundColor="#ff0024" color="#fff" ml="1">
 										YouTube
 									</Badge>
 								)}
-								{stats.rankHexes.hasOwnProperty("YT") && (
+								{stats.rankColors.hasOwnProperty("YT") && (
 									<Badge backgroundColor="#006e96" color="#fff" ml="1">
 										YT
 									</Badge>
@@ -249,7 +251,7 @@ export default class Player extends Component {
 					<Flex pt="4" pb="2">
 						<Text fontSize="m">
 							{stats.kills} kills · {stats.deaths} deaths · {stats.wins} wins ·{" "}
-							{stats.level} levels · {stats.status_credits} credits
+							{stats.level} levels · {stats.statusCredits} credits
 						</Text>
 					</Flex>
 					<Flex pb="4">

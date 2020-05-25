@@ -37,7 +37,7 @@ class Front extends Component {
 
 		return (
 			<Box
-				bg="white"
+				bg="gray.900"
 				borderWidth="1px"
 				overflow="hidden"
 				rounded="lg"

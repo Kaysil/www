@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/core"
 import { Component, h } from "preact"
 
+import { API_HOST } from "../config"
 import { Helmet } from "react-helmet"
 import { NavLink } from "react-router-dom"
 
@@ -30,7 +31,7 @@ export default class Guild extends Component {
 	componentDidMount() {
 		const input = window.location.pathname.split("/")[2]
 
-		fetch(`https://api.nethergames.org/?action=guilds&guild=${input}`)
+		fetch(`${API_HOST}/guilds/${encodeURIComponent(input)}/stats`)
 			.then((res) => res.json())
 			.then((res) => this.setState({ data: res }))
 			.catch(() => this.setState({ failed: true }))
@@ -40,7 +41,7 @@ export default class Guild extends Component {
 		const stats = this.state.data
 		const failed = this.state.failed
 
-		if (failed || null === stats) {
+		if (failed || null === stats || {} === stats || stats.error) {
 			return <Heading color="white">We couldn't find that guild!</Heading>
 		}
 
@@ -81,7 +82,7 @@ export default class Guild extends Component {
 					/>
 				</Helmet>
 				<Box
-					bg="white"
+					bg="gray.900"
 					borderWidth="1px"
 					overflow="auto"
 					rounded="lg"
@@ -130,28 +131,29 @@ export default class Guild extends Component {
 							</TabPanel>
 							<TabPanel>
 								<List spacing={2}>
-									{stats.members.map((stat) => (
-										<ListItem>
-											<Flex align="center">
-												<Avatar
-													size="sm"
-													src={`https://player.nethergames.org/avatar/${stat}`}
-												/>
-												<Box ml="3">
-													<Text fontWeight="bold">
-														<Link
-															as={NavLink}
-															strict
-															exact
-															to={`/player/${stat}`}
-														>
-															{stat}
-														</Link>
-													</Text>
-												</Box>
-											</Flex>
-										</ListItem>
-									))}
+									{stats.members &&
+										stats.members.map((stat) => (
+											<ListItem>
+												<Flex align="center">
+													<Avatar
+														size="sm"
+														src={`https://player.nethergames.org/avatar/${stat}`}
+													/>
+													<Box ml="3">
+														<Text fontWeight="bold">
+															<Link
+																as={NavLink}
+																strict
+																exact
+																to={`/player/${stat}`}
+															>
+																{stat}
+															</Link>
+														</Text>
+													</Box>
+												</Flex>
+											</ListItem>
+										))}
 								</List>
 							</TabPanel>
 						</TabPanels>
