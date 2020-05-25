@@ -14,6 +14,7 @@ import {
 	Heading,
 	Icon,
 	Spinner,
+	Stack,
 	Text,
 } from "@chakra-ui/core"
 import { Component, h } from "preact"
@@ -105,144 +106,19 @@ export default class Player extends Component {
 							)}
 						</Avatar>
 						<Box ml="3">
-							<Box fontWeight="bold">
-								{stats.name}
-								{stats.tierColors.hasOwnProperty("Bronze") && (
-									<Badge backgroundColor="#b84e00" color="#fff" ml="1">
-										Bronze
-									</Badge>
-								)}
-								{stats.tierColors.hasOwnProperty("Silver") && (
-									<Badge backgroundColor="#777" color="#fff" ml="1">
-										Silver
-									</Badge>
-								)}
-								{stats.tierColors.hasOwnProperty("Gold") && (
-									<Badge backgroundColor="#f79500" color="#fff" ml="1">
-										Gold
-									</Badge>
-								)}
-								{stats.tierColors.hasOwnProperty("Ruby") && (
-									<Badge backgroundColor="#ff0024" color="#fff" ml="1">
-										Ruby
-									</Badge>
-								)}
-								{stats.tierColors.hasOwnProperty("Diamond") && (
-									<Badge backgroundColor="#00c5e5" color="#fff" ml="1">
-										Diamond
-									</Badge>
-								)}
-								{stats.tierColors.hasOwnProperty("Sapphire") && (
-									<Badge backgroundColor="#3b37e8" color="#fff" ml="1">
-										Sapphire
-									</Badge>
-								)}
-								{stats.tierColors.hasOwnProperty("Platinum") && (
-									<Badge backgroundColor="#777" color="#fff" ml="1">
-										Platinum
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Owner") && (
-									<Badge backgroundColor="#ff0024" color="#fff" ml="1">
-										Owner
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Dev") && (
-									<Badge backgroundColor="#ff0041" color="#fff" ml="1">
-										Dev
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Director") && (
-									<Badge backgroundColor="#00cc62" color="#fff" ml="1">
-										Director
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Advisor") && (
-									<Badge backgroundColor="#ff0024" color="#fff" ml="1">
-										Advisor
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Commmunity") && (
-									<Badge backgroundColor="#ff009b" color="#fff" ml="1">
-										Community
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Admin") && (
-									<Badge backgroundColor="#ffac1a" color="#fff" ml="1">
-										Admin
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Supervisor") && (
-									<Badge backgroundColor="#ff00ba" color="#fff" ml="1">
-										Supervisor
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Discord") && (
-									<Badge backgroundColor="#1abc9c" color="#fff" ml="1">
-										Discord
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Support") && (
-									<Badge backgroundColor="#b66ae0" color="#fff" ml="1">
-										Support
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Mod") && (
-									<Badge backgroundColor="#00c5e5" color="#fff" ml="1">
-										Mod
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Crew") && (
-									<Badge backgroundColor="#00cc62" color="#fff" ml="1">
-										Crew
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Trainee") && (
-									<Badge backgroundColor="#ffab1c" color="#fff" ml="1">
-										Trainee
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Builder") && (
-									<Badge backgroundColor="#0092e2" color="#fff" ml="1">
-										Builder
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Artist") && (
-									<Badge backgroundColor="#9b59b6" color="#fff" ml="1">
-										Artist
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Legend") && (
-									<Badge backgroundColor="#00c5e5" color="#fff" ml="1">
-										Legend
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Emerald") && (
-									<Badge backgroundColor="#00cc62" color="#fff" ml="1">
-										Emerald
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Ultra") && (
-									<Badge backgroundColor="#f79500" color="#fff" ml="1">
-										Ultra
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("Partner") && (
-									<Badge backgroundColor="#ff4f00" color="#fff" ml="1">
-										Partner
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("YouTube") && (
-									<Badge backgroundColor="#ff0024" color="#fff" ml="1">
-										YouTube
-									</Badge>
-								)}
-								{stats.rankColors.hasOwnProperty("YT") && (
-									<Badge backgroundColor="#006e96" color="#fff" ml="1">
-										YT
-									</Badge>
-								)}
-							</Box>
+							<Stack align="center" isInline spacing={2}>
+								<Text fontWeight="bold" fontSize="lg">
+									{stats.name}
+								</Text>
+
+								<Badge backgroundColor={stats.tierColors[0]}>
+									{stats.tier}
+								</Badge>
+
+								<Badge backgroundColor={stats.rankColors[0]}>
+									{stats.rank}
+								</Badge>
+							</Stack>
 							<Text fontSize="m">
 								{Math.round((stats.kills / stats.deaths) * 100) / 100} k/d ratio
 							</Text>
