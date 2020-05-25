@@ -151,8 +151,8 @@ export default withPure(() => (
 							Account Dashboard
 						</a>{" "}
 						|{" "}
-						<a href="http://cdn.nethergames.org/assets/mediakit.zip">
-							Media Kit
+						<a href="https://support.nethergames.org/en-au/article/brand-assetsmedia-kit-1jy5uvm/">
+							Brand Assets/Media Kit
 						</a>
 					</div>
 				</div>
