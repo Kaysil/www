@@ -447,7 +447,6 @@ export default function Header() {
 								cursor="pointer"
 								edge="start"
 								height="2rem"
-								style={{ textIndent: "-9999px" }}
 								src="https://cdn.nethergames.org/img/logo/double-line-light.png"
 							/>
 						</RouterLink>

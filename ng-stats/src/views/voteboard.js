@@ -74,7 +74,9 @@ class Voteboard extends Component {
 		}
 
 		if (null === stats || !stats[0]) {
-			return <Spinner thickness="4px" speed="0.65s" size="xl" />
+			return (
+				<Spinner thickness="4px" speed="0.65s" color="blue.500" size="xl" />
+			)
 		}
 
 		const rows = stats.map((stat) => createData(stat.nickname, stat.votes))

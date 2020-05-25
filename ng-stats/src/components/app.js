@@ -1,6 +1,7 @@
 /** @jsx h */
 
-import "./index.css"
+import "focus-visible"
+import "typeface-inter"
 
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import {
@@ -8,7 +9,9 @@ import {
 	ColorModeProvider,
 	Flex,
 	ThemeProvider,
+	theme,
 } from "@chakra-ui/core"
+import { Global, css } from "@emotion/core"
 
 import Faction from "../views/faction"
 import Front from "../views/front"
@@ -45,9 +48,29 @@ const GlobalCss = withStyles({
 	},
 })(() => null)
 
+const customTheme = {
+	...theme,
+	fonts: {
+		...theme.fonts,
+		body: "'Inter var', sans-serif",
+		heading: "'Inter var', sans-serif",
+	},
+}
+
+const GlobalStyles = css`
+	.js-focus-visible :focus:not([data-focus-visible-added]) {
+		outline: none;
+		box-shadow: none;
+	}
+
+	img {
+		text-indent: -10000px;
+	}
+`
+
 const App = () => (
 	<BrowserRouter>
-		<ThemeProvider>
+		<ThemeProvider theme={customTheme}>
 			<ColorModeProvider value="dark">
 				<div
 					id="app"
@@ -63,6 +86,7 @@ const App = () => (
 						<Header />
 						<CSSReset />
 						<GlobalCss />
+						<Global styles={GlobalStyles} />
 						<Switch>
 							<Route exact path="/" component={Front} />
 							<Route path="/parkourboard" component={Parkourboard} />
