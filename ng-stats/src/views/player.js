@@ -143,7 +143,7 @@ export default class Player extends Component {
 								<AccordionPanel pb={4}>{stats.bio}</AccordionPanel>
 							</AccordionItem>
 						)}
-						{stats.winsData[0] !== undefined && (
+						{stats.winsData !== undefined && (
 							<AccordionItem>
 								<AccordionHeader>
 									<Box flex="1" textAlign="left" fontWeight="bold">
@@ -152,41 +152,41 @@ export default class Player extends Component {
 									<AccordionIcon />
 								</AccordionHeader>
 								<AccordionPanel pb={4}>
-									{stats.winsData[0].BR > 0 && (
-										<Text>Battle Royale: {stats.winsData[0].BR}</Text>
+									{stats.winsData.BR > 0 && (
+										<Text>Battle Royale: {stats.winsData.BR}</Text>
 									)}
-									{stats.winsData[0].BW > 0 && (
-										<Text>Bedwars: {stats.winsData[0].BW}</Text>
+									{stats.winsData.BW > 0 && (
+										<Text>Bedwars: {stats.winsData.BW}</Text>
 									)}
-									{stats.winsData[0].BH > 0 && (
-										<Text>Block Hunt: {stats.winsData[0].BH}</Text>
+									{stats.winsData.BH > 0 && (
+										<Text>Block Hunt: {stats.winsData.BH}</Text>
 									)}
-									{stats.winsData[0].BB > 0 && (
-										<Text>Build Battle: {stats.winsData[0].BB}</Text>
+									{stats.winsData.BB > 0 && (
+										<Text>Build Battle: {stats.winsData.BB}</Text>
 									)}
-									{stats.winsData[0].CTF > 0 && (
-										<Text>Capture the Flag: {stats.winsData[0].CTF}</Text>
+									{stats.winsData.CTF > 0 && (
+										<Text>Capture the Flag: {stats.winsData.CTF}</Text>
 									)}
-									{stats.winsData[0].Duels > 0 && (
-										<Text>Duels: {stats.winsData[0].Duels}</Text>
+									{stats.winsData.Duels > 0 && (
+										<Text>Duels: {stats.winsData.Duels}</Text>
 									)}
-									{stats.winsData[0].MM > 0 && (
-										<Text>Murder Mystery: {stats.winsData[0].MM}</Text>
+									{stats.winsData.MM > 0 && (
+										<Text>Murder Mystery: {stats.winsData.MM}</Text>
 									)}
-									{stats.winsData[0].RC > 0 && (
-										<Text>Races: {stats.winsData[0].RC}</Text>
+									{stats.winsData.RC > 0 && (
+										<Text>Races: {stats.winsData.RC}</Text>
 									)}
-									{stats.winsData[0].SC > 0 && (
-										<Text>Soccer: {stats.winsData[0].SC}</Text>
+									{stats.winsData.SC > 0 && (
+										<Text>Soccer: {stats.winsData.SC}</Text>
 									)}
-									{stats.winsData[0].SW > 0 && (
-										<Text>SkyWars: {stats.winsData[0].SW}</Text>
+									{stats.winsData.SW > 0 && (
+										<Text>SkyWars: {stats.winsData.SW}</Text>
 									)}
-									{stats.winsData[0].SG > 0 && (
-										<Text>Survival Games: {stats.winsData[0].SG}</Text>
+									{stats.winsData.SG > 0 && (
+										<Text>Survival Games: {stats.winsData.SG}</Text>
 									)}
-									{stats.winsData[0].TR > 0 && (
-										<Text>TNT Run: {stats.winsData[0].TR}</Text>
+									{stats.winsData.TR > 0 && (
+										<Text>TNT Run: {stats.winsData.TR}</Text>
 									)}
 								</AccordionPanel>
 							</AccordionItem>
