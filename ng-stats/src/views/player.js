@@ -105,13 +105,17 @@ export default class Player extends Component {
 									{stats.name}
 								</Text>
 
-								<Badge backgroundColor={stats.tierColors[0]}>
-									{stats.tier}
-								</Badge>
+								{stats.tierColors.length && (
+									<Badge backgroundColor={stats.tierColors[0]}>
+										{stats.tier}
+									</Badge>
+								)}
 
-								<Badge backgroundColor={stats.rankColors[0]}>
-									{stats.rank}
-								</Badge>
+								{stats.rankColors.length && (
+									<Badge backgroundColor={stats.rankColors[0]}>
+										{stats.rank}
+									</Badge>
+								)}
 							</Stack>
 							<Text fontSize="m">
 								{Math.round((stats.kills / stats.deaths) * 100) / 100} k/d ratio
@@ -132,7 +136,7 @@ export default class Player extends Component {
 						</Text>
 					</Flex>
 					<Accordion allowToggle>
-						{stats.bio !== undefined && (
+						{stats.bio && (
 							<AccordionItem>
 								<AccordionHeader>
 									<Box flex="1" textAlign="left" fontWeight="bold">
@@ -143,7 +147,7 @@ export default class Player extends Component {
 								<AccordionPanel pb={4}>{stats.bio}</AccordionPanel>
 							</AccordionItem>
 						)}
-						{stats.winsData !== undefined && (
+						{stats.winsData && (
 							<AccordionItem>
 								<AccordionHeader>
 									<Box flex="1" textAlign="left" fontWeight="bold">
@@ -191,7 +195,7 @@ export default class Player extends Component {
 								</AccordionPanel>
 							</AccordionItem>
 						)}
-						{stats.factionsData[0] !== undefined && (
+						{stats.factionsData && (
 							<AccordionItem>
 								<AccordionHeader>
 									<Box flex="1" textAlign="left" fontWeight="bold">
