@@ -105,17 +105,18 @@ export default class Player extends Component {
 									{stats.name}
 								</Text>
 
-								{stats.tierColors.length && (
+								{stats.tierColors && (
 									<Badge backgroundColor={stats.tierColors[0]}>
 										{stats.tier}
 									</Badge>
 								)}
 
-								{stats.rankColors.length && (
-									<Badge backgroundColor={stats.rankColors[0]}>
-										{stats.rank}
-									</Badge>
-								)}
+								{stats.ranks &&
+									stats.ranks.map((v, i) => {
+										return (
+											<Badge backgroundColor={stats.rankColors[i]}>{v}</Badge>
+										)
+									})}
 							</Stack>
 							<Text fontSize="m">
 								{Math.round((stats.kills / stats.deaths) * 100) / 100} k/d ratio
