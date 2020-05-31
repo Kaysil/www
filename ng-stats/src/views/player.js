@@ -105,10 +105,8 @@ export default class Player extends Component {
 									{stats.name}
 								</Text>
 
-								{stats.tierColors && (
-									<Badge backgroundColor={stats.tierColors[0]}>
-										{stats.tier}
-									</Badge>
+								{stats.tier && (
+									<Badge backgroundColor={stats.tierColor}>{stats.tier}</Badge>
 								)}
 
 								{stats.ranks &&
