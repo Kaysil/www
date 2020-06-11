@@ -15,6 +15,11 @@ import {
 	Icon,
 	Spinner,
 	Stack,
+	Tab,
+	TabList,
+	TabPanel,
+	TabPanels,
+	Tabs,
 	Text,
 } from "@chakra-ui/core"
 import { Component, h } from "preact"
@@ -22,6 +27,60 @@ import { Component, h } from "preact"
 import { API_HOST } from "../config"
 import { Helmet } from "react-helmet"
 import Tooltip from "@material-ui/core/Tooltip"
+
+function value(value) {
+	return value >= 0 ? value : "-"
+}
+
+function getKdr(kills, deaths) {
+	if (deaths <= 0) return kills
+	return deaths > 0 ? Math.round((kills / deaths) * 100) / 100 : "-"
+}
+
+function createBedwarsTableContents(
+	d,
+	types = ["Solo", "Doubles", "Trios", "Squads"],
+) {
+	return types.map((type) => (
+		<tr>
+			<td>{type}</td>
+
+			<td>{value(d[`bw${type}Kills`])}</td>
+			<td>{value(d[`bw${type}Deaths`])}</td>
+			<td>{getKdr(d[`bw${type}Kills`], d[`bw${type}Deaths`])}</td>
+
+			<td>{value(d[`bw${type}FinalKills`])}</td>
+			<td>{value(d[`bw${type}FinalDeaths`])}</td>
+			<td>{getKdr(d[`bw${type}FinalKills`], d[`bw${type}FinalDeaths`])}</td>
+
+			<td>{value(d[`bw${type}Wins`])}</td>
+			<td>{value(d[`bw${type}Losses`])}</td>
+			<td>{getKdr(d[`bw${type}Wins`], d[`bw${type}Losses`])}</td>
+
+			<td>{value(d[`bw${type}BedsBroken`])}</td>
+		</tr>
+	))
+}
+
+function createSwTableContents(d, types = ["Solo", "Doubles"]) {
+	return types.map((type) => (
+		<tr>
+			<td>{type}</td>
+
+			<td>{value(d[`sw${type}NormalKills`])}</td>
+			<td>{value(d[`sw${type}NormalDeaths`])}</td>
+			<td>{getKdr(d[`sw${type}NormalKills`], d[`sw${type}NormalDeaths`])}</td>
+
+			<td>{value(d[`sw${type}InsaneKills`])}</td>
+			<td>{value(d[`sw${type}InsaneDeaths`])}</td>
+			<td>{getKdr(d[`sw${type}InsaneKills`], d[`sw${type}InsaneDeaths`])}</td>
+
+			<td>{value(d[`sw${type}Wins`])}</td>
+			<td>{value(d[`sw${type}Losses`])}</td>
+			<td>{getKdr(d[`sw${type}Wins`], d[`sw${type}Losses`])}</td>
+		</tr>
+	))
+}
 
 export default class Player extends Component {
 	state = {
@@ -42,7 +101,7 @@ export default class Player extends Component {
 		const stats = this.state.data
 		const failed = this.state.failed
 
-		if (failed || null === stats || {} === stats || stats.error) {
+		if (failed || !stats || stats.error) {
 			return <Heading color="white">We couldn't find that player!</Heading>
 		}
 
@@ -52,8 +111,10 @@ export default class Player extends Component {
 			)
 		}
 
+		const e = stats.extra
+
 		return (
-			<div>
+			<>
 				<Helmet>
 					<title>{stats.name}</title>
 					<meta property="og:site_name" content="NetherGames Network" />
@@ -117,7 +178,7 @@ export default class Player extends Component {
 									})}
 							</Stack>
 							<Text fontSize="m">
-								{Math.round((stats.kills / stats.deaths) * 100) / 100} k/d ratio
+								{getKdr(stats.kills, stats.deaths)} k/d ratio
 							</Text>
 						</Box>
 					</Flex>
@@ -203,18 +264,125 @@ export default class Player extends Component {
 									<AccordionIcon />
 								</AccordionHeader>
 								<AccordionPanel pb={4}>
-									<Text>Bounty: {stats.factionsData[0].bounty}</Text>
-									<Text>Coins: {stats.factionsData[0].coins}</Text>
-									<Text>Join date: {stats.factionsData[0].registerDate}</Text>
-									<Text>Kills: {stats.factionsData[0].kills}</Text>
-									<Text>Power: {stats.factionsData[0].power}</Text>
-									<Text>Success Rate: {stats.factionsData[0].successRate}</Text>
+									<Text>Bounty: {stats.factionsData.bounty}</Text>
+									<Text>Coins: {stats.factionsData.coins}</Text>
+									<Text>Join date: {stats.factionsData.registerDate}</Text>
+									<Text>Kills: {stats.factionsData.kills}</Text>
+									<Text>Power: {stats.factionsData.power}</Text>
+									<Text>Success Rate: {stats.factionsData.successRate}</Text>
+								</AccordionPanel>
+							</AccordionItem>
+						)}
+						{e && (
+							<AccordionItem>
+								<AccordionHeader>
+									<Box flex="1" textAlign="left" fontWeight="bold">
+										Detailed Statistics
+									</Box>
+									<AccordionIcon />
+								</AccordionHeader>
+
+								<AccordionPanel pb={4} overflowY="hidden">
+									<Tabs variant="soft-rounded" variantColor="teal" size="sm">
+										<TabList>
+											<Tab>Bedwars</Tab>
+											<Tab ml={2}>Duels</Tab>
+											<Tab ml={2}>Murder Mystery</Tab>
+											<Tab ml={2}>SkyWars</Tab>
+										</TabList>
+
+										<TabPanels mt={4}>
+											<TabPanel fontSize="sm">
+												<table className="table">
+													<thead>
+														<tr>
+															<th colSpan={1}></th>
+															<th colSpan={3}>Normal</th>
+															<th colSpan={7}>Final</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Type</td>
+															<td>Kills</td>
+															<td>Deaths</td>
+															<td>K/D</td>
+															<td>Kills</td>
+															<td>Deaths</td>
+															<td>K/D</td>
+															<td>Wins</td>
+															<td>Losses</td>
+															<td>W/L</td>
+															<td>Beds Broken</td>
+														</tr>
+
+														{createBedwarsTableContents(e)}
+													</tbody>
+												</table>
+
+												<Text>Coins: {value(e.bwCoins)}</Text>
+												<Text>Streak: {value(e.bwStreak)}</Text>
+												<Text>Best Streak: {value(e.bwBestStreak)}</Text>
+											</TabPanel>
+
+											<TabPanel fontSize="sm"></TabPanel>
+											<TabPanel fontSize="sm"></TabPanel>
+
+											<TabPanel fontSize="sm">
+												<table className="table">
+													<thead>
+														<tr>
+															<th colSpan={1}></th>
+															<th colSpan={3}>Normal</th>
+															<th colSpan={6}>Insane</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Type</td>
+															<td>Kills</td>
+															<td>Deaths</td>
+															<td>K/D</td>
+															<td>Kills</td>
+															<td>Deaths</td>
+															<td>K/D</td>
+															<td>Wins</td>
+															<td>Losses</td>
+															<td>W/L</td>
+														</tr>
+
+														{createSwTableContents(e)}
+
+														<tr>
+															<td>Total</td>
+															<td>{value(e.swKills)}</td>
+															<td>{value(e.swDeaths)}</td>
+															<td>{getKdr(e.swKills, e.swDeaths)}</td>
+															<td colSpan={3}></td>
+															<td>{value(e.swWins)}</td>
+															<td>{value(e.swLosses)}</td>
+															<td>{getKdr(e.swWins, e.swLosses)}</td>
+														</tr>
+													</tbody>
+												</table>
+
+												<Text>Coins: {value(e.swCoins)}</Text>
+												<Text>Blocks Broken: {value(e.swBlocksBroken)}</Text>
+												<Text>Blocks Placed: {value(e.swBlocksPlaced)}</Text>
+												<Text>Arrows Shot: {value(e.swArrowsShot)}</Text>
+												<Text>Eggs Thrown: {value(e.swEggsThrown)}</Text>
+												<Text>
+													Enderpearls Thrown: {value(e.swEpearlsThrown)}
+												</Text>
+											</TabPanel>
+										</TabPanels>
+									</Tabs>
 								</AccordionPanel>
 							</AccordionItem>
 						)}
 					</Accordion>
 				</Box>
-			</div>
+			</>
 		)
 	}
 }

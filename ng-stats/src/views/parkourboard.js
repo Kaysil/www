@@ -69,7 +69,7 @@ class Parkourboard extends Component {
 			{ id: "time", label: "Time (seconds)", align: "right" },
 		]
 
-		if (failed || null === stats || {} === stats || stats.error) {
+		if (failed || !stats || stats.error) {
 			return <Heading color="white">Something went wrong!</Heading>
 		}
 

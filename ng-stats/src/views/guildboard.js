@@ -71,7 +71,7 @@ class Guildboard extends Component {
 			{ id: "xp", label: "XP", align: "right" },
 		]
 
-		if (failed || null === stats || {} === stats || stats.error) {
+		if (failed || !stats || stats.error) {
 			return <Heading color="white">Something went wrong!</Heading>
 		}
 

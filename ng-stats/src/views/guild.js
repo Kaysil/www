@@ -41,7 +41,7 @@ export default class Guild extends Component {
 		const stats = this.state.data
 		const failed = this.state.failed
 
-		if (failed || null === stats || {} === stats || stats.error) {
+		if (failed || !stats || stats.error) {
 			return <Heading color="white">We couldn't find that guild!</Heading>
 		}
 
@@ -52,7 +52,7 @@ export default class Guild extends Component {
 		}
 
 		return (
-			<div>
+			<>
 				<Helmet>
 					<title>{stats.name}</title>
 					<meta property="og:site_name" content="NetherGames Network" />
@@ -153,7 +153,7 @@ export default class Guild extends Component {
 						</TabPanels>
 					</Tabs>
 				</Box>
-			</div>
+			</>
 		)
 	}
 }

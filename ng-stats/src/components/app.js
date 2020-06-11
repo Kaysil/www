@@ -78,6 +78,32 @@ const GlobalStyles = css`
 	img {
 		text-indent: -10000px;
 	}
+
+	/* https://unpkg.com/purecss@2.0.3/build/pure.css */
+
+	.table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		empty-cells: show;
+		border: 1px solid #cbcbcb;
+	}
+
+	.table td,
+	.table th {
+		border-left: 1px solid #cbcbcb;
+		border-width: 0 0 0 1px;
+		font-size: inherit;
+		margin: 0;
+		overflow: visible;
+		padding: 0.5em 1em;
+	}
+
+	.table thead {
+		background-color: #e0e0e0;
+		color: #000;
+		text-align: left;
+		vertical-align: bottom;
+	}
 `
 
 const App = () => (
