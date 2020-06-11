@@ -203,12 +203,12 @@ export default class Player extends Component {
 									<AccordionIcon />
 								</AccordionHeader>
 								<AccordionPanel pb={4}>
-									<Text>Bounty: {stats.factionsData[0].bounty}</Text>
-									<Text>Coins: {stats.factionsData[0].coins}</Text>
-									<Text>Join date: {stats.factionsData[0].registerDate}</Text>
-									<Text>Kills: {stats.factionsData[0].kills}</Text>
-									<Text>Power: {stats.factionsData[0].power}</Text>
-									<Text>Success Rate: {stats.factionsData[0].successRate}</Text>
+									<Text>Bounty: {stats.factionsData.bounty}</Text>
+									<Text>Coins: {stats.factionsData.coins}</Text>
+									<Text>Join date: {stats.factionsData.registerDate}</Text>
+									<Text>Kills: {stats.factionsData.kills}</Text>
+									<Text>Power: {stats.factionsData.power}</Text>
+									<Text>Success Rate: {stats.factionsData.successRate}</Text>
 								</AccordionPanel>
 							</AccordionItem>
 						)}
