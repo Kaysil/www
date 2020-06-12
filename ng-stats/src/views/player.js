@@ -337,6 +337,18 @@ export default class Player extends Component {
 																</TableRow>
 
 																{createBedwarsTableContents(e)}
+
+																<TableRow>
+																	<TableCell>Total</TableCell>
+																	<TableCell>{value(e.bwKills)}</TableCell>
+																	<TableCell>{value(e.bwDeaths)}</TableCell>
+																	<TableCell>
+																		{getKdr(e.bwKills, e.bwDeaths)}
+																	</TableCell>
+																	<TableCell>{value(e.bwBedsBroken)}</TableCell>
+																	<TableCell>{value(e.bwKills)}</TableCell>
+																	<TableCell>{value(e.bwWins)}</TableCell>
+																</TableRow>
 															</TableBody>
 														</Table>
 													</div>
