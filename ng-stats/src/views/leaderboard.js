@@ -21,19 +21,18 @@ import TableHead from "@material-ui/core/TableHead"
 import TablePagination from "@material-ui/core/TablePagination"
 import TableRow from "@material-ui/core/TableRow"
 import { makeStyles } from "@material-ui/core/styles"
-import { theme } from "../components/header"
 
 function createData(name, kdr, kills, deaths, wins, level, credits) {
 	return { name, kdr, kills, deaths, wins, level, credits }
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
 	root: {
-		marginTop: "3rem",
 		width: "100%",
 	},
 	"@media (min-width: 720px)": {
 		root: {
+			maxHeight: "75%",
 			maxWidth: "75%",
 		},
 	},
@@ -77,7 +76,7 @@ class Leaderboard extends Component {
 
 		const columns = [
 			{ id: "name", label: "Name" },
-			{ id: "kdr", label: "K/DR", align: "right" },
+			{ id: "kdr", label: "K/D", align: "right" },
 			{ id: "kills", label: "Kills", align: "right" },
 			{ id: "deaths", label: "Deaths", align: "right" },
 			{ id: "wins", label: "Wins", align: "right" },
@@ -85,7 +84,7 @@ class Leaderboard extends Component {
 			{ id: "credits", label: "Credits", align: "right" },
 		]
 
-		if (failed || null === stats || {} === stats || stats.error) {
+		if (failed || stats.error) {
 			return <Heading color="white">Something went wrong!</Heading>
 		}
 
@@ -114,7 +113,7 @@ class Leaderboard extends Component {
 		return (
 			<Paper className={classes.root}>
 				<div className={classes.tableWrapper}>
-					<Table stickyHeader aria-label="sticky table">
+					<Table stickyHeader>
 						<TableHead>
 							<TableRow>
 								{columns.map(({ id, align, minWidth, label }) => (

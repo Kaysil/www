@@ -39,9 +39,8 @@ class Front extends Component {
 			<Box
 				bg="gray.900"
 				borderWidth="1px"
-				overflow="hidden"
 				rounded="lg"
-				minW={["sm", "lg"]}
+				minW={["unset", "lg"]}
 				p="4"
 			>
 				<Formik

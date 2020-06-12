@@ -28,11 +28,11 @@ function createData(nickname, votes) {
 
 const styles = () => ({
 	root: {
-		marginTop: "3rem",
 		width: "100%",
 	},
 	"@media (min-width: 720px)": {
 		root: {
+			maxHeight: "75%",
 			maxWidth: "75%",
 		},
 	},
@@ -44,7 +44,7 @@ const styles = () => ({
 
 class Voteboard extends Component {
 	state = {
-		data: null,
+		data: {},
 		failed: false,
 		page: 0,
 		rowsPerPage: 10,
@@ -88,7 +88,7 @@ class Voteboard extends Component {
 		return (
 			<Paper className={classes.root}>
 				<div className={classes.tableWrapper}>
-					<Table stickyHeader aria-label="sticky table">
+					<Table stickyHeader>
 						<TableHead>
 							<TableRow>
 								{columns.map(({ id, align, minWidth, label }) => (

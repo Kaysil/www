@@ -11,6 +11,7 @@ import {
 	ThemeProvider,
 	theme,
 } from "@chakra-ui/core"
+import { Container, withStyles } from "@material-ui/core"
 import { Global, css } from "@emotion/core"
 
 import Faction from "../views/faction"
@@ -25,7 +26,6 @@ import Player from "../views/player"
 import { Vote } from "../views/vote"
 import Voteboard from "../views/voteboard"
 import { h } from "preact"
-import { withStyles } from "@material-ui/core"
 
 if (process.env.NODE_ENV !== "development") {
 	window.$crisp = []
@@ -70,6 +70,14 @@ const customTheme = {
 }
 
 const GlobalStyles = css`
+	body {
+		background: url(https://cdn.nethergames.org/img/bg.jpg) no-repeat center
+			center fixed;
+		background-size: cover;
+		height: 100vh;
+		overflow: hidden;
+	}
+
 	.js-focus-visible :focus:not([data-focus-visible-added]) {
 		outline: none;
 		box-shadow: none;
@@ -84,35 +92,29 @@ const App = () => (
 	<BrowserRouter>
 		<ThemeProvider theme={customTheme}>
 			<ColorModeProvider value="dark">
-				<div
-					id="app"
-					style={{
-						background:
-							"url(https://cdn.nethergames.org/img/bg.jpg) no-repeat center center fixed",
-						backgroundSize: "cover",
-						height: "100vh",
-						overflow: "hidden",
-					}}
+				<Header />
+				<CSSReset />
+				<GlobalCss />
+				<Global styles={GlobalStyles} />
+				<Flex
+					h="calc(100% - 64px)"
+					justify="center"
+					align="center"
+					overflowY="auto"
 				>
-					<Flex align="center" justify="center" h="100vh">
-						<Header />
-						<CSSReset />
-						<GlobalCss />
-						<Global styles={GlobalStyles} />
-						<Switch>
-							<Route exact path="/" component={Front} />
-							<Route path="/parkourboard" component={Parkourboard} />
-							<Route path="/player" component={Player} />
-							<Route path="/leaderboard" component={Leaderboard} />
-							<Route path="/guildboard" component={Guildboard} />
-							<Route path="/guild" component={Guild} />
-							<Route path="/faction" component={Faction} />
-							<Route path="/vote" component={Vote} />
-							<Route path="/voteboard" component={Voteboard} />
-							<Route component={NotFound} />
-						</Switch>
-					</Flex>
-				</div>
+					<Switch>
+						<Route exact path="/" component={Front} />
+						<Route path="/parkourboard" component={Parkourboard} />
+						<Route path="/player" component={Player} />
+						<Route path="/leaderboard" component={Leaderboard} />
+						<Route path="/guildboard" component={Guildboard} />
+						<Route path="/guild" component={Guild} />
+						<Route path="/faction" component={Faction} />
+						<Route path="/vote" component={Vote} />
+						<Route path="/voteboard" component={Voteboard} />
+						<Route component={NotFound} />
+					</Switch>
+				</Flex>
 			</ColorModeProvider>
 		</ThemeProvider>
 	</BrowserRouter>

@@ -28,11 +28,11 @@ function createData(name, leader, level, xp) {
 
 const styles = () => ({
 	root: {
-		marginTop: "3rem",
 		width: "100%",
 	},
 	"@media (min-width: 720px)": {
 		root: {
+			maxHeight: "75%",
 			maxWidth: "75%",
 		},
 	},
@@ -71,7 +71,7 @@ class Guildboard extends Component {
 			{ id: "xp", label: "XP", align: "right" },
 		]
 
-		if (failed || null === stats || {} === stats || stats.error) {
+		if (failed || stats.error) {
 			return <Heading color="white">Something went wrong!</Heading>
 		}
 
@@ -92,7 +92,7 @@ class Guildboard extends Component {
 		return (
 			<Paper className={classes.root}>
 				<div className={classes.tableWrapper}>
-					<Table stickyHeader aria-label="sticky table">
+					<Table stickyHeader>
 						<TableHead>
 							<TableRow>
 								{columns.map(({ id, align, minWidth, label }) => (

@@ -1,6 +1,6 @@
 /** @jsx h */
 
-import { Heading } from "@chakra-ui/core"
+import { Flex } from "@chakra-ui/core"
 import { h } from "preact"
 
 const NotFound = () => (

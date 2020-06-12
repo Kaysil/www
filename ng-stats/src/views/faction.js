@@ -41,7 +41,7 @@ export default class Faction extends Component {
 		const stats = this.state.data
 		const failed = this.state.failed
 
-		if (failed || null === stats || {} === stats || stats.error) {
+		if (failed || stats.error) {
 			return <Heading color="white">We couldn't find that faction!</Heading>
 		}
 
@@ -52,7 +52,7 @@ export default class Faction extends Component {
 		}
 
 		return (
-			<div>
+			<>
 				<Helmet>
 					<title>{stats.name}</title>
 					<meta property="og:site_name" content="NetherGames Network" />
@@ -78,7 +78,6 @@ export default class Faction extends Component {
 				<Box
 					bg="gray.900"
 					borderWidth="1px"
-					overflow="auto"
 					rounded="lg"
 					maxH="75vh"
 					maxW="lg"
@@ -155,7 +154,7 @@ export default class Faction extends Component {
 						</TabPanels>
 					</Tabs>
 				</Box>
-			</div>
+			</>
 		)
 	}
 }

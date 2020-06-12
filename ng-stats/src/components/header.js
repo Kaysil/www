@@ -168,7 +168,7 @@ const menuItems = [
 	},
 	{
 		key: "14",
-		caption: "Top K/DR",
+		caption: "Top K/D",
 		onClick: () => {
 			location.href = "/leaderboard/kdr"
 		},
@@ -394,7 +394,7 @@ export default function Header() {
 							onClick={toggleDrawer(side, false)}
 							href="/leaderboard/kdr"
 						>
-							<ListItemText primary="Top K/DR" />
+							<ListItemText primary="Top K/D" />
 						</ListItem>
 						<ListItem
 							button
@@ -439,7 +439,7 @@ export default function Header() {
 	return (
 		<ThemeProvider theme={theme}>
 			<div className={classes.root}>
-				<AppBar position="fixed">
+				<AppBar position="sticky">
 					<Toolbar className={classes.navBar}>
 						<RouterLink to="/">
 							<Image
