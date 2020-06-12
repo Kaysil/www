@@ -349,7 +349,7 @@ export default class Player extends Component {
 																		{getKdr(e.bwKills, e.bwDeaths)}
 																	</TableCell>
 																	<TableCell>{value(e.bwBedsBroken)}</TableCell>
-																	<TableCell>{value(e.bwKills)}</TableCell>
+																	<TableCell>{value(e.bwFinalKills)}</TableCell>
 																	<TableCell>{value(e.bwWins)}</TableCell>
 																</TableRow>
 															</TableBody>
