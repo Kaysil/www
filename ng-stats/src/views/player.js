@@ -26,7 +26,14 @@ import { Component, h } from "preact"
 
 import { API_HOST } from "../config"
 import { Helmet } from "react-helmet"
+import Paper from "@material-ui/core/Paper"
+import Table from "@material-ui/core/Table"
+import TableBody from "@material-ui/core/TableBody"
+import TableCell from "@material-ui/core/TableCell"
+import TableHead from "@material-ui/core/TableHead"
+import TableRow from "@material-ui/core/TableRow"
 import Tooltip from "@material-ui/core/Tooltip"
+import { makeStyles } from "@material-ui/core/styles"
 
 function value(value) {
 	return value >= 0 ? value : "-"
@@ -42,45 +49,77 @@ function createBedwarsTableContents(
 	types = ["Solo", "Doubles", "Trios", "Squads"],
 ) {
 	return types.map((type) => (
-		<tr>
-			<td>{type}</td>
+		<TableRow>
+			<TableCell>{type}</TableCell>
 
-			<td>{value(d[`bw${type}Kills`])}</td>
-			<td>{value(d[`bw${type}Deaths`])}</td>
-			<td>{getKdr(d[`bw${type}Kills`], d[`bw${type}Deaths`])}</td>
+			<TableCell>{value(d[`bw${type}Kills`])}</TableCell>
+			<TableCell>{value(d[`bw${type}Deaths`])}</TableCell>
+			<TableCell>{getKdr(d[`bw${type}Kills`], d[`bw${type}Deaths`])}</TableCell>
 
-			<td>{value(d[`bw${type}FinalKills`])}</td>
-			<td>{value(d[`bw${type}FinalDeaths`])}</td>
-			<td>{getKdr(d[`bw${type}FinalKills`], d[`bw${type}FinalDeaths`])}</td>
+			<TableCell>{value(d[`bw${type}FinalKills`])}</TableCell>
+			<TableCell>{value(d[`bw${type}FinalDeaths`])}</TableCell>
+			<TableCell>
+				{getKdr(d[`bw${type}FinalKills`], d[`bw${type}FinalDeaths`])}
+			</TableCell>
 
-			<td>{value(d[`bw${type}Wins`])}</td>
-			<td>{value(d[`bw${type}Losses`])}</td>
-			<td>{getKdr(d[`bw${type}Wins`], d[`bw${type}Losses`])}</td>
+			<TableCell>{value(d[`bw${type}Wins`])}</TableCell>
+			<TableCell>{value(d[`bw${type}Losses`])}</TableCell>
+			<TableCell>{getKdr(d[`bw${type}Wins`], d[`bw${type}Losses`])}</TableCell>
 
-			<td>{value(d[`bw${type}BedsBroken`])}</td>
-		</tr>
+			<TableCell>{value(d[`bw${type}BedsBroken`])}</TableCell>
+		</TableRow>
 	))
 }
 
 function createSwTableContents(d, types = ["Solo", "Doubles"]) {
 	return types.map((type) => (
-		<tr>
-			<td>{type}</td>
+		<TableRow>
+			<TableCell>{type}</TableCell>
 
-			<td>{value(d[`sw${type}NormalKills`])}</td>
-			<td>{value(d[`sw${type}NormalDeaths`])}</td>
-			<td>{getKdr(d[`sw${type}NormalKills`], d[`sw${type}NormalDeaths`])}</td>
+			<TableCell>{value(d[`sw${type}NormalKills`])}</TableCell>
+			<TableCell>{value(d[`sw${type}NormalDeaths`])}</TableCell>
+			<TableCell>
+				{getKdr(d[`sw${type}NormalKills`], d[`sw${type}NormalDeaths`])}
+			</TableCell>
 
-			<td>{value(d[`sw${type}InsaneKills`])}</td>
-			<td>{value(d[`sw${type}InsaneDeaths`])}</td>
-			<td>{getKdr(d[`sw${type}InsaneKills`], d[`sw${type}InsaneDeaths`])}</td>
+			<TableCell>{value(d[`sw${type}InsaneKills`])}</TableCell>
+			<TableCell>{value(d[`sw${type}InsaneDeaths`])}</TableCell>
+			<TableCell>
+				{getKdr(d[`sw${type}InsaneKills`], d[`sw${type}InsaneDeaths`])}
+			</TableCell>
 
-			<td>{value(d[`sw${type}Wins`])}</td>
-			<td>{value(d[`sw${type}Losses`])}</td>
-			<td>{getKdr(d[`sw${type}Wins`], d[`sw${type}Losses`])}</td>
-		</tr>
+			<TableCell>{value(d[`sw${type}Wins`])}</TableCell>
+			<TableCell>{value(d[`sw${type}Losses`])}</TableCell>
+			<TableCell>{getKdr(d[`sw${type}Wins`], d[`sw${type}Losses`])}</TableCell>
+		</TableRow>
 	))
 }
+
+function createMmTableContents(d, types = ["Classic", "Infection"]) {
+	return types.map((type) => (
+		<TableRow>
+			<TableCell>{type}</TableCell>
+
+			<TableCell>{value(d[`mm${type}Kills`])}</TableCell>
+			<TableCell>{value(d[`mm${type}Deaths`])}</TableCell>
+			<TableCell>{getKdr(d[`mm${type}Kills`], d[`mm${type}Deaths`])}</TableCell>
+
+			<TableCell>{value(d[`mm${type}Wins`])}</TableCell>
+			<TableCell>{value(d[`mm${type}Losses`])}</TableCell>
+			<TableCell>{getKdr(d[`mm${type}Wins`], d[`mm${type}Losses`])}</TableCell>
+		</TableRow>
+	))
+}
+
+const useStyles = makeStyles(() => ({
+	root: {
+		width: "100%",
+	},
+	tableWrapper: {
+		maxHeight: 440,
+		overflow: "auto",
+	},
+}))
 
 export default class Player extends Component {
 	state = {
@@ -98,10 +137,12 @@ export default class Player extends Component {
 	}
 
 	render() {
+		const classes = useStyles()
+
 		const stats = this.state.data
 		const failed = this.state.failed
 
-		if (failed || !stats || stats.error) {
+		if (failed || stats.error) {
 			return <Heading color="white">We couldn't find that player!</Heading>
 		}
 
@@ -140,10 +181,8 @@ export default class Player extends Component {
 				<Box
 					bg="gray.900"
 					borderWidth="1px"
-					overflow="auto"
-					rounded="lg"
-					minH="m"
-					maxW="lg"
+					rounded={["none", "lg"]}
+					maxW="100%"
 					p="4"
 				>
 					<Flex>
@@ -277,7 +316,7 @@ export default class Player extends Component {
 							<AccordionItem>
 								<AccordionHeader>
 									<Box flex="1" textAlign="left" fontWeight="bold">
-										Detailed Statistics
+										Game Statistics
 									</Box>
 									<AccordionIcon />
 								</AccordionHeader>
@@ -293,87 +332,162 @@ export default class Player extends Component {
 
 										<TabPanels mt={4}>
 											<TabPanel fontSize="sm">
-												<table className="table">
-													<thead>
-														<tr>
-															<th colSpan={1}></th>
-															<th colSpan={3}>Normal</th>
-															<th colSpan={7}>Final</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Type</td>
-															<td>Kills</td>
-															<td>Deaths</td>
-															<td>K/D</td>
-															<td>Kills</td>
-															<td>Deaths</td>
-															<td>K/D</td>
-															<td>Wins</td>
-															<td>Losses</td>
-															<td>W/L</td>
-															<td>Beds Broken</td>
-														</tr>
+												<Paper className={classes.root}>
+													<div className={classes.tableWrapper}>
+														<Table stickyHeader style={{ maxWidth: "" }}>
+															<TableHead>
+																<TableRow>
+																	<TableCell colSpan={1}></TableCell>
+																	<TableCell colSpan={3}>Normal</TableCell>
+																	<TableCell colSpan={7}>Final</TableCell>
+																</TableRow>
+															</TableHead>
+															<TableBody>
+																<TableRow>
+																	<TableCell>Type</TableCell>
+																	<TableCell>Kills</TableCell>
+																	<TableCell>Deaths</TableCell>
+																	<TableCell>K/D</TableCell>
+																	<TableCell>Kills</TableCell>
+																	<TableCell>Deaths</TableCell>
+																	<TableCell>K/D</TableCell>
+																	<TableCell>Wins</TableCell>
+																	<TableCell>Losses</TableCell>
+																	<TableCell>W/L</TableCell>
+																	<TableCell>Beds Broken</TableCell>
+																</TableRow>
 
-														{createBedwarsTableContents(e)}
-													</tbody>
-												</table>
+																{createBedwarsTableContents(e)}
+															</TableBody>
+														</Table>
+													</div>
 
-												<Text>Coins: {value(e.bwCoins)}</Text>
-												<Text>Streak: {value(e.bwStreak)}</Text>
-												<Text>Best Streak: {value(e.bwBestStreak)}</Text>
+													<Text p={4}>
+														Coins: {value(e.bwCoins)} · Streak:{" "}
+														{value(e.bwStreak)} · Best Streak:{" "}
+														{value(e.bwBestStreak)}
+													</Text>
+												</Paper>
 											</TabPanel>
 
-											<TabPanel fontSize="sm"></TabPanel>
-											<TabPanel fontSize="sm"></TabPanel>
+											<TabPanel fontSize="sm">
+												<Text>Coins: {value(e.duelsCoins)}</Text>
+												<Text>Kills: {value(e.duelsKills)}</Text>
+												<Text>Deaths: {value(e.duelsDeaths)}</Text>
+												<Text>K/D: {getKdr(e.duelsKills, e.duelsDeaths)}</Text>
+												<Text>Arrows Shot: {value(e.duelsArrowsShot)}</Text>
+												<Text>Melee Hits: {value(e.duelsMeleeHits)}</Text>
+												<Text>Streak: {value(e.duelsStreak)}</Text>
+												<Text>Best Streak: {value(e.duelsBestStreak)}</Text>
+												<Text>Wins: {value(e.duelsWins)}</Text>
+												<Text>Losses: {value(e.duelsLosses)}</Text>
+												<Text>W/L: {getKdr(e.duelsWins, e.duelsLosses)}</Text>
+											</TabPanel>
 
 											<TabPanel fontSize="sm">
-												<table className="table">
-													<thead>
-														<tr>
-															<th colSpan={1}></th>
-															<th colSpan={3}>Normal</th>
-															<th colSpan={6}>Insane</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>Type</td>
-															<td>Kills</td>
-															<td>Deaths</td>
-															<td>K/D</td>
-															<td>Kills</td>
-															<td>Deaths</td>
-															<td>K/D</td>
-															<td>Wins</td>
-															<td>Losses</td>
-															<td>W/L</td>
-														</tr>
+												<Paper className={classes.root}>
+													<div className={classes.tableWrapper}>
+														<Table>
+															<TableHead>
+																<TableRow>
+																	<TableCell colSpan={1}></TableCell>
+																	<TableCell colSpan={3}>Classic</TableCell>
+																	<TableCell colSpan={3}>Infection</TableCell>
+																</TableRow>
+															</TableHead>
+															<TableBody>
+																<TableRow>
+																	<TableCell>Type</TableCell>
+																	<TableCell>Kills</TableCell>
+																	<TableCell>Deaths</TableCell>
+																	<TableCell>K/D</TableCell>
+																	<TableCell>Wins</TableCell>
+																	<TableCell>Losses</TableCell>
+																	<TableCell>W/L</TableCell>
+																</TableRow>
 
-														{createSwTableContents(e)}
+																{createMmTableContents(e)}
 
-														<tr>
-															<td>Total</td>
-															<td>{value(e.swKills)}</td>
-															<td>{value(e.swDeaths)}</td>
-															<td>{getKdr(e.swKills, e.swDeaths)}</td>
-															<td colSpan={3}></td>
-															<td>{value(e.swWins)}</td>
-															<td>{value(e.swLosses)}</td>
-															<td>{getKdr(e.swWins, e.swLosses)}</td>
-														</tr>
-													</tbody>
-												</table>
+																<TableRow>
+																	<TableCell>Total</TableCell>
+																	<TableCell>{value(e.mmKills)}</TableCell>
+																	<TableCell>{value(e.mmDeaths)}</TableCell>
+																	<TableCell>
+																		{getKdr(e.mmKills, e.mmDeaths)}
+																	</TableCell>
+																	<TableCell>{value(e.mmWins)}</TableCell>
+																	<TableCell>{value(e.mmLosses)}</TableCell>
+																	<TableCell>
+																		{getKdr(e.mmWins, e.mmLosses)}
+																	</TableCell>
+																</TableRow>
+															</TableBody>
+														</Table>
+													</div>
 
-												<Text>Coins: {value(e.swCoins)}</Text>
-												<Text>Blocks Broken: {value(e.swBlocksBroken)}</Text>
-												<Text>Blocks Placed: {value(e.swBlocksPlaced)}</Text>
-												<Text>Arrows Shot: {value(e.swArrowsShot)}</Text>
-												<Text>Eggs Thrown: {value(e.swEggsThrown)}</Text>
-												<Text>
-													Enderpearls Thrown: {value(e.swEpearlsThrown)}
-												</Text>
+													<Text p={4}>
+														Coins: {value(e.mmCoins)} · Bow Kills:{" "}
+														{value(e.mmBowKills)} · Knife Kills:{" "}
+														{value(e.mmKnifeKills)} · Throw Knife Kills:{" "}
+														{value(e.mmThrowKnifeKills)}
+													</Text>
+												</Paper>
+											</TabPanel>
+
+											<TabPanel fontSize="sm">
+												<Paper className={classes.root}>
+													<div className={classes.tableWrapper}>
+														<Table>
+															<TableHead>
+																<TableRow>
+																	<TableCell colSpan={1}></TableCell>
+																	<TableCell colSpan={3}>Normal</TableCell>
+																	<TableCell colSpan={6}>Insane</TableCell>
+																</TableRow>
+															</TableHead>
+															<TableBody>
+																<TableRow>
+																	<TableCell>Type</TableCell>
+																	<TableCell>Kills</TableCell>
+																	<TableCell>Deaths</TableCell>
+																	<TableCell>K/D</TableCell>
+																	<TableCell>Kills</TableCell>
+																	<TableCell>Deaths</TableCell>
+																	<TableCell>K/D</TableCell>
+																	<TableCell>Wins</TableCell>
+																	<TableCell>Losses</TableCell>
+																	<TableCell>W/L</TableCell>
+																</TableRow>
+
+																{createSwTableContents(e)}
+
+																<TableRow>
+																	<TableCell>Total</TableCell>
+																	<TableCell>{value(e.swKills)}</TableCell>
+																	<TableCell>{value(e.swDeaths)}</TableCell>
+																	<TableCell>
+																		{getKdr(e.swKills, e.swDeaths)}
+																	</TableCell>
+																	<TableCell colSpan={3}></TableCell>
+																	<TableCell>{value(e.swWins)}</TableCell>
+																	<TableCell>{value(e.swLosses)}</TableCell>
+																	<TableCell>
+																		{getKdr(e.swWins, e.swLosses)}
+																	</TableCell>
+																</TableRow>
+															</TableBody>
+														</Table>
+													</div>
+
+													<Text p={4}>
+														Coins: {value(e.swCoins)} · Blocks Broken:{" "}
+														{value(e.swBlocksBroken)} · Blocks Placed:{" "}
+														{value(e.swBlocksPlaced)} · Arrows Shot:{" "}
+														{value(e.swArrowsShot)} · Eggs Thrown:{" "}
+														{value(e.swEggsThrown)} · Enderpearls Thrown:{" "}
+														{value(e.swEpearlsThrown)}
+													</Text>
+												</Paper>
 											</TabPanel>
 										</TabPanels>
 									</Tabs>

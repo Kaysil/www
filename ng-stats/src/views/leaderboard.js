@@ -28,11 +28,11 @@ function createData(name, kdr, kills, deaths, wins, level, credits) {
 
 const useStyles = makeStyles(() => ({
 	root: {
-		marginTop: "3rem",
 		width: "100%",
 	},
 	"@media (min-width: 720px)": {
 		root: {
+			maxHeight: "75%",
 			maxWidth: "75%",
 		},
 	},
@@ -84,7 +84,7 @@ class Leaderboard extends Component {
 			{ id: "credits", label: "Credits", align: "right" },
 		]
 
-		if (failed || !stats || stats.error) {
+		if (failed || stats.error) {
 			return <Heading color="white">Something went wrong!</Heading>
 		}
 
@@ -113,7 +113,7 @@ class Leaderboard extends Component {
 		return (
 			<Paper className={classes.root}>
 				<div className={classes.tableWrapper}>
-					<Table stickyHeader aria-label="sticky table">
+					<Table stickyHeader>
 						<TableHead>
 							<TableRow>
 								{columns.map(({ id, align, minWidth, label }) => (

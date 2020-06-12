@@ -41,7 +41,7 @@ export default class Faction extends Component {
 		const stats = this.state.data
 		const failed = this.state.failed
 
-		if (failed || !stats || stats.error) {
+		if (failed || stats.error) {
 			return <Heading color="white">We couldn't find that faction!</Heading>
 		}
 
@@ -78,7 +78,6 @@ export default class Faction extends Component {
 				<Box
 					bg="gray.900"
 					borderWidth="1px"
-					overflow="auto"
 					rounded="lg"
 					maxH="75vh"
 					maxW="lg"

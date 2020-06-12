@@ -439,7 +439,7 @@ export default function Header() {
 	return (
 		<ThemeProvider theme={theme}>
 			<div className={classes.root}>
-				<AppBar position="fixed">
+				<AppBar position="sticky">
 					<Toolbar className={classes.navBar}>
 						<RouterLink to="/">
 							<Image

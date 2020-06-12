@@ -11,6 +11,7 @@ import {
 	ThemeProvider,
 	theme,
 } from "@chakra-ui/core"
+import { Container, withStyles } from "@material-ui/core"
 import { Global, css } from "@emotion/core"
 
 import Faction from "../views/faction"
@@ -25,7 +26,6 @@ import Player from "../views/player"
 import { Vote } from "../views/vote"
 import Voteboard from "../views/voteboard"
 import { h } from "preact"
-import { withStyles } from "@material-ui/core"
 
 if (process.env.NODE_ENV !== "development") {
 	window.$crisp = []
@@ -70,6 +70,14 @@ const customTheme = {
 }
 
 const GlobalStyles = css`
+	body {
+		background: url(https://cdn.nethergames.org/img/bg.jpg) no-repeat center
+			center fixed;
+		background-size: cover;
+		height: 100vh;
+		overflow: hidden;
+	}
+
 	.js-focus-visible :focus:not([data-focus-visible-added]) {
 		outline: none;
 		box-shadow: none;
@@ -78,67 +86,35 @@ const GlobalStyles = css`
 	img {
 		text-indent: -10000px;
 	}
-
-	/* https://unpkg.com/purecss@2.0.3/build/pure.css */
-
-	.table {
-		border-collapse: collapse;
-		border-spacing: 0;
-		empty-cells: show;
-		border: 1px solid #cbcbcb;
-	}
-
-	.table td,
-	.table th {
-		border-left: 1px solid #cbcbcb;
-		border-width: 0 0 0 1px;
-		font-size: inherit;
-		margin: 0;
-		overflow: visible;
-		padding: 0.5em 1em;
-	}
-
-	.table thead {
-		background-color: #e0e0e0;
-		color: #000;
-		text-align: left;
-		vertical-align: bottom;
-	}
 `
 
 const App = () => (
 	<BrowserRouter>
 		<ThemeProvider theme={customTheme}>
 			<ColorModeProvider value="dark">
-				<div
-					id="app"
-					style={{
-						background:
-							"url(https://cdn.nethergames.org/img/bg.jpg) no-repeat center center fixed",
-						backgroundSize: "cover",
-						height: "100vh",
-						overflow: "hidden",
-					}}
+				<Header />
+				<CSSReset />
+				<GlobalCss />
+				<Global styles={GlobalStyles} />
+				<Flex
+					h="calc(100% - 64px)"
+					justify="center"
+					align="center"
+					overflowY="auto"
 				>
-					<Flex align="center" justify="center" h="100vh">
-						<Header />
-						<CSSReset />
-						<GlobalCss />
-						<Global styles={GlobalStyles} />
-						<Switch>
-							<Route exact path="/" component={Front} />
-							<Route path="/parkourboard" component={Parkourboard} />
-							<Route path="/player" component={Player} />
-							<Route path="/leaderboard" component={Leaderboard} />
-							<Route path="/guildboard" component={Guildboard} />
-							<Route path="/guild" component={Guild} />
-							<Route path="/faction" component={Faction} />
-							<Route path="/vote" component={Vote} />
-							<Route path="/voteboard" component={Voteboard} />
-							<Route component={NotFound} />
-						</Switch>
-					</Flex>
-				</div>
+					<Switch>
+						<Route exact path="/" component={Front} />
+						<Route path="/parkourboard" component={Parkourboard} />
+						<Route path="/player" component={Player} />
+						<Route path="/leaderboard" component={Leaderboard} />
+						<Route path="/guildboard" component={Guildboard} />
+						<Route path="/guild" component={Guild} />
+						<Route path="/faction" component={Faction} />
+						<Route path="/vote" component={Vote} />
+						<Route path="/voteboard" component={Voteboard} />
+						<Route component={NotFound} />
+					</Switch>
+				</Flex>
 			</ColorModeProvider>
 		</ThemeProvider>
 	</BrowserRouter>

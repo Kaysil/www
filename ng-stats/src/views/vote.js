@@ -6,7 +6,6 @@ import {
 	Heading,
 	Input,
 	InputGroup,
-	Link,
 	Stack,
 	Text,
 } from "@chakra-ui/core"
@@ -63,7 +62,6 @@ export const Vote = () => {
 					<Box
 						bg="gray.900"
 						borderWidth="1px"
-						overflow="hidden"
 						rounded="lg"
 						minW={["sm", "lg"]}
 						p="4"
