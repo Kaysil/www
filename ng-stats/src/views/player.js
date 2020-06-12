@@ -357,19 +357,19 @@ export default class Player extends Component {
 													</div>
 
 													<Text p={4}>
-														Coins: {value(e.bwCoins)} · Streak:{" "}
-														{value(e.bwStreak)} · Best Streak:{" "}
-														{value(e.bwBestStreak)}
+														Iron Collected: {value(e.bwIronCollected)} · Gold
+														Collected: {value(e.bwGoldCollected)} · Diamonds
+														Collected: {value(e.bwDiamondsCollected)} · Emeralds
+														Collected: {value(e.bwEmeraldsCollected)}
 													</Text>
 												</Paper>
 											</TabPanel>
 
 											<TabPanel fontSize="sm">
-												<Text>Coins: {value(e.duelsCoins)}</Text>
 												<Text>Kills: {value(e.duelsKills)}</Text>
 												<Text>Deaths: {value(e.duelsDeaths)}</Text>
 												<Text>K/D: {getKdr(e.duelsKills, e.duelsDeaths)}</Text>
-												<Text>Arrows Shot: {value(e.duelsArrowsShot)}</Text>
+												<Text>Arrows Hit: {value(e.duelsArrowsShot)}</Text>
 												<Text>Melee Hits: {value(e.duelsMeleeHits)}</Text>
 												<Text>Streak: {value(e.duelsStreak)}</Text>
 												<Text>Best Streak: {value(e.duelsBestStreak)}</Text>
@@ -407,8 +407,7 @@ export default class Player extends Component {
 													</div>
 
 													<Text p={4}>
-														Coins: {value(e.mmCoins)} · Bow Kills:{" "}
-														{value(e.mmBowKills)} · Knife Kills:{" "}
+														Bow Kills: {value(e.mmBowKills)} · Knife Kills:{" "}
 														{value(e.mmKnifeKills)} · Throw Knife Kills:{" "}
 														{value(e.mmThrowKnifeKills)}
 													</Text>
@@ -462,7 +461,6 @@ export default class Player extends Component {
 													</div>
 
 													<Text p={4}>
-														Coins: {value(e.swCoins)} · Blocks Broken:{" "}
 														{value(e.swBlocksBroken)} · Blocks Placed:{" "}
 														{value(e.swBlocksPlaced)} · Arrows Shot:{" "}
 														{value(e.swArrowsShot)} · Eggs Thrown:{" "}
