@@ -97,8 +97,6 @@ function createMmTableContents(d, types = ["Classic", "Infection"]) {
 			<TableCell>{getKdr(d[`mm${type}Kills`], d[`mm${type}Deaths`])}</TableCell>
 
 			<TableCell>{value(d[`mm${type}Wins`])}</TableCell>
-			<TableCell>{value(d[`mm${type}Losses`])}</TableCell>
-			<TableCell>{getKdr(d[`mm${type}Wins`], d[`mm${type}Losses`])}</TableCell>
 		</TableRow>
 	))
 }
@@ -376,8 +374,6 @@ export default class Player extends Component {
 																	<TableCell>Deaths</TableCell>
 																	<TableCell>K/D</TableCell>
 																	<TableCell>Wins</TableCell>
-																	<TableCell>Losses</TableCell>
-																	<TableCell>W/L</TableCell>
 																</TableRow>
 
 																{createMmTableContents(e)}
@@ -390,10 +386,6 @@ export default class Player extends Component {
 																		{getKdr(e.mmKills, e.mmDeaths)}
 																	</TableCell>
 																	<TableCell>{value(e.mmWins)}</TableCell>
-																	<TableCell>{value(e.mmLosses)}</TableCell>
-																	<TableCell>
-																		{getKdr(e.mmWins, e.mmLosses)}
-																	</TableCell>
 																</TableRow>
 															</TableBody>
 														</Table>
@@ -412,6 +404,14 @@ export default class Player extends Component {
 												<Paper className={classes.root}>
 													<div className={classes.tableWrapper}>
 														<Table>
+															<TableHead>
+																<TableRow>
+																	<TableCell colSpan={1}></TableCell>
+																	<TableCell colSpan={3}>Normal</TableCell>
+																	<TableCell colSpan={6}>Insane</TableCell>
+																</TableRow>
+															</TableHead>
+
 															<TableBody>
 																<TableRow>
 																	<TableCell>Type</TableCell>
