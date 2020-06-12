@@ -171,6 +171,7 @@ export default class Player extends Component {
 				<Box
 					bg="gray.900"
 					borderWidth="1px"
+					minW={["unset", "45rem"]}
 					rounded={["none", "lg"]}
 					maxW="100%"
 					p="4"
