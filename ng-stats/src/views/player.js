@@ -234,7 +234,9 @@ export default class Player extends Component {
 									</Box>
 									<AccordionIcon />
 								</AccordionHeader>
-								<AccordionPanel pb={4}>{stats.bio}</AccordionPanel>
+								<AccordionPanel pb={4} maxW="45rem">
+									{stats.bio}
+								</AccordionPanel>
 							</AccordionItem>
 						)}
 						{stats.winsData && (
