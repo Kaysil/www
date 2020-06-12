@@ -56,17 +56,9 @@ function createBedwarsTableContents(
 			<TableCell>{value(d[`bw${type}Deaths`])}</TableCell>
 			<TableCell>{getKdr(d[`bw${type}Kills`], d[`bw${type}Deaths`])}</TableCell>
 
-			<TableCell>{value(d[`bw${type}FinalKills`])}</TableCell>
-			<TableCell>{value(d[`bw${type}FinalDeaths`])}</TableCell>
-			<TableCell>
-				{getKdr(d[`bw${type}FinalKills`], d[`bw${type}FinalDeaths`])}
-			</TableCell>
-
-			<TableCell>{value(d[`bw${type}Wins`])}</TableCell>
-			<TableCell>{value(d[`bw${type}Losses`])}</TableCell>
-			<TableCell>{getKdr(d[`bw${type}Wins`], d[`bw${type}Losses`])}</TableCell>
-
 			<TableCell>{value(d[`bw${type}BedsBroken`])}</TableCell>
+			<TableCell>{value(d[`bw${type}FinalKills`])}</TableCell>
+			<TableCell>{value(d[`bw${type}Wins`])}</TableCell>
 		</TableRow>
 	))
 }
@@ -334,27 +326,16 @@ export default class Player extends Component {
 											<TabPanel fontSize="sm">
 												<Paper className={classes.root}>
 													<div className={classes.tableWrapper}>
-														<Table stickyHeader style={{ maxWidth: "" }}>
-															<TableHead>
-																<TableRow>
-																	<TableCell colSpan={1}></TableCell>
-																	<TableCell colSpan={3}>Normal</TableCell>
-																	<TableCell colSpan={7}>Final</TableCell>
-																</TableRow>
-															</TableHead>
+														<Table stickyHeader>
 															<TableBody>
 																<TableRow>
 																	<TableCell>Type</TableCell>
 																	<TableCell>Kills</TableCell>
 																	<TableCell>Deaths</TableCell>
 																	<TableCell>K/D</TableCell>
-																	<TableCell>Kills</TableCell>
-																	<TableCell>Deaths</TableCell>
-																	<TableCell>K/D</TableCell>
-																	<TableCell>Wins</TableCell>
-																	<TableCell>Losses</TableCell>
-																	<TableCell>W/L</TableCell>
 																	<TableCell>Beds Broken</TableCell>
+																	<TableCell>Final Kills</TableCell>
+																	<TableCell>Wins</TableCell>
 																</TableRow>
 
 																{createBedwarsTableContents(e)}
@@ -388,13 +369,6 @@ export default class Player extends Component {
 												<Paper className={classes.root}>
 													<div className={classes.tableWrapper}>
 														<Table>
-															<TableHead>
-																<TableRow>
-																	<TableCell colSpan={1}></TableCell>
-																	<TableCell colSpan={3}>Classic</TableCell>
-																	<TableCell colSpan={3}>Infection</TableCell>
-																</TableRow>
-															</TableHead>
 															<TableBody>
 																<TableRow>
 																	<TableCell>Type</TableCell>
@@ -438,13 +412,6 @@ export default class Player extends Component {
 												<Paper className={classes.root}>
 													<div className={classes.tableWrapper}>
 														<Table>
-															<TableHead>
-																<TableRow>
-																	<TableCell colSpan={1}></TableCell>
-																	<TableCell colSpan={3}>Normal</TableCell>
-																	<TableCell colSpan={6}>Insane</TableCell>
-																</TableRow>
-															</TableHead>
 															<TableBody>
 																<TableRow>
 																	<TableCell>Type</TableCell>
@@ -484,7 +451,7 @@ export default class Player extends Component {
 														{value(e.swBlocksBroken)} · Blocks Placed:{" "}
 														{value(e.swBlocksPlaced)} · Arrows Shot:{" "}
 														{value(e.swArrowsShot)} · Eggs Thrown:{" "}
-														{value(e.swEggsThrown)} · Enderpearls Thrown:{" "}
+														{value(e.swEggsThrown)} · Ender Pearls Thrown:{" "}
 														{value(e.swEpearlsThrown)}
 													</Text>
 												</Paper>
