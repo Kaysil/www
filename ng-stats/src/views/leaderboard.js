@@ -32,7 +32,6 @@ const useStyles = makeStyles(() => ({
 	},
 	"@media (min-width: 720px)": {
 		root: {
-			maxHeight: "75%",
 			maxWidth: "75%",
 		},
 	},

@@ -97,6 +97,7 @@ const App = () => (
 				<GlobalCss />
 				<Global styles={GlobalStyles} />
 				<Flex
+					p="1rem"
 					h="calc(100% - 64px)"
 					justify="center"
 					align="center"
