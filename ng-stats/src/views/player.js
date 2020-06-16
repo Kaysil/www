@@ -178,7 +178,7 @@ export default class Player extends Component {
 				>
 					<Flex>
 						<Avatar src={`https://player.nethergames.org/avatar/${stats.name}`}>
-							{stats.voted && (
+							{stats.voted > 0 && (
 								<Tooltip title="Voted">
 									<AvatarBadge
 										as={Icon}
