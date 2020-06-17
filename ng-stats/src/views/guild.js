@@ -72,14 +72,13 @@ export default class Guild extends Component {
 					<meta property="og:profile:username" content={stats.name} />
 					<meta
 						property="og:description"
-						content={`Leader: ${stats.leader} | Level: ${stats.leader} | XP: ${stats.xp}`}
+						content={`Leader: ${stats.leader} | Level: ${stats.level} | XP: ${stats.xp}`}
 					/>
 				</Helmet>
 				<Box
 					bg="gray.900"
 					borderWidth="1px"
 					rounded="lg"
-					maxH="75vh"
 					maxW="lg"
 					p="4"
 				>

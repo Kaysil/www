@@ -79,7 +79,6 @@ export default class Faction extends Component {
 					bg="gray.900"
 					borderWidth="1px"
 					rounded="lg"
-					maxH="75vh"
 					maxW="lg"
 					p="4"
 				>
