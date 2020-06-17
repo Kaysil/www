@@ -83,13 +83,13 @@ export default class Guild extends Component {
 							<Tab>Officers</Tab>
 							<Tab>Members</Tab>
 						</TabList>
-						<TabPanels pt={4}>
+						<TabPanels pt={4} overflow="auto">
 							<TabPanel>
 								<Text>Leader: {stats.leader}</Text>
 								<Text>Level: {stats.level}</Text>
 								<Text>XP: {stats.xp}</Text>
 							</TabPanel>
-							<TabPanel overflow="auto">
+							<TabPanel>
 								<List spacing={2}>
 									{stats.officers.map((stat) => (
 										<ListItem>
@@ -115,7 +115,7 @@ export default class Guild extends Component {
 									))}
 								</List>
 							</TabPanel>
-							<TabPanel overflow="auto">
+							<TabPanel>
 								<List spacing={2}>
 									{stats.members &&
 										stats.members.map((stat) => (

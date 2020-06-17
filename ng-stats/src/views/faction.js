@@ -83,14 +83,14 @@ export default class Faction extends Component {
 							<Tab>Officers</Tab>
 							<Tab>Members</Tab>
 						</TabList>
-						<TabPanels pt={4}>
+						<TabPanels pt={4} overflow="auto">
 							<TabPanel>
 								<Text>Allies: {stats.allies}</Text>
 								<Text>Balance: {stats.balance}</Text>
 								<Text>Leader: {stats.leader}</Text>
 								<Text>Strength: {stats.strength}</Text>
 							</TabPanel>
-							<TabPanel overflow="auto">
+							<TabPanel>
 								<List spacing={2}>
 									{stats.officers &&
 										stats.officers.map((stat) => (
@@ -117,7 +117,7 @@ export default class Faction extends Component {
 										))}
 								</List>
 							</TabPanel>
-							<TabPanel overflow="auto">
+							<TabPanel>
 								<List spacing={2}>
 									{stats.members &&
 										stats.members.map((stat) => (
