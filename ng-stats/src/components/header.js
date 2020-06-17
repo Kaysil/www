@@ -98,90 +98,104 @@ const menuItems = [
 				key: "4",
 				caption: "Build Battle",
 				onClick: () => {
-					location.href = "/leaderboard/wins/BB"
+					location.href = "/leaderboard/wins/bb"
 				},
 			},
 			{
 				key: "5",
-				caption: "BlockHunt",
+				caption: "Block Hunt",
 				onClick: () => {
-					location.href = "/leaderboard/wins/BH"
+					location.href = "/leaderboard/wins/bh"
 				},
 			},
 			{
 				key: "6",
 				caption: "Battle Royale",
 				onClick: () => {
-					location.href = "/leaderboard/wins/BR"
+					location.href = "/leaderboard/wins/br"
 				},
 			},
 			{
 				key: "7",
 				caption: "Bedwars",
 				onClick: () => {
-					location.href = "/leaderboard/wins/BW"
+					location.href = "/leaderboard/wins/bw"
 				},
 			},
 			{
 				key: "8",
 				caption: "Duels",
 				onClick: () => {
-					location.href = "/leaderboard/wins/Duels"
+					location.href = "/leaderboard/wins/duels"
 				},
 			},
 			{
 				key: "9",
 				caption: "Murder Mystery",
 				onClick: () => {
-					location.href = "/leaderboard/wins/MM"
+					location.href = "/leaderboard/wins/mm"
 				},
 			},
 			{
 				key: "10",
 				caption: "Races",
 				onClick: () => {
-					location.href = "/leaderboard/wins/RC"
+					location.href = "/leaderboard/wins/rc"
 				},
 			},
 			{
 				key: "11",
 				caption: "Soccer",
 				onClick: () => {
-					location.href = "/leaderboard/wins/SC"
+					location.href = "/leaderboard/wins/sc"
 				},
 			},
 			{
 				key: "12",
+				caption: "Survival Games",
+				onClick: () => {
+					location.href = "/leaderboard/wins/sg"
+				},
+			},
+			{
+				key: "13",
 				caption: "SkyWars",
 				onClick: () => {
-					location.href = "/leaderboard/wins/SW"
+					location.href = "/leaderboard/wins/sw"
+				},
+			},
+			{
+				key: "14",
+				caption: "TNT Run",
+				onClick: () => {
+					location.href = "/leaderboard/wins/tr"
 				},
 			},
 		],
 	},
 	{
-		key: "13",
+		key: "15",
 		caption: "Top Kills",
 		onClick: () => {
 			location.href = "/leaderboard/kills"
 		},
 	},
 	{
-		key: "14",
+		key: "16",
 		caption: "Top K/D",
 		onClick: () => {
 			location.href = "/leaderboard/kdr"
 		},
 	},
 	{
-		key: "15",
+		key: "17",
 		caption: "Top Guilds",
 		onClick: () => {
 			location.href = "/guildboard"
 		},
 	},
 	{
-		key: "16",
+		key: "18",
 		caption: "Best Parkour",
 		onClick: () => {
 			location.href = "/parkourboard"
