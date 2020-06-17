@@ -75,15 +75,9 @@ export default class Faction extends Component {
 						content={`Leader: ${stats.leader} | Strength: ${stats.strength} | Balance: ${stats.balance}`}
 					/>
 				</Helmet>
-				<Box
-					bg="gray.900"
-					borderWidth="1px"
-					rounded="lg"
-					maxW="lg"
-					p="4"
-				>
+				<Flex bg="gray.900" borderWidth="1px" flexDir="column" maxH="75vh" maxW="lg" p="4" rounded="lg">
 					<Heading>{stats.name}</Heading>
-					<Tabs variant="enclosed" pt="4">
+					<Tabs variant="enclosed" pt="4" d="flex" flex={1} flexDir="column" minH={0}>
 						<TabList>
 							<Tab>General</Tab>
 							<Tab>Officers</Tab>
@@ -96,7 +90,7 @@ export default class Faction extends Component {
 								<Text>Leader: {stats.leader}</Text>
 								<Text>Strength: {stats.strength}</Text>
 							</TabPanel>
-							<TabPanel>
+							<TabPanel overflow="auto">
 								<List spacing={2}>
 									{stats.officers &&
 										stats.officers.map((stat) => (
@@ -123,7 +117,7 @@ export default class Faction extends Component {
 										))}
 								</List>
 							</TabPanel>
-							<TabPanel>
+							<TabPanel overflow="auto">
 								<List spacing={2}>
 									{stats.members &&
 										stats.members.map((stat) => (
@@ -152,7 +146,7 @@ export default class Faction extends Component {
 							</TabPanel>
 						</TabPanels>
 					</Tabs>
-				</Box>
+				</Flex>
 			</>
 		)
 	}
