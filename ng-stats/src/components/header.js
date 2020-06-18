@@ -433,7 +433,7 @@ export default function Header() {
 				<ListItem
 					button
 					component={Link}
-					href="https://sso.nethergames.org/?service=account"
+					href="https://login.nethergames.org/?service=account"
 					onClick={toggleDrawer(side, false)}
 				>
 					<ListItemText primary="Settings" />
@@ -491,7 +491,7 @@ export default function Header() {
 										horizontal: "right",
 									}}
 								/>
-								<Button href="https://sso.nethergames.org/?service=account">
+								<Button href="https://login.nethergames.org/?service=account">
 									Settings
 								</Button>
 								<Button component={NavLink} strict exact to={"/vote"}>
