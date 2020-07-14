@@ -462,7 +462,7 @@ export default class Player extends Component {
 
 													<Text p={4}>
 														Blocks Broken: {value(e.swBlocksBroken)} · Blocks
-														Placed: {value(e.swBlocksPlaced)} · Arrows Shot:{" "}
+														Placed: {value(e.swBlocksPlaced)} · Arrows Hit:{" "}
 														{value(e.swArrowsShot)} · Eggs Thrown:{" "}
 														{value(e.swEggsThrown)} · Ender Pearls Thrown:{" "}
 														{value(e.swEpearlsThrown)}
