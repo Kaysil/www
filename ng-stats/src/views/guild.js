@@ -17,10 +17,9 @@ import {
 	Text,
 } from "@chakra-ui/core"
 import { Component, h } from "preact"
-
-import { API_HOST } from "../config"
 import { Helmet } from "react-helmet"
 import { NavLink } from "react-router-dom"
+import { API_HOST } from "../config"
 
 export default class Guild extends Component {
 	state = {
@@ -45,7 +44,7 @@ export default class Guild extends Component {
 			return <Heading color="white">We couldn't find that guild!</Heading>
 		}
 
-		if (!stats[0] && !stats.officers) {
+		if (!stats) {
 			return (
 				<Spinner thickness="4px" speed="0.65s" color="blue.500" size="xl" />
 			)
@@ -75,9 +74,24 @@ export default class Guild extends Component {
 						content={`Leader: ${stats.leader} | Level: ${stats.level} | XP: ${stats.xp}`}
 					/>
 				</Helmet>
-				<Flex bg="gray.900" borderWidth="1px" flexDir="column" maxH="75vh" maxW="lg" p="4" rounded="lg">
+				<Flex
+					bg="gray.900"
+					borderWidth="1px"
+					flexDir="column"
+					maxH="75vh"
+					maxW="lg"
+					p="4"
+					rounded="lg"
+				>
 					<Heading>{stats.name}</Heading>
-					<Tabs variant="enclosed" pt="4" d="flex" flex={1} flexDir="column" minH={0}>
+					<Tabs
+						variant="enclosed"
+						pt="4"
+						d="flex"
+						flex={1}
+						flexDir="column"
+						minH={0}
+					>
 						<TabList>
 							<Tab>General</Tab>
 							<Tab>Officers</Tab>
@@ -91,28 +105,29 @@ export default class Guild extends Component {
 							</TabPanel>
 							<TabPanel>
 								<List spacing={2}>
-									{stats.officers.map((stat) => (
-										<ListItem>
-											<Flex align="center">
-												<Avatar
-													size="sm"
-													src={`https://player.nethergames.org/avatar/${stat}`}
-												/>
-												<Box ml="3">
-													<Text fontWeight="bold">
-														<Link
-															as={NavLink}
-															strict
-															exact
-															to={`/player/${stat}`}
-														>
-															{stat}
-														</Link>
-													</Text>
-												</Box>
-											</Flex>
-										</ListItem>
-									))}
+									{stats.officers &&
+										stats.officers.map((stat) => (
+											<ListItem>
+												<Flex align="center">
+													<Avatar
+														size="sm"
+														src={`https://player.nethergames.org/avatar/${stat}`}
+													/>
+													<Box ml="3">
+														<Text fontWeight="bold">
+															<Link
+																as={NavLink}
+																strict
+																exact
+																to={`/player/${stat}`}
+															>
+																{stat}
+															</Link>
+														</Text>
+													</Box>
+												</Flex>
+											</ListItem>
+										))}
 								</List>
 							</TabPanel>
 							<TabPanel>

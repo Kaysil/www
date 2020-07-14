@@ -75,9 +75,24 @@ export default class Faction extends Component {
 						content={`Leader: ${stats.leader} | Strength: ${stats.strength} | Balance: ${stats.balance}`}
 					/>
 				</Helmet>
-				<Flex bg="gray.900" borderWidth="1px" flexDir="column" maxH="75vh" maxW="lg" p="4" rounded="lg">
+				<Flex
+					bg="gray.900"
+					borderWidth="1px"
+					flexDir="column"
+					maxH="75vh"
+					maxW="lg"
+					p="4"
+					rounded="lg"
+				>
 					<Heading>{stats.name}</Heading>
-					<Tabs variant="enclosed" pt="4" d="flex" flex={1} flexDir="column" minH={0}>
+					<Tabs
+						variant="enclosed"
+						pt="4"
+						d="flex"
+						flex={1}
+						flexDir="column"
+						minH={0}
+					>
 						<TabList>
 							<Tab>General</Tab>
 							<Tab>Officers</Tab>
