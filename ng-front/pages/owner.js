@@ -12,6 +12,7 @@ export default function OwnerPage() {
 		<Head>
 			<title>Helpdesk | NetherGames Network</title>
 			<meta name="robots" content="noindex" />
+			<meta name="theme-color" content="invalid" />
 			<meta
 				property="og:description"
 				content="To apply for owner, you'll need to create a forums account."
