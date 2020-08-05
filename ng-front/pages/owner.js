@@ -1,4 +1,5 @@
 import Head from "next/head"
+import { useEffect } from "react"
 
 let RICK_ROLL_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
