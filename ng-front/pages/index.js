@@ -31,7 +31,7 @@ export default () => (
 						href="https://store.nethergames.org/category/titan"
 						title="TITAN RANK RELEASED"
 						titleMobile="TITAN RANK RELEASED"
-					>							    |
+					>	
 						TITAN RANK RELEASED - Looking for more perks? You can now
 						buy the titan rank! Conditions apply — Augest 5 2020
 					</Notification>
