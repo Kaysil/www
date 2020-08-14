@@ -28,12 +28,12 @@ export default () => (
 					active={isMobile ? 32 : 160}
 				>
 					<Notification
-						href="https://forums.nethergames.org/threads/discord-ban-appeals.8418/"
-						title="DISCORD BAN APPEALS"
-						titleMobile="DISCORD BAN APPEALS"
+						href="https://store.nethergames.org/category/titan"
+						title="TITAN RANK RELEASED"
+						titleMobile="TITAN RANK RELEASED"
 					>
-						DISCORD BAN APPEALS - Banned from our Discord server? You can now
-						appeal it! Conditions apply — Tuesday, May 12th
+						TITAN RANK RELEASED - Interested in private games and other cool perks?
+						Get it with the Titan rank! Buy now — Wednesday, August 5th
 					</Notification>
 					<Navbar hideLogo={!isMobile} />
 				</Header>

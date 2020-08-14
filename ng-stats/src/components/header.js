@@ -201,6 +201,13 @@ const menuItems = [
 			location.href = "/parkourboard"
 		},
 	},
+	{
+		key: "19",
+		caption: "Bedwars Competition",
+		onClick: () => {
+			location.href = "/eventboard"
+		},
+	},
 ]
 
 export default function Header() {
@@ -427,6 +434,15 @@ export default function Header() {
 							href={"/parkourboard"}
 						>
 							<ListItemText primary="Best Parkour" />
+						</ListItem>
+						<ListItem
+							button
+							className={classes.nested}
+							component={Link}
+							onClick={toggleDrawer(side, false)}
+							href={"/eventboard"}
+						>
+							<ListItemText primary="Bedwars Competition" />
 						</ListItem>
 					</List>
 				</Collapse>
