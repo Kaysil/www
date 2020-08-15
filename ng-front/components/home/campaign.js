@@ -7,8 +7,8 @@ export default () => (
 			<span>Bedwars</span>
 			<span>Creative</span>
 			<span>Duels</span>
-			<span>Factions</span>
 			<span>Murder Mystery</span>
+			<span>Factions</span>
 			<span>Skyblock</span>
 			<span>SkyWars</span>
 			<span>And more!</span>
