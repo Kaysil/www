@@ -11,7 +11,7 @@ export default withMediaQuery(({ title, description, children }) => (
 				name="description"
 				content={
 					description ||
-					"All for one. All for fun. Play Bedwars, Creative, Murder Mystery and SkyWars among other games with your friends now."
+					"All for one. All for fun. Play Bedwars, Creative, Duels, Murder Mystery, Skyblock and SkyWars among other games with your friends now."
 				}
 			/>
 		</Head>
