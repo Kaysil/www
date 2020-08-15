@@ -16,7 +16,7 @@ export default () => (
 			image={"https://cdn.nethergames.org/img/logo/double-line-light.png"}
 			title="NetherGames"
 			url="https://nethergames.org"
-			description="All for one. All for fun. Play Bedwars, Creative, Duels, Factions, Murder Mystery, Skyblock and SkyWars among other games with your friends now."
+			description="All for one. All for fun. Play Bedwars, Creative, Duels, Factions, Murder Mystery, Factions, Skyblock and SkyWars among other games with your friends now."
 		/>
 		<MediaQueryConsumer>
 			{({ isMobile }) => (
