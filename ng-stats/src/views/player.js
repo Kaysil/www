@@ -281,6 +281,9 @@ export default class Player extends Component {
 									{stats.winsData.SG > 0 && (
 										<Text>Survival Games: {stats.winsData.SG}</Text>
 									)}
+									{stats.winsData.TB > 0 && (
+										<Text>The Bridge: {stats.winsData.TB}</Text>
+									)}
 									{stats.winsData.TR > 0 && (
 										<Text>TNT Run: {stats.winsData.TR}</Text>
 									)}
@@ -321,6 +324,7 @@ export default class Player extends Component {
 											<Tab ml={2}>Duels</Tab>
 											<Tab ml={2}>Murder Mystery</Tab>
 											<Tab ml={2}>SkyWars</Tab>
+											<Tab ml={2}>The Bridge</Tab>
 										</TabList>
 
 										<TabPanels mt={4}>
@@ -468,6 +472,19 @@ export default class Player extends Component {
 														{value(e.swEpearlsThrown)}
 													</Text>
 												</Paper>
+											</TabPanel>
+
+											<TabPanel fontSize="sm">
+												<Text>Kills: {value(e.tbKills)}</Text>
+												<Text>Deaths: {value(e.tbDeaths)}</Text>
+												<Text>K/D: {getKdr(e.tbKills, e.tbDeaths)}</Text>
+												<Text>Arrows Hit: {value(e.tbArrowsShot)}</Text>
+												<Text>Melee Hits: {value(e.tbMeleeHits)}</Text>
+												<Text>Streak: {value(e.tbStreak)}</Text>
+												<Text>Best Streak: {value(e.tbBestStreak)}</Text>
+												<Text>Wins: {value(e.tbWins)}</Text>
+												<Text>Losses: {value(e.tbLosses)}</Text>
+												<Text>W/L: {getKdr(e.tbWins, e.tbLosses)}</Text>
 											</TabPanel>
 										</TabPanels>
 									</Tabs>
