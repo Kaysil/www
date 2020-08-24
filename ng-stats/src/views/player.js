@@ -480,6 +480,7 @@ export default class Player extends Component {
 												<Text>K/D: {getKdr(e.tbKills, e.tbDeaths)}</Text>
 												<Text>Arrows Hit: {value(e.tbArrowsShot)}</Text>
 												<Text>Melee Hits: {value(e.tbMeleeHits)}</Text>
+												<Text>Goals: {value(e.tbGoals)}</Text>
 												<Text>Streak: {value(e.tbStreak)}</Text>
 												<Text>Best Streak: {value(e.tbBestStreak)}</Text>
 												<Text>Wins: {value(e.tbWins)}</Text>
