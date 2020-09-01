@@ -71,7 +71,6 @@ export default class Guild extends Component {
 					<meta property="og:profile:username" content={stats.name} />
 					<meta
 						property="og:description"
-						//content={`Leader: ${stats.leader} | Level: ${stats.level} | XP: ${stats.xp}`}
 						content={`Leader: ${stats.leader}`}
 					/>
 				</Helmet>
@@ -101,8 +100,6 @@ export default class Guild extends Component {
 						<TabPanels pt={4} overflow="auto">
 							<TabPanel>
 								<Text>Leader: {stats.leader}</Text>
-								//<Text>Level: {stats.level}</Text>
-								//<Text>XP: {stats.xp}</Text>
 							</TabPanel>
 							<TabPanel>
 								<List spacing={2}>

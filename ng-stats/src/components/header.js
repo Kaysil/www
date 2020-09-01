@@ -138,48 +138,55 @@ const menuItems = [
 			},
 			{
 				key: "10",
+				caption: "Momma Says",
+				onClick: () => {
+					location.href = "/leaderboard/wins/ms"
+				},
+			},
+			{
+				key: "11",
 				caption: "Murder Mystery",
 				onClick: () => {
 					location.href = "/leaderboard/wins/mm"
 				},
 			},
 			{
-				key: "11",
+				key: "12",
 				caption: "Races",
 				onClick: () => {
 					location.href = "/leaderboard/wins/rc"
 				},
 			},
 			{
-				key: "12",
+				key: "13",
 				caption: "Soccer",
 				onClick: () => {
 					location.href = "/leaderboard/wins/sc"
 				},
 			},
 			{
-				key: "13",
+				key: "14",
 				caption: "Survival Games",
 				onClick: () => {
 					location.href = "/leaderboard/wins/sg"
 				},
 			},
 			{
-				key: "14",
+				key: "15",
 				caption: "SkyWars",
 				onClick: () => {
 					location.href = "/leaderboard/wins/sw"
 				},
 			},
 			{
-				key: "15",
+				key: "16",
 				caption: "The Bridge",
 				onClick: () => {
 					location.href = "/leaderboard/wins/tb"
 				},
 			},
 			{
-				key: "16",
+				key: "17",
 				caption: "TNT Run",
 				onClick: () => {
 					location.href = "/leaderboard/wins/tr"
@@ -188,38 +195,24 @@ const menuItems = [
 		],
 	},
 	{
-		key: "17",
+		key: "18",
 		caption: "Top Kills",
 		onClick: () => {
 			location.href = "/leaderboard/kills"
 		},
 	},
 	{
-		key: "18",
+		key: "19",
 		caption: "Top K/D",
 		onClick: () => {
 			location.href = "/leaderboard/kdr"
 		},
 	},
-	/*{
-		key: "19",
-		caption: "Top Guilds",
-		onClick: () => {
-			location.href = "/guildboard"
-		},
-	},*/
 	{
-		key: "19",
+		key: "20",
 		caption: "Best Parkour",
 		onClick: () => {
 			location.href = "/parkourboard"
-		},
-	},
-	{
-		key: "20",
-		caption: "Bedwars Competition",
-		onClick: () => {
-			location.href = "/eventboard"
 		},
 	},
 ]
@@ -389,6 +382,15 @@ export default function Header() {
 									className={classes.nested}
 									component={Link}
 									onClick={toggleDrawer(side, false)}
+									href="/leaderboard/wins/MS"
+								>
+									<ListItemText primary="Momma Says" />
+								</ListItem>
+								<ListItem
+									button
+									className={classes.nested}
+									component={Link}
+									onClick={toggleDrawer(side, false)}
 									href="/leaderboard/wins/MM"
 								>
 									<ListItemText primary="Murder Mystery" />
@@ -449,15 +451,6 @@ export default function Header() {
 						>
 							<ListItemText primary="Top K/D" />
 						</ListItem>
-						/*<ListItem
-							button
-							className={classes.nested}
-							component={Link}
-							onClick={toggleDrawer(side, false)}
-							href={"/guildboard"}
-						>
-							<ListItemText primary="Top Guilds" />
-						</ListItem>*/
 						<ListItem
 							button
 							className={classes.nested}
@@ -466,15 +459,6 @@ export default function Header() {
 							href={"/parkourboard"}
 						>
 							<ListItemText primary="Best Parkour" />
-						</ListItem>
-						<ListItem
-							button
-							className={classes.nested}
-							component={Link}
-							onClick={toggleDrawer(side, false)}
-							href={"/eventboard"}
-						>
-							<ListItemText primary="Bedwars Competition" />
 						</ListItem>
 					</List>
 				</Collapse>

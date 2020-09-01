@@ -266,6 +266,9 @@ export default class Player extends Component {
 									{stats.winsData.Duels > 0 && (
 										<Text>Duels: {stats.winsData.Duels}</Text>
 									)}
+									{stats.winsData.MS > 0 && (
+										<Text>Momma Says: {stats.winsData.MS}</Text>
+									)}
 									{stats.winsData.MM > 0 && (
 										<Text>Murder Mystery: {stats.winsData.MM}</Text>
 									)}
@@ -320,7 +323,8 @@ export default class Player extends Component {
 								<AccordionPanel pb={4} overflowY="hidden">
 									<Tabs variant="soft-rounded" variantColor="teal" size="sm">
 										<TabList>
-											<Tab>Bedwars</Tab>
+											<Tab>Arcade</Tab>
+											<Tab ml={2}>Bedwars</Tab>
 											<Tab ml={2}>Duels</Tab>
 											<Tab ml={2}>Murder Mystery</Tab>
 											<Tab ml={2}>SkyWars</Tab>
@@ -328,6 +332,19 @@ export default class Player extends Component {
 										</TabList>
 
 										<TabPanels mt={4}>
+											<TabPanel fontSize="sm">
+												<Text>Build Battle</Text>
+												<Text>Solo Wins: {value(e.bbSoloWins)}</Text>
+												<Text>Doubles Wins: {value(e.bbDoublesWins)}</Text>
+												<Text></Text>
+												<Text>Momma Says</Text>
+												<Text>Successes: {value(e.msSuccesses)}</Text>
+												<Text>Fails: {value(e.msFails)}</Text>
+												<Text></Text>
+												<Text>Soccer</Text>
+												<Text>Goals: {value(e.scGoals)}</Text>
+											</TabPanel>
+
 											<TabPanel fontSize="sm">
 												<Paper className={classes.root}>
 													<div className={classes.tableWrapper}>
