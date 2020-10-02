@@ -69,10 +69,7 @@ export default class Guild extends Component {
 						content={`https://player.nethergames.org/avatar/${stats.leader}`}
 					/>
 					<meta property="og:profile:username" content={stats.name} />
-					<meta
-						property="og:description"
-						content={`Leader: ${stats.leader}`}
-					/>
+					<meta property="og:description" content={`Leader: ${stats.leader}`} />
 				</Helmet>
 				<Flex
 					bg="gray.900"

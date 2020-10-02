@@ -2,12 +2,12 @@
 	"name": "NetherGames",
 	"icons": [
 		{
-			"src": "/static/favicon/android-chrome-192x192.png?v=1",
+			"src": "/favicon/android-chrome-192x192.png?v=1",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "/static/favicon/android-chrome-512x512.png?v=1",
+			"src": "/favicon/android-chrome-512x512.png?v=1",
 			"type": "image/png",
 			"sizes": "512x512"
 		}

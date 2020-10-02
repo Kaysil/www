@@ -8,31 +8,31 @@ export default function App({ Component, pageProps }) {
 				<link
 					rel="apple-touch-icon"
 					sizes="180x180"
-					href="/static/favicon/apple-touch-icon.png?v=1"
+					href="/favicon/apple-touch-icon.png?v=1"
 				/>
 				<link
 					rel="icon"
 					type="image/png"
 					sizes="32x32"
-					href="/static/favicon/favicon-32x32.png?v=1"
+					href="/favicon/favicon-32x32.png?v=1"
 				/>
 				<link
 					rel="icon"
 					type="image/png"
 					sizes="16x16"
-					href="/static/favicon/favicon-16x16.png?v=1"
+					href="/favicon/favicon-16x16.png?v=1"
 				/>
-				<link rel="manifest" href="/static/favicon/site.webmanifest?v=1" />
+				<link rel="manifest" href="/favicon/site.webmanifest?v=1" />
 				<link
 					rel="mask-icon"
-					href="/static/favicon/safari-pinned-tab.svg?v=1"
+					href="/favicon/safari-pinned-tab.svg?v=1"
 					color="#da532c"
 				/>
-				<link rel="shortcut icon" href="/static/favicon/favicon.ico?v=1" />
+				<link rel="shortcut icon" href="/favicon/favicon.ico?v=1" />
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta
 					name="msapplication-config"
-					content="/static/favicon/browserconfig.xml?v=1"
+					content="/favicon/browserconfig.xml?v=1"
 				/>
 				<meta name="theme-color" content="#353a4c" />
 				<script

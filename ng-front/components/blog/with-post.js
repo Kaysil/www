@@ -106,10 +106,7 @@ export default (meta) => ({ children }) => {
 	return (
 		<MDXProvider components={components}>
 			<Page title={meta.title + " - NetherGames Blog"}>
-				<SocialMeta
-					image={"/static/images" + meta.link + "/card.png"}
-					{...meta}
-				/>
+				<SocialMeta image={"/images" + meta.link + "/card.png"} {...meta} />
 				<MediaQueryConsumer>
 					{({ isMobile }) => (
 						<Header height={64 + (isMobile ? 32 : 0)} shadow defaultActive>

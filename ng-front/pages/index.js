@@ -32,8 +32,8 @@ export default () => (
 						title="TITAN RANK RELEASED"
 						titleMobile="TITAN RANK RELEASED"
 					>
-						TITAN RANK RELEASED - Interested in private games and other cool perks?
-						Get it with the Titan rank! Buy now — Wednesday, August 5th
+						TITAN RANK RELEASED - Interested in private games and other cool
+						perks? Get it with the Titan rank! Buy now — Wednesday, August 5th
 					</Notification>
 					<Navbar hideLogo={!isMobile} />
 				</Header>

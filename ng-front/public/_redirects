@@ -1,0 +1,32 @@
+# Proxy `/static/*` to `/*`
+/static/* https://nethergames.org/:splat 200!
+
+# Short URLs
+/artist https://support.nethergames.org/en-au/article/3non78 301!
+/bandispute https://forums.nethergames.org/unban 301!
+/builder https://support.nethergames.org/en-au/article/3non78 301!
+/developer https://support.nethergames.org/en-au/article/3non78 301!
+/discordmod https://support.nethergames.org/en-au/article/3non78 301!
+/forumsmod https://support.nethergames.org/en-au/article/3non78 301!
+/live https://www.youtube.com/embed/live_stream?channel=UCxkCEGV9MD_KrMcp2WwXE7Q 301!
+/livechat https://go.crisp.chat/chat/embed/?website_id=ac15f3f7-12a4-4eac-a670-b20fa788c429 301!
+/mutedispute https://forums.nethergames.org/unmute 301!
+/privacy https://support.nethergames.org/en-au/article/ovsyh2 301!
+/privacypolicy https://support.nethergames.org/en-au/article/ovsyh2 301!
+/privacy-policy https://support.nethergames.org/en-au/article/ovsyh2 301!
+/rpp https://support.nethergames.org/en-au/article/1rvsbe9 301!
+/refunds https://support.nethergames.org/en-au/article/1rvsbe9 301!
+/redeem https://data.nethergames.org/redeem.php 301!
+/report https://forums.nethergames.org/report 301!
+/support https://support.nethergames.org 301!
+/supportstaff https://support.nethergames.org/en-au/article/3non78 301!
+/staff https://support.nethergames.org/en-au/article/3non78 301!
+/survey https://forms.office.com/Pages/ResponsePage.aspx?id=_3qZ76kIiE2d8Gfrine5gKMFwBX2GoFAiY0S_0-_W8pUQkYxSUg4UkFXVUxYOEZVVzFHUDNFMUtGQSQlQCN0PWcu 301!
+/tac https://support.nethergames.org/en-au/article/1ecu64q 301!
+/terms-and-conditions https://support.nethergames.org/en-au/article/1ecu64q 301!
+/trainee https://support.nethergames.org/en-au/article/3non78 301!
+/unban https://forums.nethergames.org/unban 301!
+/unmute https://forums.nethergames.org/unmute 301!
+/vacancies https://support.nethergames.org/en-au/article/3non78 301!
+/warningdispute https://forums.nethergames.org/warningdispute 301!
+/youtube https://support.nethergames.org/en-au/article/19102g1 301!
