@@ -26,7 +26,7 @@ export default () => (
 					height: 450px;
 					max-width: 1024px;
 					margin: auto;
-					background: url(/static/images/discord.png);
+					background: url(/images/discord.png);
 					background-size: 100% auto;
 					background-position: 0 4rem;
 					background-repeat: no-repeat;

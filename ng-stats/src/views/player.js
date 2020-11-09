@@ -266,6 +266,9 @@ export default class Player extends Component {
 									{stats.winsData.Duels > 0 && (
 										<Text>Duels: {stats.winsData.Duels}</Text>
 									)}
+									{stats.winsData.MS > 0 && (
+										<Text>Momma Says: {stats.winsData.MS}</Text>
+									)}
 									{stats.winsData.MM > 0 && (
 										<Text>Murder Mystery: {stats.winsData.MM}</Text>
 									)}
@@ -280,6 +283,9 @@ export default class Player extends Component {
 									)}
 									{stats.winsData.SG > 0 && (
 										<Text>Survival Games: {stats.winsData.SG}</Text>
+									)}
+									{stats.winsData.TB > 0 && (
+										<Text>The Bridge: {stats.winsData.TB}</Text>
 									)}
 									{stats.winsData.TR > 0 && (
 										<Text>TNT Run: {stats.winsData.TR}</Text>
@@ -317,13 +323,28 @@ export default class Player extends Component {
 								<AccordionPanel pb={4} overflowY="hidden">
 									<Tabs variant="soft-rounded" variantColor="teal" size="sm">
 										<TabList>
-											<Tab>Bedwars</Tab>
+											<Tab>Arcade</Tab>
+											<Tab ml={2}>Bedwars</Tab>
 											<Tab ml={2}>Duels</Tab>
 											<Tab ml={2}>Murder Mystery</Tab>
 											<Tab ml={2}>SkyWars</Tab>
+											<Tab ml={2}>The Bridge</Tab>
 										</TabList>
 
 										<TabPanels mt={4}>
+											<TabPanel fontSize="sm">
+												<Text>Build Battle</Text>
+												<Text>Solo Wins: {value(e.bbSoloWins)}</Text>
+												<Text>Doubles Wins: {value(e.bbDoublesWins)}</Text>
+												<Text></Text>
+												<Text>Momma Says</Text>
+												<Text>Successes: {value(e.msSuccesses)}</Text>
+												<Text>Fails: {value(e.msFails)}</Text>
+												<Text></Text>
+												<Text>Soccer</Text>
+												<Text>Goals: {value(e.scGoals)}</Text>
+											</TabPanel>
+
 											<TabPanel fontSize="sm">
 												<Paper className={classes.root}>
 													<div className={classes.tableWrapper}>
@@ -468,6 +489,20 @@ export default class Player extends Component {
 														{value(e.swEpearlsThrown)}
 													</Text>
 												</Paper>
+											</TabPanel>
+
+											<TabPanel fontSize="sm">
+												<Text>Kills: {value(e.tbKills)}</Text>
+												<Text>Deaths: {value(e.tbDeaths)}</Text>
+												<Text>K/D: {getKdr(e.tbKills, e.tbDeaths)}</Text>
+												<Text>Arrows Hit: {value(e.tbArrowsShot)}</Text>
+												<Text>Melee Hits: {value(e.tbMeleeHits)}</Text>
+												<Text>Goals: {value(e.tbGoals)}</Text>
+												<Text>Streak: {value(e.tbStreak)}</Text>
+												<Text>Best Streak: {value(e.tbBestStreak)}</Text>
+												<Text>Wins: {value(e.tbWins)}</Text>
+												<Text>Losses: {value(e.tbLosses)}</Text>
+												<Text>W/L: {getKdr(e.tbWins, e.tbLosses)}</Text>
 											</TabPanel>
 										</TabPanels>
 									</Tabs>

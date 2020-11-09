@@ -25,6 +25,7 @@ import Parkourboard from "../views/parkourboard"
 import Player from "../views/player"
 import { Vote } from "../views/vote"
 import Voteboard from "../views/voteboard"
+import Eventboard from "../views/eventboard"
 import { h } from "preact"
 
 if (process.env.NODE_ENV !== "development") {
@@ -109,6 +110,7 @@ const App = () => (
 						<Route path="/player" component={Player} />
 						<Route path="/leaderboard" component={Leaderboard} />
 						<Route path="/guildboard" component={Guildboard} />
+						<Route path="/eventboard" component={Eventboard} />
 						<Route path="/guild" component={Guild} />
 						<Route path="/faction" component={Faction} />
 						<Route path="/vote" component={Vote} />

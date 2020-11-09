@@ -9,7 +9,9 @@ export default () => (
 			<span>Duels</span>
 			<span>Factions</span>
 			<span>Murder Mystery</span>
+			<span>Skyblock</span>
 			<span>SkyWars</span>
+			<span>The Bridge</span>
 			<span>And more!</span>
 		</WordSlider>
 		<style jsx>{`
